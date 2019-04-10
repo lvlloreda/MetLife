@@ -1,0 +1,2666 @@
+<!DOCTYPE html><!--[if lt IE 7]>      
+<html class='no-js lt-ie9 lt-ie8 lt-ie7'>
+   <![endif]--><!--[if IE 7]>         
+   <html class='no-js lt-ie9 lt-ie8'>
+      <![endif]--><!--[if IE 8]>         
+      <html class='no-js lt-ie9'>
+         <![endif]--><!--[if gt IE 8]><!--><html xmlns="http://www.w3.org/1999/xhtml" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><!--<![endif]--><head>
+               <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+               <meta http-equiv="x-ua-compatible" content="IE=Edge,chrome=1" />
+               <meta http-equiv="X-UA-Compatible" value="IE=Edge,chrome=1" />
+               <meta http-equiv="CACHE-CONTROL" content="NO-CACHE" />
+               <meta http-equiv="PRAGMA" content="NO-CACHE" />
+               <meta name="description" content="" />
+               <meta name="viewport" content="width=device-width, initial-scale=1.0" /><!-- Place favicon.ico and apple-touch-icon.png in the root directory --><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --><!-- build:js scripts/vendor/ie.js --><!--[if lt IE 9]>
+               <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+               <script src="bower_components/respond/src/respond.js"></script>
+               <![endif]--><!-- endbuild -->
+               
+               
+               
+               
+               
+               <title>Core GSP</title>
+			   <link rel="stylesheet" type="text/css" href="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/css/bootstrap.min.css" />
+               <link rel="stylesheet" type="text/css" href="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/css/style.css" />
+			   <link rel="stylesheet" type="text/css" href="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/css/datepicker3.css" />
+			   <link rel="stylesheet" type="text/css" href="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/css/ion.rangeSlider.css" />
+        	   <link rel="stylesheet" type="text/css" href="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/css/ion.rangeSlider.skinHTML5.css" />
+               </head><body class="ml"><div id="webrespath">
+  <script>
+  /*&lt;![CDATA[*/
+  var webResource = 'https:\/\/qa.salespilot.metlife.com.co\/DataCenter_LATAM';
+  var coreFolder = 'GSP_CORE';
+  var tenantFolder = 'Tenant_COLOMBIA';
+  var locale = 'es_CO';
+  var needAnalysisFlow = '';
+  if(locale == null) {
+    locale = 'es-co';
+  }
+  var appDateFormat = "DD/MM/YYYY";
+  var webResourceAbsolute = 'https:\/\/qa.salespilot.metlife.com.co';
+	var digSeparator=".";
+	var decimalPoint=",";
+  var appendDigit = "0";
+  var appCurMaxLength = 15;
+  var decimalPointRegExp = new RegExp("[" + decimalPoint + "]", "g");
+  var digSeparatorRegExp = new RegExp("[" + digSeparator + "]", "g");
+  /*]]&gt;*/
+  </script><!--[if lt IE 9]>
+		  <script  th:src="@{${application.webresource }+'/'+${ coreFolder }+'/WebContent/scripts/components/bower_components/html5shiv/dist/html5shiv.js'}"></script>
+		  <script th:src="@{${application.webresource }+'/'+${ coreFolder }+'/WebContent/scripts/components/bower_components/respond/src/respond.js'}"></script>
+        <![endif]-->
+  
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/Calendar/dhtmlxcalendar.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jsrender.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/initGomez.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/gomez.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jQuery/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jQuery/Bootstrap/bootstrap.min.js"></script><!-- <script th:src="@{${application.webresource }+'/'+${ coreFolder }+'/WebContent/scripts/components/jQuery/Bootstrap/bootstrap.js'}" type="text/javascript"></script> --> 
+  
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jQuery/Bootstrap/bootstrap-multiselect.js"></script>
+		<script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jQuery/Bootstrap/prettify.js"></script>
+   <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jQuery/Bootstrap/isotope.pkgd.min.js"></script>
+ 
+  <script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/throbber.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/adminLeftNav.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/sessionUtil.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/dashBoard.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/parent.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/gspAjaxDataConfigObj.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/utils.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/gspBaseController.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/gspConstants.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/gspCalendarWidget.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/html.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/urlMappings.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/paginationConfigObj.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/gspPagination.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/request/iframe.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/gspValidateElements.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/gspCommonUtils.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/gspShowHideElements.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/parser.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/date.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/string.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/number.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/lang/functional.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/_base/url.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/promise/all.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/date/stamp.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/gspValidations.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/regExp.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/validations/nls/messages.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/cldr/nls/number.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/regexp.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/lang/functional/lambda.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/lang/functional/array.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/lang/functional/object.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/date/locale.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/cldr/nls/en/number.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/cldr/nls/es/number.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/main.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/validations/nls/en-us/messages.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/validations/nls/es-co/messages.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/cldr/supplemental.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/cldr/nls/gregorian.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/cldr/nls/en/gregorian.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/cldr/nls/es/gregorian.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/planSelection.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/window.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/quoteSelection.js"></script><script type="text/javascript" data-dojo-config="parseOnLoad: true, async: true,locale:'es-co',isDebug:true, extraLocale: ['en-us']" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/dojo.js"></script><!--  <script th:if="${session.langDefault =='en_US'}" th:src="@{${application.webresource }+'/'+${ coreFolder }+'/WebContent/scripts/dojo/dojo.js'}" type="text/javascript" data-dojo-config="parseOnLoad: true, async: true,locale:'en-us',isDebug:true"></script> --><!--this is added temporarly to work with sfdc integration of needs analysis screen, need to be removed later onwards -->
+ 
+  
+  
+  <script src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/bower_components/html5shiv/dist/html5shiv.min.js"></script>
+  <script src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/bower_components/modernizr/modernizr.js"></script>
+  <script src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/bower_components/respond/src/respond.min.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/bower_components/respond/src/matchmedia.polyfill.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/bower_components/respond/src/matchmedia.addListener.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jQuery/Bootstrap/bootstrap-typeahead.min.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/main.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jQuery/Bootstrap/bootstrap-datepicker.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jQuery/Bootstrap/locales-datepicker/bootstrap-datepicker.es-co.js"></script>
+</div>
+               <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jQuery/Bootstrap/bootstrap-slider.min.js"></script>
+               <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/CanvasSDK/canvas-all.js"></script>
+               <script type="text/javascript">
+                  require([ webResource + '/' + coreFolder + '/WebContent/scripts/components/throbber.js',"dojo/domReady!"],function(throbber){  
+                  	throbber.showThrobber("throbberDiv", false);
+                  });
+                  require([webResource+'/'+tenantFolder+'/WebContent/scripts/adminLeftNav.js',webResource+'/'+tenantFolder+'/WebContent/scripts/sessionUtil.js',webResource+'/'+tenantFolder+'/WebContent/scripts/dashBoard.js',webResource + '/' + coreFolder + '/WebContent/scripts/components/throbber.js',"dojo/domReady!"],function(adminLeftNav,sessionUtil,dashBoard,throbber){  
+                  	adminLeftNav.init();
+                  	sessionUtil.init();
+                  	dashBoard.init();
+                  	throbber.removeThrobber();
+                  });
+                  require([ webResource+'/'+tenantFolder+'/WebContent/scripts/parent.js'],function(parent){  
+                  	parent.init();
+                  });
+                  
+               </script>
+               <style>
+                  .content-wrap .contentClient {
+                  margin: 0 20px 0 10px;
+                  }
+               </style>
+            
+            
+               <section class="content-wrap">
+                  <a class="nav-expand" href="" data-original-title="" title=""><i class="fa fa-bars"></i></a>
+                  <div id="wrapper">
+                  <div></div>
+                     <div><!--Left Nav--><!-- navFragment starts-->
+                        	
+                        
+                        <a class="nav-expand" href="" data-original-title="" title=""><i class="fa fa-bars"></i></a>
+                        <nav class="main-nav">
+                             
+						   <div>
+						   <div>
+                              <div id="leftNavigationFragment">   
+   <input type="hidden" id="maxInactiveInterval" name="maxInactiveInterval" value="1800" />
+   <input type="hidden" id="timeBeforeSessExpire" name="timeBeforeSessExpire" value="5" />
+   <input type="hidden" id="CN" name="CN" value="COL" /><!--Left Nav-->
+   
+   <div>
+      <div></div>
+         <ul class="nav nav-pills nav-stacked">
+            <li class="profile" id="profileIcon">
+               <img src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/images/employee.jpg" />
+               <div class="userMenu" id="userMenu">
+                  <span class="arrow">Arrow</span>
+                  <ul>
+                     <li><a href="#" id="viewProfileLink" data-met-initjs="userProfile" data-original-title="" title="">Ver Perfil</a></li>
+                     <li><a href="#" data-toggle="modal" id="logoutLink" data-original-title="" title="">Salir</a></li>
+                  </ul>
+               </div>
+            </li><!-- DashBoard Tab -->
+			
+            <li class="home"><a href="#" id="dashboardTab" data-original-title="" title=""> 
+			<i class="gsp-icon home"></i><span>Menú Principal</span></a></li><!-- Auditor Dashboard -->
+			
+						
+			<!-- Reassign Tab -->
+			
+			<!-- Client Tab -->
+			
+			
+            <li class="customer">
+			<a href="#" id="clientsTab" data-met-initjs="search" data-original-title="" title=""><i class="gsp-icon customer"></i><span>Clientes</span></a></li><!-- NeedAnalysis Tab -->
+			
+			
+			<li id="needAnalysisTab" class="need"><a id="needAnalysisTab" href="#" data-original-title="" title=""><i class="gsp-icon need"></i><span><span>Análisis de Necesidades</span></span></a></li><!-- Illustration Tab -->
+			
+			
+			<li class="illustration active"><a id="illustrationTab" href="#" data-original-title="" title=""><i class="gsp-icon illustration"></i><span><span>Cotizaciones</span></span></a></li><!-- ApplicationSearch Tab -->	
+			
+			
+			<li class="application">
+			<a href="#" id="applicationTab" data-original-title="" title=""><i class="gsp-icon application"></i><span>Solicitud</span></a></li><!-- Reports Tab -->
+			
+			
+			<li class="product">
+			<a href="#" id="reportsTab" data-original-title="" title="">
+			<i class="gsp-icon product"></i><span>Reportes</span></a></li><!-- Orphan Tab  th:if="${(session.userDetailMap['ROLE_CD'] =='15901' and session.userHierarchyMap['userLevel'] !='4') or session.userDetailMap['ROLE_CD'] =='15907' or session.userDetailMap['ROLE_CD'] =='15908'}"--> 
+			
+			
+			<!-- GlobalSearch Tab --><!-- <li th:class="${globalSearchTab != null and globalSearchTab == 'true'} ? 'search active' : 'search'" th:if="${session.userDetailMap['ROLE_CD'] =='15901' or session.userDetailMap['ROLE_CD'] =='15905' or session.userDetailMap['ROLE_CD'] =='15907' or session.userDetailMap['ROLE_CD'] =='15908'}"><a href="#" id="globalSearchTab"><i class='gsp-icon search'></i><span
+			th:utext="#{${ tenantCode}+'.globalSearch'}"></span></a></li>	 -->
+			
+			
+			
+         </ul>
+      </div>
+   </div></div>
+                           </div> 
+						    
+						   
+						   
+						   
+						    
+						    
+						      
+						     
+						    
+						   
+						   
+						   
+						   
+						     
+						    
+						    
+						    
+						   
+                           
+                        </nav><!--Left Nav--><!-- navFragment ends-->
+                        
+                        	
+                     </div><!--Slice--><!--  <div class="content"> -->
+                     
+                     
+                     <div id="mainContentDiv">
+                        <div id="appContent">
+
+
+<div id="createQuote_content">
+	<link rel="stylesheet" type="text/css" href="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/css/styleCol.css" /><!-- <form id="backSearch" name="backSearch" data-met-formToSubmit="" data-met-formAction="/sales/searchPageDetails" data-met-formMethod="POST">
+	<div id="webFlowVariables_fragment" th:include="'/UIFragments/Fragment/Common/webFlowVariables_fragment' :: webFlowVariables_fragment"/>
+    <div id="hiddenVariablesToSubmit_fragment" th:include="'/UIFragments/Fragment/Common/hiddenVariablesToSubmit_fragment' :: hiddenVariablesToSubmit_fragment"/>
+    </form>  -->
+	
+	<div></div>			
+ <div>
+
+		<div class="mainContent content newUI">
+		   <input type="hidden" value="" name="jsInit" id="jsInit" data-met-initjs="quoteSelection" />
+			<div class="nheader pdfHeader container"><!--  <div class="noProd">2 Products</div> -->
+				
+				<div class="col-sm-9" id="createQuote_heading">
+   <div class="row">
+	<h1><span>Calcular cotización</span></h1><!-- <a href="#" th:utext="#{${ tenantCode}+'.edit'}"></a> -->
+	
+	</div>
+	<div class="QuoteClient row"><span class="clientInfo">Cliente: Luz Garcia</span><!-- Dont display the Client link if ManualExtraPremium flag is true -->  
+		
+		
+		<div id="isExtraPremumDiv">
+		
+			<a href="#" id="editClientLink" class="client-edit" data-met-initjs="createNewClient" cust-id="8584" cust-ver-id="1">Editar</a>
+			
+		</div>
+	</div>
+</div>
+				<div class="col-sm-3" id="createQuote_quoteNumber">
+	<div id="quoteNumber">
+		
+		<div class="QuoteDate">
+		<input type="hidden" id="quoteID" name="quoteId" value="0" />
+		</div>
+		</div>
+	</div>
+			</div>
+			
+			<!-- <div id="userRegistration_identificationDocumentDetails" th:include="'/UIFragments/Fragment/selectPlan_quoteHeader' :: selectPlan_quoteHeader"/> 		
+      <div id="selectPlan_quoteSubHeader" th:include="'/UIFragments/Fragment/createQuote_subHeader' :: createQuote_subHeaderFragment"/> 
+      <div id="selectPlan_quoteBar" th:include="'/UIFragments/Fragment/selectPlan_quoteBar' :: selectPlan_quoteBar"/> 	
+      -->
+				
+				<div id="businessErrorMessagesFragment">
+ <div id="businessErrorMessagesDiv" style="display:none"><!--  <div class="errorMsg" >
+		<div class="errorHeader"><span th:utext="#{${ tenantCode}+'.businessError'}"/></div>
+		<div class="errorBox">
+			<p id="businessErrorMsgText"></p>
+		</div>
+	</div> -->
+  
+	 <div class="errorBox"><!-- <p id="errorHeaderPara" class="errorHeader" th:utext="#{${ tenantCode}+'.businessError'}"></p> -->
+		
+		 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">
+            <i class="fa fa-times"></i>
+          </button>
+		<p class="errorBody marginTop10px alert alert-danger alert-dismissable" id="businessErrorMsgText"></p>
+		<p class="errorBody"></p>
+	  </div>
+</div>
+</div>
+				<form id="frmAuthDecline" name="frmAuthDecline" data-met-formtosubmit="" data-met-formaction="/sales/searchPageDetails" data-met-formmethod="POST">
+					<div id="webFlowVariables_fragment">
+		<div style="display:none;">
+			<span id="flowExecutionUrl">/sales/parentflow?execution=e2s3&amp;TOKEN_CLT_TRNS=1L3GFUW4L5BZAUVE</span>
+			<span id="flowExecutionKey">e2s3</span>
+			
+		</div>
+	</div>
+					<div id="hiddenVariablesToSubmit_fragment">
+		<input id="queryBuilderParam" type="hidden" name="queryBuilderParam" value="" />
+		<input id="pageToLoad" type="hidden" name="pageToLoad" value="" />
+		<input id="searchCriteriaInputs" type="hidden" name="searchCriteriaInputs" value="FullName|custId|QuoteStatus|QuoteNumber|quoteStartDate|quoteExperiedDate|illustrationSearch|product|IllustrationStatus|IllustrationName|NeedStatus|FirstName|LastName|CUST_ID|AGNT_ID|AGNT_ID_FROM|TASK_STTS_NM|USR_ID|taskRef|MultipleSearchCriteria|ApplicationStatus|FirstNameField|LastNameField|DateOfBirth|DocIdNumber|AppId|ApplicationStartDate|ApplicationEndDate" />
+<input id="hiddenQuoteParams" type="hidden" name="hiddenQuoteParams" value="" />
+		<input id="nativeQueryFlag" type="hidden" name="nativeQueryFlag" value="false" />
+		<input id="nativeQuerySQLKey" type="hidden" name="nativeQuerySQLKey" value="" />
+		<input id="inputList" type="hidden" name="inputList" value="" />
+		<input id="inputListCount" type="hidden" name="inputListCount" value="" />
+		<input id="nativeQuerySQLKeyCount" type="hidden" name="nativeQuerySQLKeyCount" value="" />
+		<input id="fragmentToLoad" type="hidden" name="fragmentToLoad" value="" />
+		<input id="multipleNativeQueryFlag" type="hidden" name="multipleNativeQueryFlag" value="false" />
+		<input id="nativeQueryMultipleSql" type="hidden" name="nativeQueryMultipleSql" value="" />
+		<input id="mulQueryIpList" type="hidden" name="mulQueryIpList" value="" />
+		<input id="resultSetKeysList" type="hidden" name="resultSetKeysList" value="" />
+		<input id="queryBuilderFlagActv" type="hidden" name="queryBuilderFlagActv" value="true" />
+		<input id="getTypeAheadDataFlag" type="hidden" name="getTypeAheadDataFlag" value="" />
+		<input id="criteriaSearchFlag" type="hidden" name="criteriaSearchFlag" value="" />
+		<input id="criteriaSearchCountQuery" type="hidden" name="criteriaSearchCountQuery" value="" /><!-- 	<input id="hiddenCustId" type="hidden" name="hiddenCustId" value=""></input> -->
+	
+		<input id="recordType" type="hidden" name="recordType" value="" />
+		<input id="appendUniqueIdentifier" type="hidden" name="appendUniqueIdentifier" value="" />  
+		<input id="perPage" type="hidden" name="perPage" value="" />
+		<input id="leftJoinKey" type="hidden" name="leftJoinKey" value="" />
+		<input id="queryBuilderParamCount" type="hidden" name="queryBuilderParamCount" value="" />
+		<input id="globalSearchDefaultPage" type="hidden" name="globalSearchDefaultPage" value="" />
+		<input id="taskFlag" type="hidden" name="taskFlag" value="" />
+<input id="viewAllFlag" type="hidden" name="viewAllFlag" value="" />
+		<input id="hidWhereClauseTextBox" type="hidden" name="whereClauseTextBox" value="" />
+		<input id="dashBoardStatusType" type="hidden" name="dashBoardStatusType" value="" />
+            <input id="dynamicParamsForStatus" type="hidden" name="dynamicParamsForStatus" value="" />
+            <input id="advancedSearchFlag" type="hidden" name="advancedSearchFlag" value="" />
+            <input id="advancedSearch" type="hidden" name="advancedSearch" value="" />
+           <input id="advancedSearchSQLPart1" type="hidden" name="advancedSearchSQLPart1" value="" />
+           <input id="advancedSearchSQLPart2" type="hidden" name="advancedSearchSQLPart2" value="" />
+           <input id="nativeQueryKeyCountForScroll" type="hidden" name="nativeQueryKeyCountForScroll" value="" /> 
+            <input id="searchFlag" type="hidden" name="searchFlag" value="" />
+            <input id="searchPageParam" type="hidden" name="searchPageParam" value="" />
+            <input id="role_code" type="hidden" name="role_code" value="15901" />
+            <input id="polHolderType" type="hidden" name="polHolderType" />
+	</div><!-- <script type="text/javascript"
+						src="webResource+'/'+tenantFolder+'/WebContent/scripts/dashBoard.js"></script>
+					 -->
+					
+					<div id="createQuote_authorizeDeclineOverlay">
+	<div id="authorizeDeclineOverlay" class="pop_container quoteAuth">
+      <div class="popup newUI">
+        <div class="newPopHeader row">
+		  <div class="rescueHeader col-xs-6 col-sm-10"> <h3>Comentario del Autorizador</h3></div>
+          <div class="col-xs-2 closeButtonContainer"><a href="#" id="closeQuoteAuthorizeBtn" class="closeBtn" aria-label="Close Window"></a></div>
+        </div>
+        <div class="fullPart">
+
+ 
+            <div class="row">
+	            <div class="col-sm-3 col-xs-6">
+	            	<label class="authLabel" for="quoteAuthorize">Autorizado</label>
+	                <input type="radio" name="appDataMap['quoteStatus']" data-met-checks="radio" data-met-errordiv="errSpnRdnApproveDecline" class="fl" id="quoteAuthorize" value="INP" data-met-text="Aprobada" />
+						 
+				  </div>
+				  <div class="col-sm-3 col-xs-6">
+				    	<label class="authLabel" for="quoteDecline">Declinado</label>
+	                 	<input type="radio" name="appDataMap['quoteStatus']" data-met-checks="radio" data-met-errordiv="errSpnRdnApproveDecline" class="fl" id="quoteDecline" value="DEC" data-met-text="Declinada" />
+	                    
+				  </div>
+				   <span id="errSpnRdnApproveDecline" class="marginTop5px clear fl errorLabel"></span>
+            </div>  
+
+			  
+			  
+			 
+			 <div class="fl clear marginTop20px width100percent">
+                <label class="fl clear"><span class="">Comentarios</span></label>
+                <div>
+                 <textarea id="authorizerComment" class="Address" data-met-mand="mandatory" data-met-errordiv="errSpnTxtAuthComment" maxlength="1000" name="appDataMap['userComments']"></textarea>
+				 <span id="errSpnTxtAuthComment" class="clear fl errorLabel" style="display: none;"></span>
+                </div>
+              </div>
+              <button type="button" id="quoteAuthorizationBtn" class="clear greenBtn fl marginTop15px">Enviar</button>
+      
+         
+        </div>
+      </div>
+    </div>
+ </div>
+					<input type="hidden" id="hidQtShowROField" value="false" /> <input type="hidden" id="hidEntCrtEditQt" value="true" /> <input type="hidden" id="hidEntAuthQt" value="false" />
+				<input type="hidden" id="hidLockStatus" value="false" /> <input type="hidden" id="hidEnt" value="{AUTH_DECL_QT=false, UPD_ADMIN_PARMS=false, EAPP_NOTFY=true, EDT_ACTV_CUST=false, EAPP_MGMT=true, QT_EMAIL_PRNT=true, CRT_EDT_QT=true, EAPP_SRCH=true, EAPP_VIEW=true, QT_OPER_OBS=false, VIEW_CUST_DETL=true, QT_EDT_PLAN=true, QT_SHW_RO_FLD=false, QT_OPER_SLD=false, CRT_EDT_CUST=true, GNRL_RPT=true, EAPP_EMAIL=true, disabledFieldClass=, PRNT_EMAIL_QT=true, VIEW_QT=true, UNLOCK_QT=false}" />
+			<input type="hidden" id="hidEntCommQtSld" value="false" />
+			<input type="hidden" id="hidQuoteId" name="quoteId" value="0" />
+									
+
+				<input id="TOKEN_CLT_TRNS" type="hidden" name="TOKEN_CLT_TRNS" value="1L3GFUW4L5BZAUVE" /></form>
+
+				<div id="quote_FlowExecution_data">
+		<div style="display:none;">
+			<span id="flowExecutionUrl">/sales/parentflow?execution=e2s3&amp;TOKEN_CLT_TRNS=1L3GFUW4L5BZAUVE</span>
+			<span id="flowExecutionKey">e2s3</span>
+			
+		</div>
+	</div>
+				<div class="clear contentBody nameQuote fl quoteCal" id="quoteContentBody">
+					<div class="clear rightPart padB10px" id="QuoteRightPart">
+						<div id="createQuote_totalPremium">
+   <div>
+   <div id="totalPremium">
+   <h2 class="wordwrap"><label>Luz</label>  <label>Garcia</label> </h2>
+   
+	<span>Prima Total</span>
+	
+	
+	
+	<div id="selectPayFreqQtP" class="DDselect styled-select w130px">
+	  <select class="primary w155px" id="selectPayFreqQt">
+	  
+		 <option value="4">Mensual</option>
+		 
+		 
+		 
+		 <option value="2">Semestral</option>
+		 
+		 <option value="1">Anual</option>
+		 
+
+	  </select>
+	</div>
+	<button type="button" id="btnReviewQuote" class="btn grayBtn btn-mobile disabledReviewQuote" disabled="">Revisar Cotización</button>
+	
+	
+	
+</div>	
+</div>
+   </div>
+							
+					</div>
+					<div class="leftPart" id="divSelectedPlansInQt">
+						 
+
+						<div>
+							<div id="planSelectDivVT5">
+
+								<div id="createQuote_selectedPlan">
+   <span id="errorHeaderVT5"></span>
+   <form data-met-formtosubmit="" id="planSelectVT5">
+   <div>
+   <div></div>
+   
+      <div class="contentBox" id="planSelectedParentDiv">
+	  
+      <div id="planSelectedVT5">
+      <div class="contentBoxHeader">
+         <div class=" marginLeft20px">
+            <div class="primaryDD"><strong>Vida Entera 50 años</strong></div>
+            <span id="errSpnTxtifsPopUpVT5" class="marginTop5px clear fl wrdwrap errorLabel"></span>
+         </div>
+		
+         <div>
+         
+         <div>
+            <a href="#" class="closeBlueBtn" data-met-data="{&quot;removeDivId&quot;:&quot;planSelectedVT5&quot;,&quot;planId&quot;:&quot;VT5&quot;}" id="remove_VT5">Close Window</a> 
+         </div>
+      </div>
+      </div>
+      <div class="contentBoxBody"><!--  <div th:text="${gspFlowScopeBean.appDataMap}"></div> -->
+     
+         <div id="planDivVT5" plancode="VT5">
+            <div class="fl marginTop30px">
+		
+               <div>
+                  <label class="fl clear">Seleccione:</label>
+				  
+                  <div class="fl clear">
+                     <div class="fl clear marginTop10px">
+                        <div class="fl">
+                           
+                           <div>
+                              <input type="radio" checked="checked" id="faceAmount_VT5" class="fl" value="faceAmount" data-met-todisablefields="premiumInput_;frequency_;frequencyDiv_" data-met-toenablefields="faceAmountInput_" plancode="VT5" name="appDataMap['QuoteData.Plan_VT5.amountType']" />
+                           </div>
+                        </div>
+                        <span class="marginLeft5px fl w120px">Valor Asegurado</span>
+                     </div>
+                     <div class="fl">
+                     	 
+                        <div class="fl">
+                           <input type="text" id="faceAmountInput_VT5" data-met-mand="mandatory" data-met-errordiv="errSpnFaceAmountInput_VT5" data-met-keypress="Comma_allowed;Dot_allowed;num_Allowed" data-met-currency="" places="0" data-met-blur="currMinLength" data-met-minlength="5" placeholder="Valor" plancode="VT5" name="appDataMap['QuoteData.Plan_VT5.planBasicAmount']" value="" currencyflag="true" />
+                           <input type="hidden" id="basicCovName" name="appDataMap['QuoteData.Plan_VT5.basicCovName']" value="Muerte por cualquier causa" />
+                        </div>
+                        <span class="fl marginTop10px marginLeft10px">Pesos</span> 
+                        <span id="errSpnFaceAmountInput_VT5" class="clear fl wrdwrap errorLabel" style="display: none;"></span>
+                     </div>
+                  </div>
+                  <div class="fl clear">
+				
+                     <div class="fl clear marginTop20px">
+                        <div class="fl">
+                           
+                           <div>
+                              <input type="radio" name="appDataMap['QuoteData.Plan_VT5.amountType']" class="fl" id="premium_VT5" value="premium" data-met-todisablefields="faceAmountInput_" data-met-toenablefields="premiumInput_;frequency_;frequencyDiv_" plancode="VT5" />
+                              
+                           </div>
+                        </div>
+                        <span class="marginLeft5px fl w120px">Prima</span> 
+                     </div>
+                     <div class="fl marginTop10px">
+                        
+                        <div class="fl">
+                           <input type="text" class="disabledFields" data-met-mand="mandatory" data-met-errordiv="errSpnPremiumInput_VT5" data-met-keypress="Comma_allowed;Dot_allowed;num_Allowed" data-met-currency="" places="0" data-met-blur="currMinLength" data-met-minlength="5" placeholder="Valor" id="premiumInput_VT5" disabled="disabled" plancode="VT5" name="appDataMap['QuoteData.Plan_VT5.planPremium']" value="" currencyflag="true" />
+                        </div>
+                        <span class="fl marginTop10px marginLeft10px">Pesos</span> 
+                  
+
+<div class="selectDrop" style="overflow:hidden">
+						
+                           
+                           <div class="fl styled-select w155px disabledFields" id="frequencyDiv_VT5">
+                              <select class="primary" disabled="disabled" id="frequency_VT5" data-met-frequency="" data-met-errordiv="errSpnFrequency_VT5" plancode="VT5" name="appDataMap['QuoteData.Plan_VT5.paymentFrequency']">
+                                 
+                                    <option value="4">Mensual</option>                                	
+                                 
+                                                                    	
+                                 
+                                    <option value="2">Semestral</option>                                	
+                                 
+                                    <option value="1">Anual</option>                                	
+                                 
+                              </select>
+                           </div>
+                           <span id="errSpnFrequency_VT5" class="clear fl wrdwrap errorLabel"></span>
+                       </div>
+                        <span id="errSpnPremiumInput_VT5" class="clear fl wrdwrap errorLabel"></span>
+                        </div>
+                     <div class="fl marginTop10px clear">
+                   
+                     </div><!--PALP-->
+					 
+					 			
+               </div>
+            </div>
+            </div>
+			
+			
+				  
+							  
+            
+			
+			
+			
+			
+			
+			
+            <div id="checkBoxesDivVT5" plancode="VT5">
+               <div class="fl clear marginTop30px">
+                  <div class="marginTop30px">
+                     <label class="fl clear">Amparos</label>
+                     
+					 <div class="fl clear">
+					 <div>
+						<div>
+						<div>
+						<div class="fl clear marginTop15px" id="createQuote_selectedRider">
+
+	<div class="fl clear "><!-- 	<span th:text="${calulatedQtFlag}"/> -->
+		
+		<div>
+			<div class="fl">
+
+				<input type="checkbox" data-set-flag="hiddenRiderCheckboxVT50" btncode="VT5" data-met-tomandatoryfields="checkBoxInput|N|N" id="riderCheckboxVT50" plancode="VT50" checked="checked" name="appDataMap['QuoteData.Plan_VT5.RiderData.insured:0.riderCheck']" value="on" /> <input type="hidden" id="hiddenRiderCheckboxVT50" data-met-index="" name="appDataMap['QuoteData.Plan_VT5.RiderData.insured:0.defaultCalculatedFlag']" value="true" />
+			</div>
+		</div>
+	</div>	
+	<input type="hidden" name="appDataMap['QuoteData.Plan_VT5.RiderData.insured:0.riderCode']" value="2" /> <input type="hidden" name="appDataMap['QuoteData.Plan_VT5.RiderData.insured:0.applTo']" value="insured" /> <input type="hidden" name="appDataMap['QuoteData.Plan_VT5.RiderData.insured:0.DepSQ']" value="" /> 
+		<input type="hidden" name="appDataMap['QuoteData.Plan_VT5.RiderData.insured:0.riderName']" value="Exoneración de Pago de Primas" />
+		<span class="marginTop5px fl marginLeft5px w120px">Exoneración de Pago de Primas</span>
+	<div class="fl" id="checkBoxSelectedVT50">
+
+		<div class="fl marginLeft5px ">
+
+			
+
+			<input type="text" placeholder="Valor" id="checkBoxInput_VT50" data-met-indexval="0" disabled="" data-met-keypress="Comma_allowed;Dot_allowed;num_Allowed" data-met-currency="" data-met-blur="currMinLength" data-met-minlength="1" data-met-errordiv="errSpnTxtCheckBoxInputVT50" btncode="VT5" plancode="VT5" name="appDataMap['QuoteData.Plan_VT5.RiderData.insured:0.riderAmount']" value="" currencyflag="true" />
+
+		
+			<span class="fl marginLeft10px marginTop10px">Pesos</span> <span>    
+			</span> <span id="errSpnTxtCheckBoxInputVT50" class="clear fl errorLabel"></span>
+		</div>
+	</div>
+	<br />
+	<br />
+	<input type="hidden" id="isExclusionWithRiders" value="" />
+</div>
+						</div>
+						</div>
+                     </div>
+                              </div><div class="fl clear">
+					 <div>
+						<div>
+						<div>
+						<div class="fl clear marginTop15px" id="createQuote_selectedRider">
+
+	<div class="fl clear "><!-- 	<span th:text="${calulatedQtFlag}"/> -->
+		
+		<div>
+			<div class="fl">
+
+				<input type="checkbox" data-set-flag="hiddenRiderCheckboxVT51" btncode="VT5" data-met-tomandatoryfields="checkBoxInput|N|Y" id="riderCheckboxVT51" plancode="VT51" checked="checked" name="appDataMap['QuoteData.Plan_VT5.RiderData.insured:1.riderCheck']" value="on" /> <input type="hidden" id="hiddenRiderCheckboxVT51" data-met-index="" name="appDataMap['QuoteData.Plan_VT5.RiderData.insured:1.defaultCalculatedFlag']" value="true" />
+			</div>
+		</div>
+	</div>	
+	<input type="hidden" name="appDataMap['QuoteData.Plan_VT5.RiderData.insured:1.riderCode']" value="15" /> <input type="hidden" name="appDataMap['QuoteData.Plan_VT5.RiderData.insured:1.applTo']" value="insured" /> <input type="hidden" name="appDataMap['QuoteData.Plan_VT5.RiderData.insured:1.DepSQ']" value="" /> 
+		<input type="hidden" name="appDataMap['QuoteData.Plan_VT5.RiderData.insured:1.riderName']" value="Incapacidad Total y Permanente por cualquier causa" />
+		<span class="marginTop5px fl marginLeft5px w120px">Incapacidad Total y Permanente por cualquier causa</span>
+	<div class="fl" id="checkBoxSelectedVT51">
+
+		<div class="fl marginLeft5px ">
+
+			
+
+			<input type="text" placeholder="Valor" id="checkBoxInput_VT51" data-met-indexval="1" data-met-keypress="Comma_allowed;Dot_allowed;num_Allowed" data-met-currency="" data-met-blur="currMinLength" data-met-minlength="1" data-met-errordiv="errSpnTxtCheckBoxInputVT51" btncode="VT5" plancode="VT5" name="appDataMap['QuoteData.Plan_VT5.RiderData.insured:1.riderAmount']" value="" currencyflag="true" />
+
+		
+			<span class="fl marginLeft10px marginTop10px">Pesos</span> <span>    
+			</span> <span id="errSpnTxtCheckBoxInputVT51" class="clear fl errorLabel"></span>
+		</div>
+	</div>
+	<br />
+	<br />
+	<input type="hidden" id="isExclusionWithRiders" value="" />
+</div>
+						</div>
+						</div>
+                     </div>
+                              </div>
+					
+					 
+                  </div>
+               </div>
+            </div>
+            <div class="fl clear calBtnNew">
+			<div>
+            <div>
+			
+			
+			
+			<button type="button" class="fl" productfamilyc="12311" plancode="VT5" data-met-data="{&quot;formId&quot;:&quot;planSelectVT5&quot;,&quot;divToAttach&quot;:&quot;planSelectedVT5&quot;,&quot;planSelectedDiv&quot;:&quot;planSelectDivVT5&quot;}" id="planSubmitVT5">Calcular</button>
+			
+			
+				  
+			 	
+			 
+			 <div id="testCalcButton" style="display:none">
+			     <input type="hidden" id="enableQuoteBtnForCrtUpdate" value="" />
+				 <span id="calulatedQtFlag"></span><br />
+				 <span id="lockStatus1">false</span><br />
+				 <span id="showROQtFields1">false</span><br />
+				 <span id="recalculateQtFlag"></span><br />
+				 <span id="enableCalcBtn">true</span><br />
+				 <span id="status"></span><br />
+			  </div>
+			  </div>
+			
+			  </div>
+               		  
+	               
+               <div>
+					 <div>
+                  <div>
+                     
+                  </div>
+               </div>
+                 
+               </div>
+            </div>
+         </div>
+      </div>	 
+      <div class="contentBoxFooter">
+				  
+				  	
+     
+				  
+				  
+				  
+				  
+				  
+				  
+				  
+         
+		 
+		  
+         
+		 <div class="fr">
+			
+            			
+        	
+					 
+            <a class="fr marginRight15px">Valores de Rescate</a> 
+	   </div>
+       <div id="createQuote_IFODiv">
+	<div>
+	  <div>
+      
+		</div>
+	</div>
+	</div> 
+         </div>
+         <div id="createQuote_rescueOverlayDiv">
+      <div class="rescueOverlay pop_container" id="rescueOverlayVT5">
+         <div class="popup newUI">
+            <div class="newPopHeader row">
+               <div class="rescueHeader col-xs-6 col-sm-10"><h3><span>Valores de Rescate</span></h3></div>
+               <div class="col-xs-2 closeButtonContainer"><a href="#" class="closeBtn" aria-label="Close Window" id="btnCloseRescueOverlayVT5"></a></div>
+			  
+            </div>
+            <div class="fullPart rescue">
+        
+                  
+              
+            </div>
+         </div>
+      </div>
+   </div><!-- 	 <div id="createQuote_palpPro1Div" th:include="'/UIFragments/Fragment/createQuote_palpPro1' :: createQuote_palpPro1Fragment"/>  --> 
+	
+		<div id="createQuote_semiannualDesigningRent_overlay">
+		<div class="pop_container" id="annualAnnuityVT5">
+			 <div class="popup newUI">
+       
+        
+        <div class="fullPart rescue">
+ 
+		   
+        
+        </div>
+      </div>
+		</div>	
+    </div>
+		<div id="createQuote_decreasingInsuredValue_overlayDiv">
+		<div class="pop_container" id="decreasingTermVT5">
+			 <div class="popup newUI">
+        <div class="popHeader width98per">
+		  <h3><span>Valor asegurado del Temporal</span></h3>
+          <p><a href="#" class="closeBtn" id="btnCloseTermOverlayVT5">Close Window</a></p>
+        </div>
+        <div class="fullPart rescue">
+          <div class="innerPart">
+		  
+          </div>
+        </div>
+      </div>
+		</div>	
+    </div>
+		<div id="createQuote_palp1_overlayDiv">
+      <div id="projection1Overlay" class="pop_container tableRightAlign">
+         <div class="popup newUI">
+            <div class="newPopHeader row">
+				<div class="rescueHeader col-xs-6 col-sm-10"><h3><span>Proyección 1</span></h3></div>
+               <div class="col-xs-2 closeButtonContainer"><a href="#" class="closeBtn" id="btnCloseprojection1Overlay" aria-label="Close Window"></a></div>
+            </div>
+            <div class="fullPart rescue">
+             
+                  
+              
+            </div>
+         </div>
+      </div>
+   </div>
+		<div id="createQuote_palp2_overlayDiv">
+	<div id="projection2Overlay" class="pop_container tableRightAlign">
+		 <div class="popup newUI">
+        <div class="newPopHeader row">
+			<div class="rescueHeader col-xs-6 col-sm-10"><h3><span>Proyección 2</span></h3></div>
+       <div class="col-xs-2 closeButtonContainer"><a href="#" class="closeBtn" id="btnCloseprojection2Overlay" aria-label="Close Window"></a></div>
+        </div>
+        <div class="fullPart rescue">
+       
+		  
+        
+        </div>
+      </div>
+		</div>	
+    </div>
+		<div id="createQuote_semesterContributionPlan_overlayDiv">
+		<div class="pop_container" id="cancelationDataVT5">
+			 <div class="popup newUI">
+       
+  
+        
+        <div class="fullPart rescue">
+    
+		  
+		   
+        </div>
+     
+      
+      </div>
+		</div>	
+    </div>
+		<div id="createQuote_surrenderValue_overlayFragmentDiv">
+		<div class="pop_container" id="fractionalDataVT5">
+		<div class="popup newUI">
+        <div class="popHeader width98per">
+		  <h3><span>Plan de pagos semestrales sugeridos</span></h3>
+          <p><a href="#" class="closeBtn" id="btnCloseFractionalOverlayVT5">Close Window</a></p>
+        </div>
+        <div class="fullPart rescue">
+          <div class="innerPart">
+		  
+			
+			
+          </div>
+        </div>
+      </div>
+		</div>	
+    </div>
+         </div>
+	
+		<div>
+	         <input type="hidden" id="plan0" name="appDataMap['QuoteData.Plan_VT5.planId']" value="VT5" />
+	         <input type="hidden" id="productFamilyId0" name="appDataMap['QuoteData.Plan_VT5.productFamilyCode']" value="1231" />
+	         
+        </div>
+		
+		  
+         <input type="hidden" name="appDataMap['QuoteData.selectedPlanId']" value="VT5" />
+         <input type="hidden" name="appDataMap['QuoteData.Plan_VT5.productCode']" value="12311" />
+         <input type="hidden" name="appDataMap['QuoteData.Plan_VT5.planName']" value="Vida Entera 50 años" />
+         <input type="hidden" name="appDataMap['QuoteData.Plan_VT5.productName']" value="Vida Entera" />
+         <input type="hidden" name="appDataMap['selectedProductCode']" value="12311" />
+         <input type="hidden" id="hidFamilyProductFlag" name="appDataMap['QuoteData.Plan_VT5.familyProductFlag']" value="false" />
+		  
+         <input type="hidden" name="appDataMap['selectedProductFamilyCode']" value="1231" />
+		 </div>
+		 </div>
+		<input id="hiddenQuoteParams" type="hidden" name="hiddenQuoteParams" value="" />
+		<input type="hidden" id="hidQuoteId" name="quoteId" value="0" />
+		<input type="hidden" id="productFamilyCodePalp" value="1231" />
+   <input type="hidden" name="metaDataMap[&quot;newValue&quot;]" id="hidNewValues" value="{&quot;QuoteData.Plan_VT5.amountType&quot;:&quot;faceAmount&quot;,&quot;QuoteData.Plan_VT5.planBasicAmount&quot;:&quot;80.000.000&quot;,&quot;QuoteData.Plan_VT5.basicCovName&quot;:&quot;Muerte por cualquier causa&quot;,&quot;QuoteData.Plan_VT5.RiderData.insured_0.riderCheck&quot;:&quot;on&quot;,&quot;QuoteData.Plan_VT5.RiderData.insured_0.defaultCalculatedFlag&quot;:&quot;true&quot;,&quot;QuoteData.Plan_VT5.RiderData.insured_0.riderCode&quot;:&quot;2&quot;,&quot;QuoteData.Plan_VT5.RiderData.insured_0.applTo&quot;:&quot;insured&quot;,&quot;QuoteData.Plan_VT5.RiderData.insured_0.riderName&quot;:&quot;Exoneración de Pago de Primas&quot;,&quot;QuoteData.Plan_VT5.RiderData.insured_1.riderCheck&quot;:&quot;on&quot;,&quot;QuoteData.Plan_VT5.RiderData.insured_1.defaultCalculatedFlag&quot;:&quot;true&quot;,&quot;QuoteData.Plan_VT5.RiderData.insured_1.riderCode&quot;:&quot;15&quot;,&quot;QuoteData.Plan_VT5.RiderData.insured_1.applTo&quot;:&quot;insured&quot;,&quot;QuoteData.Plan_VT5.RiderData.insured_1.riderName&quot;:&quot;Incapacidad Total y Permanente por cualquier causa&quot;,&quot;QuoteData.Plan_VT5.planId&quot;:&quot;VT5&quot;,&quot;QuoteData.Plan_VT5.productFamilyCode&quot;:&quot;1231&quot;,&quot;QuoteData.selectedPlanId&quot;:&quot;VT5&quot;,&quot;QuoteData.Plan_VT5.productCode&quot;:&quot;12311&quot;,&quot;QuoteData.Plan_VT5.planName&quot;:&quot;Vida Entera 50 años&quot;,&quot;QuoteData.Plan_VT5.productName&quot;:&quot;Vida Entera&quot;,&quot;selectedProductCode&quot;:&quot;12311&quot;,&quot;QuoteData.Plan_VT5.familyProductFlag&quot;:&quot;false&quot;,&quot;selectedProductFamilyCode&quot;:&quot;1231&quot;,&quot;quoteId&quot;:&quot;0&quot;}" /><input type="hidden" name="metaDataMap[&quot;recordTypeName&quot;]" id="recordTypeName" value="Quote Update" /><input type="hidden" name="metaDataMap[&quot;auditLogEventDescriptor&quot;]" id="auditLogEventDescriptor" value="Quote_Create" /></form>
+ 
+   </div>
+
+							</div>
+						</div><div>
+							<div id="planSelectDivTE7">
+
+								<div id="createQuote_selectedPlan">
+   <span id="errorHeaderTE7"> </span>
+   <form data-met-formtosubmit="" id="planSelectTE7">
+   <div>
+   <div></div>
+   
+      <div class="contentBox" id="planSelectedParentDiv">
+	  
+      <div id="planSelectedTE7">
+      <div class="contentBoxHeader">
+         <div class=" marginLeft20px">
+            <div class="primaryDD"><strong>Temporal 70 años</strong></div>
+            <span id="errSpnTxtifsPopUpTE7" class="marginTop5px clear fl wrdwrap errorLabel"></span>
+         </div>
+		
+         <div>
+         
+         <div>
+            <a href="#" class="closeBlueBtn" data-met-data="{&quot;removeDivId&quot;:&quot;planSelectedTE7&quot;,&quot;planId&quot;:&quot;TE7&quot;}" id="remove_TE7">Close Window</a> 
+         </div>
+      </div>
+      </div>
+      <div class="contentBoxBody"><!--  <div th:text="${gspFlowScopeBean.appDataMap}"></div> -->
+     
+         <div id="planDivTE7" plancode="TE7">
+            <div class="fl marginTop30px">
+		
+               <div>
+                  <label class="fl clear">Seleccione:</label>
+				  
+                  <div class="fl clear">
+                     <div class="fl clear marginTop10px">
+                        <div class="fl">
+                           
+                           <div>
+                              <input type="radio" checked="checked" id="faceAmount_TE7" class="fl" value="faceAmount" data-met-todisablefields="premiumInput_;frequency_;frequencyDiv_" data-met-toenablefields="faceAmountInput_" plancode="TE7" name="appDataMap['QuoteData.Plan_TE7.amountType']" />
+                           </div>
+                        </div>
+                        <span class="marginLeft5px fl w120px">Valor Asegurado</span>
+                     </div>
+                     <div class="fl">
+                     	 
+                        <div class="fl">
+                           <input type="text" id="faceAmountInput_TE7" data-met-mand="mandatory" data-met-errordiv="errSpnFaceAmountInput_TE7" data-met-keypress="Comma_allowed;Dot_allowed;num_Allowed" data-met-currency="" places="0" data-met-blur="currMinLength" data-met-minlength="5" placeholder="Valor" plancode="TE7" name="appDataMap['QuoteData.Plan_TE7.planBasicAmount']" value="" currencyflag="true" />
+                           <input type="hidden" id="basicCovName" name="appDataMap['QuoteData.Plan_TE7.basicCovName']" value="Muerte por cualquier causa" />
+                        </div>
+                        <span class="fl marginTop10px marginLeft10px">Pesos</span> 
+                        <span id="errSpnFaceAmountInput_TE7" class="clear fl wrdwrap errorLabel"></span>
+                     </div>
+                  </div>
+                  <div class="fl clear">
+				
+                     <div class="fl clear marginTop20px">
+                        <div class="fl">
+                           
+                           <div>
+                              <input type="radio" name="appDataMap['QuoteData.Plan_TE7.amountType']" class="fl" id="premium_TE7" value="premium" data-met-todisablefields="faceAmountInput_" data-met-toenablefields="premiumInput_;frequency_;frequencyDiv_" plancode="TE7" />
+                              
+                           </div>
+                        </div>
+                        <span class="marginLeft5px fl w120px">Prima</span> 
+                     </div>
+                     <div class="fl marginTop10px">
+                        
+                        <div class="fl">
+                           <input type="text" class="disabledFields" data-met-mand="mandatory" data-met-errordiv="errSpnPremiumInput_TE7" data-met-keypress="Comma_allowed;Dot_allowed;num_Allowed" data-met-currency="" places="0" data-met-blur="currMinLength" data-met-minlength="5" placeholder="Valor" id="premiumInput_TE7" disabled="disabled" plancode="TE7" name="appDataMap['QuoteData.Plan_TE7.planPremium']" value="" currencyflag="true" />
+                        </div>
+                        <span class="fl marginTop10px marginLeft10px">Pesos</span> 
+                  
+
+<div class="selectDrop" style="overflow:hidden">
+						
+                           
+                           <div class="fl styled-select w155px disabledFields" id="frequencyDiv_TE7">
+                              <select class="primary" disabled="disabled" id="frequency_TE7" data-met-frequency="" data-met-errordiv="errSpnFrequency_TE7" plancode="TE7" name="appDataMap['QuoteData.Plan_TE7.paymentFrequency']">
+                                 
+                                    <option value="4">Mensual</option>                                	
+                                 
+                                                                    	
+                                 
+                                    <option value="2">Semestral</option>                                	
+                                 
+                                    <option value="1">Anual</option>                                	
+                                 
+                              </select>
+                           </div>
+                           <span id="errSpnFrequency_TE7" class="clear fl wrdwrap errorLabel"></span>
+                       </div>
+                        <span id="errSpnPremiumInput_TE7" class="clear fl wrdwrap errorLabel"></span>
+                        </div>
+                     <div class="fl marginTop10px clear">
+                   
+                     </div><!--PALP-->
+					 
+					 			
+               </div>
+            </div>
+            </div>
+			
+			
+				  
+							  
+            
+			
+			
+			
+			
+			
+			
+            <div id="checkBoxesDivTE7" plancode="TE7">
+               <div class="fl clear marginTop30px">
+                  <div class="marginTop30px">
+                     <label class="fl clear">Amparos</label>
+                     
+					 <div class="fl clear">
+					 <div>
+						<div>
+						<div>
+						<div class="fl clear marginTop15px" id="createQuote_selectedRider">
+
+	<div class="fl clear "><!-- 	<span th:text="${calulatedQtFlag}"/> -->
+		
+		<div>
+			<div class="fl">
+
+				<input type="checkbox" data-set-flag="hiddenRiderCheckboxTE70" btncode="TE7" data-met-tomandatoryfields="checkBoxInput|N|N" id="riderCheckboxTE70" plancode="TE70" checked="checked" name="appDataMap['QuoteData.Plan_TE7.RiderData.insured:0.riderCheck']" value="on" /> <input type="hidden" id="hiddenRiderCheckboxTE70" data-met-index="" name="appDataMap['QuoteData.Plan_TE7.RiderData.insured:0.defaultCalculatedFlag']" value="true" />
+			</div>
+		</div>
+	</div>	
+	<input type="hidden" name="appDataMap['QuoteData.Plan_TE7.RiderData.insured:0.riderCode']" value="2" /> <input type="hidden" name="appDataMap['QuoteData.Plan_TE7.RiderData.insured:0.applTo']" value="insured" /> <input type="hidden" name="appDataMap['QuoteData.Plan_TE7.RiderData.insured:0.DepSQ']" value="" /> 
+		<input type="hidden" name="appDataMap['QuoteData.Plan_TE7.RiderData.insured:0.riderName']" value="Exoneración de Pago de Primas" />
+		<span class="marginTop5px fl marginLeft5px w120px">Exoneración de Pago de Primas</span>
+	<div class="fl" id="checkBoxSelectedTE70">
+
+		<div class="fl marginLeft5px ">
+
+			
+
+			<input type="text" placeholder="Valor" id="checkBoxInput_TE70" data-met-indexval="0" disabled="" data-met-keypress="Comma_allowed;Dot_allowed;num_Allowed" data-met-currency="" data-met-blur="currMinLength" data-met-minlength="1" data-met-errordiv="errSpnTxtCheckBoxInputTE70" btncode="TE7" plancode="TE7" name="appDataMap['QuoteData.Plan_TE7.RiderData.insured:0.riderAmount']" value="" currencyflag="true" />
+
+		
+			<span class="fl marginLeft10px marginTop10px">Pesos</span> <span>    
+			</span> <span id="errSpnTxtCheckBoxInputTE70" class="clear fl errorLabel"></span>
+		</div>
+	</div>
+	<br />
+	<br />
+	<input type="hidden" id="isExclusionWithRiders" value="" />
+</div>
+						</div>
+						</div>
+                     </div>
+                              </div><div class="fl clear">
+					 <div>
+						<div>
+						<div>
+						<div class="fl clear marginTop15px" id="createQuote_selectedRider">
+
+	<div class="fl clear "><!-- 	<span th:text="${calulatedQtFlag}"/> -->
+		
+		<div>
+			<div class="fl">
+
+				<input type="checkbox" data-set-flag="hiddenRiderCheckboxTE71" btncode="TE7" data-met-tomandatoryfields="checkBoxInput|N|Y" id="riderCheckboxTE71" plancode="TE71" checked="checked" name="appDataMap['QuoteData.Plan_TE7.RiderData.insured:1.riderCheck']" value="on" /> <input type="hidden" id="hiddenRiderCheckboxTE71" data-met-index="" name="appDataMap['QuoteData.Plan_TE7.RiderData.insured:1.defaultCalculatedFlag']" value="true" />
+			</div>
+		</div>
+	</div>	
+	<input type="hidden" name="appDataMap['QuoteData.Plan_TE7.RiderData.insured:1.riderCode']" value="15" /> <input type="hidden" name="appDataMap['QuoteData.Plan_TE7.RiderData.insured:1.applTo']" value="insured" /> <input type="hidden" name="appDataMap['QuoteData.Plan_TE7.RiderData.insured:1.DepSQ']" value="" /> 
+		<input type="hidden" name="appDataMap['QuoteData.Plan_TE7.RiderData.insured:1.riderName']" value="Incapacidad Total y Permanente por cualquier causa" />
+		<span class="marginTop5px fl marginLeft5px w120px">Incapacidad Total y Permanente por cualquier causa</span>
+	<div class="fl" id="checkBoxSelectedTE71">
+
+		<div class="fl marginLeft5px ">
+
+			
+
+			<input type="text" placeholder="Valor" id="checkBoxInput_TE71" data-met-indexval="1" data-met-keypress="Comma_allowed;Dot_allowed;num_Allowed" data-met-currency="" data-met-blur="currMinLength" data-met-minlength="1" data-met-errordiv="errSpnTxtCheckBoxInputTE71" btncode="TE7" plancode="TE7" name="appDataMap['QuoteData.Plan_TE7.RiderData.insured:1.riderAmount']" value="" currencyflag="true" />
+
+		
+			<span class="fl marginLeft10px marginTop10px">Pesos</span> <span>    
+			</span> <span id="errSpnTxtCheckBoxInputTE71" class="clear fl errorLabel"></span>
+		</div>
+	</div>
+	<br />
+	<br />
+	<input type="hidden" id="isExclusionWithRiders" value="" />
+</div>
+						</div>
+						</div>
+                     </div>
+                              </div>
+					
+					 
+                  </div>
+               </div>
+            </div>
+            <div class="fl clear calBtnNew">
+			<div>
+            <div>
+			
+			
+			
+			<button type="button" class="fl" productfamilyc="12312" plancode="TE7" data-met-data="{&quot;formId&quot;:&quot;planSelectTE7&quot;,&quot;divToAttach&quot;:&quot;planSelectedTE7&quot;,&quot;planSelectedDiv&quot;:&quot;planSelectDivTE7&quot;}" id="planSubmitTE7">Calcular</button>
+			
+			
+				  
+			 	
+			 
+			 <div id="testCalcButton" style="display:none">
+			     <input type="hidden" id="enableQuoteBtnForCrtUpdate" value="" />
+				 <span id="calulatedQtFlag"></span><br />
+				 <span id="lockStatus1">false</span><br />
+				 <span id="showROQtFields1">false</span><br />
+				 <span id="recalculateQtFlag"></span><br />
+				 <span id="enableCalcBtn">true</span><br />
+				 <span id="status"></span><br />
+			  </div>
+			  </div>
+			
+			  </div>
+               		  
+	               
+               <div>
+					 <div>
+                  <div>
+                     
+                  </div>
+               </div>
+                 
+               </div>
+            </div>
+         </div>
+      </div>	 
+      <div class="contentBoxFooter">
+				  
+				  	
+     
+				  
+				  
+				  
+				  
+				  
+				  
+				  
+         
+		 
+		  
+         
+		 <div class="fr">
+			
+            			
+        	
+					 
+            <a class="fr marginRight15px">Valores de Rescate</a> 
+	   </div>
+       <div id="createQuote_IFODiv">
+	<div>
+	  <div>
+      
+		</div>
+	</div>
+	</div> 
+         </div>
+         <div id="createQuote_rescueOverlayDiv">
+      <div class="rescueOverlay pop_container" id="rescueOverlayTE7">
+         <div class="popup newUI">
+            <div class="newPopHeader row">
+               <div class="rescueHeader col-xs-6 col-sm-10"><h3><span>Valores de Rescate</span></h3></div>
+               <div class="col-xs-2 closeButtonContainer"><a href="#" class="closeBtn" aria-label="Close Window" id="btnCloseRescueOverlayTE7"></a></div>
+			  
+            </div>
+            <div class="fullPart rescue">
+        
+                  
+              
+            </div>
+         </div>
+      </div>
+   </div><!-- 	 <div id="createQuote_palpPro1Div" th:include="'/UIFragments/Fragment/createQuote_palpPro1' :: createQuote_palpPro1Fragment"/>  --> 
+	
+		<div id="createQuote_semiannualDesigningRent_overlay">
+		<div class="pop_container" id="annualAnnuityTE7">
+			 <div class="popup newUI">
+       
+        
+        <div class="fullPart rescue">
+ 
+		   
+        
+        </div>
+      </div>
+		</div>	
+    </div>
+		<div id="createQuote_decreasingInsuredValue_overlayDiv">
+		<div class="pop_container" id="decreasingTermTE7">
+			 <div class="popup newUI">
+        <div class="popHeader width98per">
+		  <h3><span>Valor asegurado del Temporal</span></h3>
+          <p><a href="#" class="closeBtn" id="btnCloseTermOverlayTE7">Close Window</a></p>
+        </div>
+        <div class="fullPart rescue">
+          <div class="innerPart">
+		  
+          </div>
+        </div>
+      </div>
+		</div>	
+    </div>
+		<div id="createQuote_palp1_overlayDiv">
+      <div id="projection1Overlay" class="pop_container tableRightAlign">
+         <div class="popup newUI">
+            <div class="newPopHeader row">
+				<div class="rescueHeader col-xs-6 col-sm-10"><h3><span>Proyección 1</span></h3></div>
+               <div class="col-xs-2 closeButtonContainer"><a href="#" class="closeBtn" id="btnCloseprojection1Overlay" aria-label="Close Window"></a></div>
+            </div>
+            <div class="fullPart rescue">
+             
+                  
+              
+            </div>
+         </div>
+      </div>
+   </div>
+		<div id="createQuote_palp2_overlayDiv">
+	<div id="projection2Overlay" class="pop_container tableRightAlign">
+		 <div class="popup newUI">
+        <div class="newPopHeader row">
+			<div class="rescueHeader col-xs-6 col-sm-10"><h3><span>Proyección 2</span></h3></div>
+       <div class="col-xs-2 closeButtonContainer"><a href="#" class="closeBtn" id="btnCloseprojection2Overlay" aria-label="Close Window"></a></div>
+        </div>
+        <div class="fullPart rescue">
+       
+		  
+        
+        </div>
+      </div>
+		</div>	
+    </div>
+		<div id="createQuote_semesterContributionPlan_overlayDiv">
+		<div class="pop_container" id="cancelationDataTE7">
+			 <div class="popup newUI">
+       
+  
+        
+        <div class="fullPart rescue">
+    
+		  
+		   
+        </div>
+     
+      
+      </div>
+		</div>	
+    </div>
+		<div id="createQuote_surrenderValue_overlayFragmentDiv">
+		<div class="pop_container" id="fractionalDataTE7">
+		<div class="popup newUI">
+        <div class="popHeader width98per">
+		  <h3><span>Plan de pagos semestrales sugeridos</span></h3>
+          <p><a href="#" class="closeBtn" id="btnCloseFractionalOverlayTE7">Close Window</a></p>
+        </div>
+        <div class="fullPart rescue">
+          <div class="innerPart">
+		  
+			
+			
+          </div>
+        </div>
+      </div>
+		</div>	
+    </div>
+         </div>
+	
+		<div>
+	         <input type="hidden" id="plan1" name="appDataMap['QuoteData.Plan_TE7.planId']" value="TE7" />
+	         <input type="hidden" id="productFamilyId1" name="appDataMap['QuoteData.Plan_TE7.productFamilyCode']" value="1231" />
+	         
+        </div>
+		
+		  
+         <input type="hidden" name="appDataMap['QuoteData.selectedPlanId']" value="TE7" />
+         <input type="hidden" name="appDataMap['QuoteData.Plan_TE7.productCode']" value="12312" />
+         <input type="hidden" name="appDataMap['QuoteData.Plan_TE7.planName']" value="Temporal 70 años" />
+         <input type="hidden" name="appDataMap['QuoteData.Plan_TE7.productName']" value="Temporales" />
+         <input type="hidden" name="appDataMap['selectedProductCode']" value="12312" />
+         <input type="hidden" id="hidFamilyProductFlag" name="appDataMap['QuoteData.Plan_TE7.familyProductFlag']" value="false" />
+		  
+         <input type="hidden" name="appDataMap['selectedProductFamilyCode']" value="1231" />
+		 </div>
+		 </div>
+		<input id="hiddenQuoteParams" type="hidden" name="hiddenQuoteParams" value="" />
+		<input type="hidden" id="hidQuoteId" name="quoteId" value="0" />
+		<input type="hidden" id="productFamilyCodePalp" value="1231" />
+   </form>
+ 
+   </div>
+
+							</div>
+						</div><div>
+							<div id="planSelectDivAPJ">
+
+								<div id="createQuote_selectedPlan">
+   <span id="errorHeaderAPJ"> </span>
+   <form data-met-formtosubmit="" id="planSelectAPJ">
+   <div>
+   <div></div>
+   
+      <div class="contentBox" id="planSelectedParentDiv">
+	  
+      <div id="planSelectedAPJ">
+      <div class="contentBoxHeader">
+         <div class=" marginLeft20px">
+            <div class="primaryDD"><strong>AP Mujer</strong></div>
+            <span id="errSpnTxtifsPopUpAPJ" class="marginTop5px clear fl wrdwrap errorLabel"></span>
+         </div>
+		
+         <div>
+         
+         <div>
+            <a href="#" class="closeBlueBtn" data-met-data="{&quot;removeDivId&quot;:&quot;planSelectedAPJ&quot;,&quot;planId&quot;:&quot;APJ&quot;}" id="remove_APJ">Close Window</a> 
+         </div>
+      </div>
+      </div>
+      <div class="contentBoxBody"><!--  <div th:text="${gspFlowScopeBean.appDataMap}"></div> -->
+     
+         <div id="planDivAPJ" plancode="APJ">
+            <div class="fl marginTop30px">
+		
+               <div>
+                  <label class="fl clear">Seleccione:</label>
+				  
+                  <div class="fl clear">
+                     <div class="fl clear marginTop10px">
+                        <div class="fl">
+                           
+                           <div>
+                              <input type="radio" checked="checked" id="faceAmount_APJ" class="fl" value="faceAmount" data-met-todisablefields="premiumInput_;frequency_;frequencyDiv_" data-met-toenablefields="faceAmountInput_" plancode="APJ" name="appDataMap['QuoteData.Plan_APJ.amountType']" />
+                           </div>
+                        </div>
+                        <span class="marginLeft5px fl w120px">Valor Asegurado</span>
+                     </div>
+                     <div class="fl">
+                     	 
+                        <div class="fl">
+                           <input type="text" id="faceAmountInput_APJ" data-met-mand="mandatory" data-met-errordiv="errSpnFaceAmountInput_APJ" data-met-keypress="Comma_allowed;Dot_allowed;num_Allowed" data-met-currency="" places="0" data-met-blur="currMinLength" data-met-minlength="5" placeholder="Valor" plancode="APJ" name="appDataMap['QuoteData.Plan_APJ.planBasicAmount']" value="" currencyflag="true" />
+                           <input type="hidden" id="basicCovName" name="appDataMap['QuoteData.Plan_APJ.basicCovName']" value="Muerte Accidental" />
+                        </div>
+                        <span class="fl marginTop10px marginLeft10px">Pesos</span> 
+                        <span id="errSpnFaceAmountInput_APJ" class="clear fl wrdwrap errorLabel"></span>
+                     </div>
+                  </div>
+                  <div class="fl clear">
+				
+                     <div class="fl clear marginTop20px">
+                        <div class="fl">
+                           
+                           <div>
+                              <input type="radio" name="appDataMap['QuoteData.Plan_APJ.amountType']" class="fl" id="premium_APJ" value="premium" data-met-todisablefields="faceAmountInput_" data-met-toenablefields="premiumInput_;frequency_;frequencyDiv_" plancode="APJ" />
+                              
+                           </div>
+                        </div>
+                        <span class="marginLeft5px fl w120px">Prima</span> 
+                     </div>
+                     <div class="fl marginTop10px">
+                        
+                        <div class="fl">
+                           <input type="text" class="disabledFields" data-met-mand="mandatory" data-met-errordiv="errSpnPremiumInput_APJ" data-met-keypress="Comma_allowed;Dot_allowed;num_Allowed" data-met-currency="" places="0" data-met-blur="currMinLength" data-met-minlength="5" placeholder="Valor" id="premiumInput_APJ" disabled="disabled" plancode="APJ" name="appDataMap['QuoteData.Plan_APJ.planPremium']" value="" currencyflag="true" />
+                        </div>
+                        <span class="fl marginTop10px marginLeft10px">Pesos</span> 
+                  
+
+<div class="selectDrop" style="overflow:hidden">
+						
+                           
+                           <div class="fl styled-select w155px disabledFields" id="frequencyDiv_APJ">
+                              <select class="primary" disabled="disabled" id="frequency_APJ" data-met-frequency="" data-met-errordiv="errSpnFrequency_APJ" plancode="APJ" name="appDataMap['QuoteData.Plan_APJ.paymentFrequency']">
+                                 
+                                    <option value="4">Mensual</option>                                	
+                                 
+                                                                    	
+                                 
+                                    <option value="2">Semestral</option>                                	
+                                 
+                                    <option value="1">Anual</option>                                	
+                                 
+                              </select>
+                           </div>
+                           <span id="errSpnFrequency_APJ" class="clear fl wrdwrap errorLabel"></span>
+                       </div>
+                        <span id="errSpnPremiumInput_APJ" class="clear fl wrdwrap errorLabel"></span>
+                        </div>
+                     <div class="fl marginTop10px clear">
+                   
+                     </div><!--PALP-->
+					 
+					 			
+               </div>
+            </div>
+            </div>
+			
+			
+				  
+							  
+            
+			
+			
+			
+			
+			
+			
+            <div id="checkBoxesDivAPJ" plancode="APJ">
+               <div class="fl clear marginTop30px">
+                  <div class="marginTop30px">
+                     <label class="fl clear">Amparos</label>
+                     
+					 <div class="fl clear">
+					 <div>
+						<div>
+						<div>
+						<div class="fl clear marginTop15px" id="createQuote_selectedRider">
+
+	<div class="fl clear "><!-- 	<span th:text="${calulatedQtFlag}"/> -->
+		
+		<div>
+			<div class="fl">
+
+				<input type="checkbox" data-set-flag="hiddenRiderCheckboxAPJ0" btncode="APJ" data-met-tomandatoryfields="checkBoxInput|N|N" id="riderCheckboxAPJ0" plancode="APJ0" checked="checked" disabled="disabled" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:0.riderCheck']" value="on" /> <input type="hidden" id="hiddenRiderCheckboxAPJ0" data-met-index="" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:0.defaultCalculatedFlag']" value="true" />
+			</div>
+		</div>
+	</div>	
+	<input type="hidden" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:0.riderCode']" value="902" /> <input type="hidden" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:0.applTo']" value="insured" /> <input type="hidden" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:0.DepSQ']" value="" /> 
+		<input type="hidden" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:0.riderName']" value="Desmembración por Accidente" />
+		<span class="marginTop5px fl marginLeft5px w120px">Desmembración por Accidente</span>
+	<div class="fl" id="checkBoxSelectedAPJ0">
+
+		<div class="fl marginLeft5px ">
+
+			
+
+			<input type="text" placeholder="Valor" id="checkBoxInput_APJ0" data-met-indexval="0" disabled="" data-met-keypress="Comma_allowed;Dot_allowed;num_Allowed" data-met-currency="" data-met-blur="currMinLength" data-met-minlength="1" data-met-errordiv="errSpnTxtCheckBoxInputAPJ0" btncode="APJ" plancode="APJ" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:0.riderAmount']" value="" currencyflag="true" />
+
+		
+			<span class="fl marginLeft10px marginTop10px">Pesos</span>  <span id="errSpnTxtCheckBoxInputAPJ0" class="clear fl errorLabel"></span>
+		</div>
+	</div>
+	<br />
+	<br />
+	<input type="hidden" id="isExclusionWithRiders" value="" />
+</div>
+						</div>
+						</div>
+                     </div>
+                              </div><div class="fl clear">
+					 <div>
+						<div>
+						<div>
+						<div class="fl clear marginTop15px" id="createQuote_selectedRider">
+
+	<div class="fl clear "><!-- 	<span th:text="${calulatedQtFlag}"/> -->
+		
+		<div>
+			<div class="fl">
+
+				<input type="checkbox" data-set-flag="hiddenRiderCheckboxAPJ1" btncode="APJ" data-met-tomandatoryfields="checkBoxInput|N|Y" id="riderCheckboxAPJ1" plancode="APJ1" checked="checked" disabled="disabled" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:1.riderCheck']" value="on" /> <input type="hidden" id="hiddenRiderCheckboxAPJ1" data-met-index="" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:1.defaultCalculatedFlag']" value="true" />
+			</div>
+		</div>
+	</div>	
+	<input type="hidden" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:1.riderCode']" value="604" /> <input type="hidden" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:1.applTo']" value="insured" /> <input type="hidden" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:1.DepSQ']" value="" /> 
+		<input type="hidden" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:1.riderName']" value="Central Médica y Médico Domiciliario" />
+		<span class="marginTop5px fl marginLeft5px w120px">Central Médica y Médico Domiciliario</span>
+	<div class="fl" id="checkBoxSelectedAPJ1">
+
+		
+	</div>
+	<br />
+	<br />
+	<input type="hidden" id="isExclusionWithRiders" value="" />
+</div>
+						</div>
+						</div>
+                     </div>
+                              </div><div class="fl clear">
+					 <div>
+						<div>
+						<div>
+						<div class="fl clear marginTop15px" id="createQuote_selectedRider">
+
+	<div class="fl clear "><!-- 	<span th:text="${calulatedQtFlag}"/> -->
+		
+		<div>
+			<div class="fl">
+
+				<input type="checkbox" data-set-flag="hiddenRiderCheckboxAPJ2" btncode="APJ" data-met-tomandatoryfields="checkBoxInput|N|N" id="riderCheckboxAPJ2" plancode="APJ2" checked="checked" disabled="disabled" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:2.riderCheck']" value="on" /> <input type="hidden" id="hiddenRiderCheckboxAPJ2" data-met-index="" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:2.defaultCalculatedFlag']" value="true" />
+			</div>
+		</div>
+	</div>	
+	<input type="hidden" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:2.riderCode']" value="137" /> <input type="hidden" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:2.applTo']" value="insured" /> <input type="hidden" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:2.DepSQ']" value="" /> 
+		<input type="hidden" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:2.riderName']" value="Fractura de Huesos y Quemaduras Graves" />
+		<span class="marginTop5px fl marginLeft5px w120px">Fractura de Huesos y Quemaduras Graves</span>
+	<div class="fl" id="checkBoxSelectedAPJ2">
+
+		<div class="fl marginLeft5px ">
+
+			
+
+			<input type="text" placeholder="Valor" id="checkBoxInput_APJ2" data-met-indexval="2" disabled="" data-met-keypress="Comma_allowed;Dot_allowed;num_Allowed" data-met-currency="" data-met-blur="currMinLength" data-met-minlength="1" data-met-errordiv="errSpnTxtCheckBoxInputAPJ2" btncode="APJ" plancode="APJ" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:2.riderAmount']" value="" currencyflag="true" />
+
+		
+			<span class="fl marginLeft10px marginTop10px">Pesos</span>  <span id="errSpnTxtCheckBoxInputAPJ2" class="clear fl errorLabel"></span>
+		</div>
+	</div>
+	<br />
+	<br />
+	<input type="hidden" id="isExclusionWithRiders" value="" />
+</div>
+						</div>
+						</div>
+                     </div>
+                              </div><div class="fl clear">
+					 <div>
+						<div>
+						<div>
+						<div class="fl clear marginTop15px" id="createQuote_selectedRider">
+
+	<div class="fl clear "><!-- 	<span th:text="${calulatedQtFlag}"/> -->
+		
+		<div>
+			<div class="fl">
+
+				<input type="checkbox" data-set-flag="hiddenRiderCheckboxAPJ3" btncode="APJ" data-met-tomandatoryfields="checkBoxInput|N|N" id="riderCheckboxAPJ3" plancode="APJ3" checked="checked" disabled="disabled" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:3.riderCheck']" value="on" /> <input type="hidden" id="hiddenRiderCheckboxAPJ3" data-met-index="" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:3.defaultCalculatedFlag']" value="true" />
+			</div>
+		</div>
+	</div>	
+	<input type="hidden" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:3.riderCode']" value="601" /> <input type="hidden" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:3.applTo']" value="insured" /> <input type="hidden" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:3.DepSQ']" value="" /> 
+		<input type="hidden" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:3.riderName']" value="Incapacidad Total y Permanente por Accidente" />
+		<span class="marginTop5px fl marginLeft5px w120px">Incapacidad Total y Permanente por Accidente</span>
+	<div class="fl" id="checkBoxSelectedAPJ3">
+
+		<div class="fl marginLeft5px ">
+
+			
+
+			<input type="text" placeholder="Valor" id="checkBoxInput_APJ3" data-met-indexval="3" disabled="" data-met-keypress="Comma_allowed;Dot_allowed;num_Allowed" data-met-currency="" data-met-blur="currMinLength" data-met-minlength="1" data-met-errordiv="errSpnTxtCheckBoxInputAPJ3" btncode="APJ" plancode="APJ" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:3.riderAmount']" value="" currencyflag="true" />
+
+		
+			<span class="fl marginLeft10px marginTop10px">Pesos</span>  <span id="errSpnTxtCheckBoxInputAPJ3" class="clear fl errorLabel"></span>
+		</div>
+	</div>
+	<br />
+	<br />
+	<input type="hidden" id="isExclusionWithRiders" value="" />
+</div>
+						</div>
+						</div>
+                     </div>
+                              </div><div class="fl clear">
+					 <div>
+						<div>
+						<div>
+						<div class="fl clear marginTop15px" id="createQuote_selectedRider">
+
+	<div class="fl clear "><!-- 	<span th:text="${calulatedQtFlag}"/> -->
+		
+		<div>
+			<div class="fl">
+
+				<input type="checkbox" data-set-flag="hiddenRiderCheckboxAPJ4" btncode="APJ" data-met-tomandatoryfields="checkBoxInput|N|Y" id="riderCheckboxAPJ4" plancode="APJ4" checked="checked" disabled="disabled" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:4.riderCheck']" value="on" /> <input type="hidden" id="hiddenRiderCheckboxAPJ4" data-met-index="" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:4.defaultCalculatedFlag']" value="true" />
+			</div>
+		</div>
+	</div>	
+	<input type="hidden" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:4.riderCode']" value="603" /> <input type="hidden" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:4.applTo']" value="insured" /> <input type="hidden" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:4.DepSQ']" value="" /> 
+		<input type="hidden" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:4.riderName']" value="Asistencia Odontológica de Emergencia" />
+		<span class="marginTop5px fl marginLeft5px w120px">Asistencia Odontológica de Emergencia</span>
+	<div class="fl" id="checkBoxSelectedAPJ4">
+
+		
+	</div>
+	<br />
+	<br />
+	<input type="hidden" id="isExclusionWithRiders" value="" />
+</div>
+						</div>
+						</div>
+                     </div>
+                              </div><div class="fl clear">
+					 <div>
+						<div>
+						<div>
+						<div class="fl clear marginTop15px" id="createQuote_selectedRider">
+
+	<div class="fl clear "><!-- 	<span th:text="${calulatedQtFlag}"/> -->
+		
+		<div>
+			<div class="fl">
+
+				<input type="checkbox" data-set-flag="hiddenRiderCheckboxAPJ5" btncode="APJ" data-met-tomandatoryfields="checkBoxInput|N|N" id="riderCheckboxAPJ5" plancode="APJ5" checked="checked" disabled="disabled" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:5.riderCheck']" value="on" /> <input type="hidden" id="hiddenRiderCheckboxAPJ5" data-met-index="" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:5.defaultCalculatedFlag']" value="true" />
+			</div>
+		</div>
+	</div>	
+	<input type="hidden" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:5.riderCode']" value="605" /> <input type="hidden" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:5.applTo']" value="insured" /> <input type="hidden" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:5.DepSQ']" value="" /> 
+		<input type="hidden" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:5.riderName']" value="Renta Diaria por Hospitalización en Unidad de Cuidados Intensivos" />
+		<span class="marginTop5px fl marginLeft5px w120px">Renta Diaria por Hospitalización en Unidad de Cuidados Intensivos</span>
+	<div class="fl" id="checkBoxSelectedAPJ5">
+
+		<div class="fl marginLeft5px ">
+
+			
+
+			<input type="text" placeholder="Valor" id="checkBoxInput_APJ5" data-met-indexval="5" disabled="" data-met-keypress="Comma_allowed;Dot_allowed;num_Allowed" data-met-currency="" data-met-blur="currMinLength" data-met-minlength="1" data-met-errordiv="errSpnTxtCheckBoxInputAPJ5" btncode="APJ" plancode="APJ" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:5.riderAmount']" value="" currencyflag="true" />
+
+		
+			<span class="fl marginLeft10px marginTop10px">Pesos</span>  <span id="errSpnTxtCheckBoxInputAPJ5" class="clear fl errorLabel"></span>
+		</div>
+	</div>
+	<br />
+	<br />
+	<input type="hidden" id="isExclusionWithRiders" value="" />
+</div>
+						</div>
+						</div>
+                     </div>
+                              </div><div class="fl clear">
+					 <div>
+						<div>
+						<div>
+						<div class="fl clear marginTop15px" id="createQuote_selectedRider">
+
+	<div class="fl clear "><!-- 	<span th:text="${calulatedQtFlag}"/> -->
+		
+		<div>
+			<div class="fl">
+
+				<input type="checkbox" data-set-flag="hiddenRiderCheckboxAPJ6" btncode="APJ" data-met-tomandatoryfields="checkBoxInput|N|N" id="riderCheckboxAPJ6" plancode="APJ6" checked="checked" disabled="disabled" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:6.riderCheck']" value="on" /> <input type="hidden" id="hiddenRiderCheckboxAPJ6" data-met-index="" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:6.defaultCalculatedFlag']" value="true" />
+			</div>
+		</div>
+	</div>	
+	<input type="hidden" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:6.riderCode']" value="602" /> <input type="hidden" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:6.applTo']" value="insured" /> <input type="hidden" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:6.DepSQ']" value="" /> 
+		<input type="hidden" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:6.riderName']" value="Renta Diaria por Hospitalización" />
+		<span class="marginTop5px fl marginLeft5px w120px">Renta Diaria por Hospitalización</span>
+	<div class="fl" id="checkBoxSelectedAPJ6">
+
+		<div class="fl marginLeft5px ">
+
+			
+
+			<input type="text" placeholder="Valor" id="checkBoxInput_APJ6" data-met-indexval="6" disabled="" data-met-keypress="Comma_allowed;Dot_allowed;num_Allowed" data-met-currency="" data-met-blur="currMinLength" data-met-minlength="1" data-met-errordiv="errSpnTxtCheckBoxInputAPJ6" btncode="APJ" plancode="APJ" name="appDataMap['QuoteData.Plan_APJ.RiderData.insured:6.riderAmount']" value="" currencyflag="true" />
+
+		
+			<span class="fl marginLeft10px marginTop10px">Pesos</span>  <span id="errSpnTxtCheckBoxInputAPJ6" class="clear fl errorLabel"></span>
+		</div>
+	</div>
+	<br />
+	<br />
+	<input type="hidden" id="isExclusionWithRiders" value="" />
+</div>
+						</div>
+						</div>
+                     </div>
+                              </div>
+					
+					 
+                  </div>
+               </div>
+            </div>
+            <div class="fl clear calBtnNew">
+			<div>
+            <div>
+			
+			
+			
+			<button type="button" class="fl" productfamilyc="11403" plancode="APJ" data-met-data="{&quot;formId&quot;:&quot;planSelectAPJ&quot;,&quot;divToAttach&quot;:&quot;planSelectedAPJ&quot;,&quot;planSelectedDiv&quot;:&quot;planSelectDivAPJ&quot;}" id="planSubmitAPJ">Calcular</button>
+			
+			
+				  
+			 	
+			 
+			 <div id="testCalcButton" style="display:none">
+			     <input type="hidden" id="enableQuoteBtnForCrtUpdate" value="" />
+				 <span id="calulatedQtFlag"></span><br />
+				 <span id="lockStatus1">false</span><br />
+				 <span id="showROQtFields1">false</span><br />
+				 <span id="recalculateQtFlag"></span><br />
+				 <span id="enableCalcBtn">true</span><br />
+				 <span id="status"></span><br />
+			  </div>
+			  </div>
+			
+			  </div>
+               		  
+	               
+               <div>
+					 
+                 
+               </div>
+            </div>
+         </div>
+      </div>	 
+      <div class="contentBoxFooter">
+				  
+				  	
+     
+				  
+				  
+				  
+				  
+				  
+				  
+				  
+         
+		 
+		  
+         
+		 <div class="fr">
+			
+            			
+        	
+					 
+             
+	   </div>
+       <div id="createQuote_IFODiv">
+	
+	</div> 
+         </div>
+         <div id="createQuote_rescueOverlayDiv">
+      <div class="rescueOverlay pop_container" id="rescueOverlayAPJ">
+         <div class="popup newUI">
+            <div class="newPopHeader row">
+               <div class="rescueHeader col-xs-6 col-sm-10"><h3><span>Valores de Rescate</span></h3></div>
+               <div class="col-xs-2 closeButtonContainer"><a href="#" class="closeBtn" aria-label="Close Window" id="btnCloseRescueOverlayAPJ"></a></div>
+			  
+            </div>
+            <div class="fullPart rescue">
+        
+                  
+              
+            </div>
+         </div>
+      </div>
+   </div><!-- 	 <div id="createQuote_palpPro1Div" th:include="'/UIFragments/Fragment/createQuote_palpPro1' :: createQuote_palpPro1Fragment"/>  --> 
+	
+		<div id="createQuote_semiannualDesigningRent_overlay">
+		<div class="pop_container" id="annualAnnuityAPJ">
+			 <div class="popup newUI">
+       
+        
+        <div class="fullPart rescue">
+ 
+		   
+        
+        </div>
+      </div>
+		</div>	
+    </div>
+		<div id="createQuote_decreasingInsuredValue_overlayDiv">
+		<div class="pop_container" id="decreasingTermAPJ">
+			 <div class="popup newUI">
+        <div class="popHeader width98per">
+		  <h3><span>Valor asegurado del Temporal</span></h3>
+          <p><a href="#" class="closeBtn" id="btnCloseTermOverlayAPJ">Close Window</a></p>
+        </div>
+        <div class="fullPart rescue">
+          <div class="innerPart">
+		  
+          </div>
+        </div>
+      </div>
+		</div>	
+    </div>
+		<div id="createQuote_palp1_overlayDiv">
+      <div id="projection1Overlay" class="pop_container tableRightAlign">
+         <div class="popup newUI">
+            <div class="newPopHeader row">
+				<div class="rescueHeader col-xs-6 col-sm-10"><h3><span>Proyección 1</span></h3></div>
+               <div class="col-xs-2 closeButtonContainer"><a href="#" class="closeBtn" id="btnCloseprojection1Overlay" aria-label="Close Window"></a></div>
+            </div>
+            <div class="fullPart rescue">
+             
+                  
+              
+            </div>
+         </div>
+      </div>
+   </div>
+		<div id="createQuote_palp2_overlayDiv">
+	<div id="projection2Overlay" class="pop_container tableRightAlign">
+		 <div class="popup newUI">
+        <div class="newPopHeader row">
+			<div class="rescueHeader col-xs-6 col-sm-10"><h3><span>Proyección 2</span></h3></div>
+       <div class="col-xs-2 closeButtonContainer"><a href="#" class="closeBtn" id="btnCloseprojection2Overlay" aria-label="Close Window"></a></div>
+        </div>
+        <div class="fullPart rescue">
+       
+		  
+        
+        </div>
+      </div>
+		</div>	
+    </div>
+		<div id="createQuote_semesterContributionPlan_overlayDiv">
+		<div class="pop_container" id="cancelationDataAPJ">
+			 <div class="popup newUI">
+       
+  
+        
+        <div class="fullPart rescue">
+    
+		  
+		   
+        </div>
+     
+      
+      </div>
+		</div>	
+    </div>
+		<div id="createQuote_surrenderValue_overlayFragmentDiv">
+		<div class="pop_container" id="fractionalDataAPJ">
+		<div class="popup newUI">
+        <div class="popHeader width98per">
+		  <h3><span>Plan de pagos semestrales sugeridos</span></h3>
+          <p><a href="#" class="closeBtn" id="btnCloseFractionalOverlayAPJ">Close Window</a></p>
+        </div>
+        <div class="fullPart rescue">
+          <div class="innerPart">
+		  
+			
+			
+          </div>
+        </div>
+      </div>
+		</div>	
+    </div>
+         </div>
+	
+		<div>
+	         <input type="hidden" id="plan2" name="appDataMap['QuoteData.Plan_APJ.planId']" value="APJ" />
+	         <input type="hidden" id="productFamilyId2" name="appDataMap['QuoteData.Plan_APJ.productFamilyCode']" value="1140" />
+	         
+        </div>
+		
+		  
+         <input type="hidden" name="appDataMap['QuoteData.selectedPlanId']" value="APJ" />
+         <input type="hidden" name="appDataMap['QuoteData.Plan_APJ.productCode']" value="11403" />
+         <input type="hidden" name="appDataMap['QuoteData.Plan_APJ.planName']" value="AP Mujer" />
+         <input type="hidden" name="appDataMap['QuoteData.Plan_APJ.productName']" value="Semimodulares" />
+         <input type="hidden" name="appDataMap['selectedProductCode']" value="11403" />
+         <input type="hidden" id="hidFamilyProductFlag" name="appDataMap['QuoteData.Plan_APJ.familyProductFlag']" value="false" />
+		  
+         <input type="hidden" name="appDataMap['selectedProductFamilyCode']" value="1140" />
+		 </div>
+		 </div>
+		<input id="hiddenQuoteParams" type="hidden" name="hiddenQuoteParams" value="" />
+		<input type="hidden" id="hidQuoteId" name="quoteId" value="0" />
+		<input type="hidden" id="productFamilyCodePalp" value="1140" />
+   </form>
+ 
+   </div>
+
+							</div>
+						</div>
+						<div id="createQuote_footer">
+   <div>
+	<div class="col-sm-8">
+          	<div class="btn-wrap btn-wrap-primary pull-right">
+			<button class="btn btn-secondary btn-mobile pull-right" data-toggle="modal" id="btnEditDependent" style="display: none;">Cambiar la selección de Familiares</button>
+               <button class="btn btn-secondary btn-mobile pull-right" href="#" data-met-initjs="showPreviousPlan" id="navigateToPlanSelection">Agregar Plan</button>
+               <p class="marginbtm15px AddBlueBtn btnLink"></p>
+	
+            </div>
+    </div>
+	</div>
+	</div><!-- 							 <div id="illustration_markComplete" th:include="'/UIFragments/Fragment/illustration_markComplete' :: illustration_markCompleteFragment"></div> --><!-- 						 <button type="button" id="btnMarkCompltINP" class="btn btn-primary btn-mobile" data-toggle='modal' th:utext="#{${ tenantCode}+'.markComplete'}"></button> -->
+
+
+					</div>
+					
+				</div><!-- <div id="createQuote_totalPremiumJSRender" th:include="'/UIFragments/Fragment/createQuote_totalPremiumJSRenderTemplate' :: createQuote_totalPremiumJSRenderTemplate"/>
+   <div th:each="quoteSelectionMap,listIndexObj : ${gspFlowScopeBean.quoteMap['selectedPlansForQuote']}" >
+   <form th:id="'planSelect'+${listIndexObj.index}"  data-met-formToSubmit="" th:object="${gspFlowScopeBean}">
+      <div id="createQuote_productSpecify" th:include="'/UIFragments/Fragment/createQuote_productSpecify' :: createQuote_productSpecifyFragment"/> 
+   </form>
+   </div>
+   <div th:object="${appData}" id="jsTemp" th:include="'/UIFragments/Fragment/createQuoteJSRenderTemplate' :: createQuoteJSRenderTemplate"/> 	  -->
+
+
+				
+
+				<div id="createQuoteJSRenderTemplate">
+   	<script data-met-template="createQuoteJSRenderTemplate" type="text/x-jsrender">
+	&lt;div id="planSelected{{:selectedPlansForQuote.categoryValue.code}}"&gt;
+		&lt;div class="contentBoxHeader"&gt;
+                &lt;div class="fl clear marginLeft20px marginTop10px"&gt;
+				  &lt;div class="primaryDD"&gt;&lt;a&gt;&lt;strong&gt;{{:selectedPlansForQuote.categoryValue.name}}&lt;/strong&gt;&lt;/a&gt;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;a href="#" class="closeBlueBtn" id="remove_{{:selectedPlansForQuote.categoryValue.code}}" data-met-data="{&amp;quot;removeDivId&amp;quot;:&amp;quot;Plan_{{:selectedPlansForQuote.categoryValue.code}}&amp;quot;}"&gt;Close Window&lt;/a&gt; &lt;/div&gt;
+              &lt;div class="contentBoxBody"&gt;
+                &lt;div class="marginTop30px"&gt;
+				{{if selectedPlansForQuote.productFamilyCode == '1231'}}
+			
+                  &lt;div class="fl"&gt;
+                    &lt;label class="fl clear"&gt;Seleccione:&lt;/label&gt;
+                    &lt;div class="fl clear marginTop10px w110px"&gt;
+                      &lt;input type="radio" id="faceamt" name="appDataMap[&amp;#39;QuoteData.Plan_{{:selectedPlansForQuote.categoryValue.code}}.amountType&amp;#39;]" value="faceAmount" /&gt; 
+                      &lt;span class="marginLeft20px fl"&gt;Valor Asegurado&lt;/span&gt; &lt;/div&gt;
+                  &lt;/div&gt;
+                  &lt;div class="fl marginLeft25px"&gt;
+                    &lt;label class="fl clear"&gt;&amp;nbsp;&lt;/label&gt;
+                    &lt;input type="text" placeholder="Amount" name="appDataMap[&amp;#39;QuoteData.Plan_{{:selectedPlansForQuote.categoryValue.code}}.planBasicAmount&amp;#39;]" value="{{:BasicCovFaceAmt}}" /&gt;
+                  &lt;/div&gt;
+                  &lt;div class="clear"&gt;&lt;/div&gt;
+                  &lt;div class="fl"&gt;
+                    &lt;div class="fl clear marginTop10px w110px"&gt;
+                      &lt;input type="radio" id="premium" name="appDataMap[&amp;#39;QuoteData.Plan_{{:selectedPlansForQuote.categoryValue.code}}.amountType&amp;#39;]" value="premium" /&gt; 
+					   &lt;span class="marginLeft20px fl"&gt;Prima&lt;/span&gt; &lt;/div&gt;
+                  &lt;/div&gt;
+                  &lt;div class="fl marginLeft25px marginTop10px"&gt;
+                    &lt;input type="text" placeholder="Amount" data-met-keypress="Comma_allowed;Dot_allowed;num_Allowed" data-met-currency="" places="2" data-met-blur="currMinLength" data-met-minLength="5" /&gt;
+                    &lt;span class="fl marginTop10px marginLeft10px"&gt;Pesos&lt;/span&gt; &lt;/div&gt;
+                  &lt;div class="fl marginLeft25px marginTop10px"&gt;
+                    &lt;div class="fl clear"&gt;
+                      &lt;select class="primary"&gt;
+                        &lt;option value="1"&gt;Anual&lt;/option&gt;&lt;option value="4"&gt;Mensual&lt;/option&gt;&lt;option value="2"&gt;Semestral&lt;/option&gt;
+                      &lt;/select&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;&lt;!-- {{if selectedPlansForQuote.productFamilyId == '1140'}}
+				 
+				 &lt;div class="marginTop30px"&gt;
+								               		                 
+					  &lt;div class="fl clear marginTop15px"&gt;
+                      &lt;div class="fl"&gt;
+                        &lt;input type="checkbox" th:attrappend=												"id={{:selectedPlansForQuote.categoryValue.code}}" name="appDataMap[\'QuoteData.Plan_{{:selectedPlansForQuote.categoryValue.code}}.RiderData:__${riderListIndex.index}__.riderCheck\']" /&gt;
+                      &lt;/div&gt;
+                      &lt;span class="marginTop5px fl marginLeft5px" th:text="{{:selectedPlansForQuote['relationshipValue']['BasicCoverage']['Name']}}"&gt;&lt;/span&gt; &lt;/div&gt;
+                 
+					  &lt;div class="fl marginLeft25px marginTop55px"&gt;
+						&lt;input type="text" th:attrappend="id=${quoteSelectionMap['categoryValue']['code']+riderListIndex.index},data-met-errorDiv={{:selectedPlansForQuote.categoryValue.code}}" placeholder="Amount" name="appDataMap[\'QuoteData.Plan_{{:selectedPlansForQuote.categoryValue.code}}.\']" data-met-keypress="num_Allowed" data-met-errorDiv="errSpnTxtCustMgmtIdNumber" value="{{:RiderCovFaceAmtUVR}}"/&gt;
+						&lt;span class="fl marginTop10px marginLeft10px" th:utext="#{${ tenantCode}+'.pesos'}"&gt;&lt;/span&gt; 
+					  &lt;/div&gt;
+				
+					&lt;/div&gt; 
+              
+					{{/if}} --&gt;
+            
+				{{/if}}
+				 
+                &lt;div class="clear"&gt;&lt;/div&gt;
+                &lt;div class="marginTop30px"&gt;
+					&lt;div class="fl"&gt;
+						&lt;label class="fl clear"&gt;Amparos&lt;/label&gt;
+					&lt;/div&gt;
+					
+					 {{for selectedPlansForQuote.association.CAT005 ~plan = selectedPlansForQuote }}
+					 &lt;div class="fl clear marginTop15px"&gt;
+					 &lt;div class="fl"&gt;
+                        &lt;input type="checkbox" id="{{:~plan.categoryValue.code}}{{:#getIndex()}}" name="appDataMap[&amp;#39;QuoteData.Plan_{{:~plan.categoryValue.code}}.RiderData:{{:#getIndex()}}.riderCheck&amp;#39;]" /&gt;
+						&lt;input type="hidden" name="appDataMap[&amp;#39;QuoteData.Plan_{{:~plan.categoryValue.code}}.RiderData:{{:#getIndex()}}.riderId&amp;#39;]" value="{{:riderCode}}" /&gt;&lt;input type="hidden" name="appDataMap[&amp;#39;QuoteData.Plan_{{:~plan.categoryValue.code}}.RiderData:{{:#getIndex()}}.riderName&amp;#39;]" value="{{:riderName}}" /&gt;
+                      &lt;/div&gt;
+                      &lt;span class="marginTop5px fl marginLeft5px"&gt;{{:riderName}}&lt;/span&gt; 
+					  &lt;/div&gt;
+					   &lt;div class="fl marginLeft25px marginTop55px"&gt;
+						&lt;input type="text" placeholder="Amount" id="{{:~plan.categoryValue.code}}{{:#getIndex()}}" name="appDataMap[&amp;#39;QuoteData.Plan_{{:~plan.categoryValue.code}}.RiderData:{{:#getIndex()}}.riderAmount&amp;#39;]" data-met-keypress="Comma_allowed;Dot_allowed;num_Allowed" data-met-currency="" places="2" data-met-blur="currMinLength" data-met-errorDiv="errSpnTxtCustMgmtIdNumber" /&gt;
+						&lt;span class="fl marginTop10px marginLeft10px"&gt;Pesos&lt;/span&gt; 
+					  &lt;/div&gt;
+					{{/for}}
+                &lt;/div&gt;
+				&lt;/div&gt; 
+				
+                &lt;button type="button" class="fl clear marginTop30px marginBottom20px" id="planSubmit_{{:selectedPlansForQuote.categoryValue.code}}" data-met-data="{&amp;quot;formId&amp;quot;:&amp;quot;planSelect{{:selectedPlansForQuote.categoryValue.code}}&amp;quot;,&amp;quot;divToAttach&amp;quot;:&amp;quot;planSelected_{{:selectedPlansForQuote.categoryValue.code}}&amp;quot;}"&gt;Calcular&lt;/button&gt;
+              &lt;/div&gt;
+              &lt;div class="contentBoxFooter"&gt;
+                &lt;p&gt;&lt;!-- {{:PlanTotalPremium.PremiumPesos_4}} --&gt; &lt;span&gt;per month&lt;/span&gt;&lt;/p&gt;
+				&lt;input type="hidden" id="calculatedValue{{:selectedPlansForQuote.categoryValue.code}}" value="12" /&gt;
+                &lt;a href="#"&gt;Valores de Rescate&lt;/a&gt; &lt;a class="fr marginRight15px" href="#"&gt;Detalles del Ahorro&lt;/a&gt; &lt;/div&gt;
+				&lt;/div&gt;
+				</script>
+				</div>
+
+				<div id="createQuote_totalPremiumJSRenderTemplate">
+    <div>
+   	<script data-met-template="createQuote_totalPremiumJSRenderTemplate" type="text/x-jsrender">
+	
+   
+   &lt;h2 class="wordwrap"&gt;&lt;label&gt;Luz&lt;/label&gt;  &lt;label&gt;Garcia&lt;/label&gt; &lt;/h2&gt;
+	&lt;span&gt;Prima Total&lt;/span&gt;&lt;br /&gt;
+
+	{{if TotalPremium.Total_Premium_4}}
+		{{if TotalPremium.Total_Premium_4.toString().length&gt;9}}
+			&lt;div&gt;
+				&lt;p id="prem_Monthly"&gt;&lt;a class="amount"&gt;{{:~formatCurrency(TotalPremium.Total_Premium_4)}}&lt;/a&gt;&lt;a class="pesosCurr"&gt; Pesos&lt;/a&gt;&lt;/p&gt;
+			&lt;/div&gt;
+		{{else}}
+			&lt;div&gt;
+				&lt;p id="prem_Monthly"&gt;&lt;a class="amt"&gt;{{:~formatCurrency(TotalPremium.Total_Premium_4)}}&lt;/a&gt;&lt;a class="pesosCurr"&gt; Pesos&lt;/a&gt;&lt;/p&gt;
+			&lt;/div&gt;
+		{{/if}}
+	{{/if}}
+	{{if TotalPremium.Total_Premium_3}}
+		&lt;p id="prem_Quarterly" style="display:none"&gt;&lt;a class="amt" id="qarte"&gt;{{:~formatCurrency(TotalPremium.Total_Premium_3)}}&lt;/a&gt;&lt;a class="pesosCurr"&gt; Pesos&lt;/a&gt;&lt;/p&gt;
+	{{/if}}
+	{{if TotalPremium.Total_Premium_2}}
+	&lt;p id="prem_SemiAnnually" style="display:none"&gt;&lt;a class="amt" id="semi"&gt;{{:~formatCurrency(TotalPremium.Total_Premium_2)}}&lt;/a&gt;&lt;a class="pesosCurr"&gt; Pesos&lt;/a&gt;&lt;/p&gt;
+		{{/if}}
+		{{if TotalPremium.Total_Premium_1}}
+	&lt;p id="prem_Annually" style="display:none"&gt;&lt;a class="amt" id="anually"&gt;{{:~formatCurrency(TotalPremium.Total_Premium_1)}}&lt;/a&gt;&lt;a class="pesosCurr"&gt; Pesos&lt;/a&gt;&lt;/p&gt;
+	{{/if}}
+	{{if TotalPremium.Total_totalPremium}}
+		{{if TotalPremium.Total_totalPremium.toString().length&gt;9}}
+		&lt;p id="singlePremium"&gt;&lt;a id="singlePrimium" class="amount"&gt;{{:~formatCurrency(TotalPremium.Total_totalPremium)}}&lt;/a&gt;&lt;a class="pesosCurr"&gt; Pesos&lt;/a&gt;&lt;/p&gt;
+		{{else}}
+		&lt;p id="singlePremium"&gt;&lt;a id="singlePrimium" class="amt"&gt;{{:~formatCurrency(TotalPremium.Total_totalPremium)}}&lt;/a&gt;&lt;a class="pesosCurr"&gt; Pesos&lt;/a&gt;&lt;/p&gt;
+		{{/if}}
+	{{/if}}
+	{{if false == singlePremiumFlag}}
+	&lt;div class="DDselect styled-select w130px" id="selectPayFreqQtP"&gt;
+	  &lt;select id="selectPayFreqQt" class="primary w155px"&gt;
+		&lt;div value="4"&gt;
+		 &lt;option value="4"&gt;Mensual&lt;/option&gt;
+		 &lt;/div&gt;&lt;div value="3"&gt;
+		 
+		 &lt;/div&gt;&lt;div value="2"&gt;
+		 &lt;option value="2"&gt;Semestral&lt;/option&gt;
+		 &lt;/div&gt;&lt;div value="1"&gt;
+		 &lt;option value="1"&gt;Anual&lt;/option&gt;
+		 &lt;/div&gt;
+	  &lt;/select&gt;
+	&lt;/div&gt;
+	{{/if}}
+	&lt;button type="button" id="btnReviewQuote" class="btn btn-mobile"&gt;Revisar Cotización&lt;/button&gt;&lt;!-- &lt;p class="save"&gt;&lt;a href="#" data-met-initjs="quoteSummary" id="btnGetReviewQuote" th:utext="#{${ tenantCode}+'.save'}"&gt;&lt;/a&gt;&lt;/p&gt; --&gt;
+	
+  	
+           
+	</script>
+	</div>
+	</div>
+
+				<div id="createQuote_quoteNumberJSTemplate">
+   	<script data-met-template="createQuote_quoteNumberJSTemplate" type="text/x-jsrender">
+	&lt;div id="quoteNumber"&gt;
+	&lt;div class="QuoteDate"&gt;&lt;span&gt;Cotización #&lt;/span&gt; &lt;b&gt;{{:quoteNum}}&lt;/b&gt; &lt;br /&gt;
+		{{:quoteCreatedDate}} &lt;/div&gt;
+		
+	&lt;/div&gt;
+	&lt;input type="hidden" id="quoteID" value="{{:quoteId}}" name="quoteId" /&gt;
+	
+	</script>
+	</div>
+				<div id="removePlan_overlayFragment">
+		<div id="removePlanOverlay" class="pop_container popSaveSuccess">
+			<div class="popup Width400px">
+				<div class="popHeader">
+				<p>
+				   <a href="#" class="closeBtn" data-met-hidepopup="removePlanOverlay" id="cancelOverlayCloseBtn"><span>Close Window</span></a>
+				</p>
+				</div>
+				<div class="sampleTxt">
+					<p><span id="removePlanText"></span></p>
+					<p class="marginTop20px" align="center">
+						<button id="btnRemoveYes" type="button">Si</button>						
+						<button id="btnRemoveNo" type="button" data-met-hidepopup="removePlanOverlay">No</button>						
+					</p>
+				</div>
+			</div>
+		</div>	
+    </div>
+				<div id="removeLastPlan_overlay">
+		 <div id="removeLastPlanOverlay" class="pop_container popSaveSuccess">
+		<div class="popup Width400px">
+		<div class="popHeader">
+		<p>
+           <a href="#" class="closeBtn" data-met-hidepopup="removeLastPlanOverlay" id="hide"><span>Close Window</span></a>
+        </p>
+		</div>
+		<div class="sampleTxt">
+		<p><span>No puede eliminar este plan porque no hay más y la cotización seria invalida</span></p>
+		<p class="marginTop20px" align="center">
+		<button id="btnRemoveLastPlan" type="button" data-met-initjs="quoteSelection">OK</button>
+		</p>
+		</div>
+		</div>
+		</div>
+    </div>
+
+				<form id="frmPlanSelection" name="frmPlanSelection" data-met-formtosubmit="">
+					<div id="startQuoteDependentDetailsJSRenderTemplate">
+	
+	<script data-met-template="dependentDetailsJSRenderTemplate" type="text/x-jsrender">
+						&lt;div class="clear"&gt; 
+                         &lt;div class="fl marginTop10px"&gt;
+							{{if relationshipCode == 8}}
+								{{if dependentAge &gt; 23}}
+							 &lt;input type="checkbox" disabled="disabled" /&gt;
+							{{else}}
+							 &lt;input type="checkbox" id="checkboxId{{:index}}" data-met-idCount="{{:index}}" dependentAdded="" value="on" name="appDataMap[&amp;#39;DependentData.Dependents.Dependent:{{:index}}.check&amp;#39;]" /&gt;
+							{{/if}}							
+								{{else  relationshipCode == 2}}
+								 {{if noSpouse == true}} 
+									&lt;input type="checkbox" id="checkboxId{{:index}}" data-met-idCount="{{:index}}" dependentAdded="" value="on" name="appDataMap[&amp;#39;DependentData.Dependents.Dependent:{{:index}}.check&amp;#39;]" data-met-disableAllSpouse="" /&gt;
+								{{else}}
+								&lt;input type="checkbox" id="checkboxId{{:index}}" data-met-idCount="{{:index}}" dependentAdded="" value="on" name="appDataMap[&amp;#39;DependentData.Dependents.Dependent:{{:index}}.check&amp;#39;]" data-met-disableAllSpouse="" /&gt;				
+									{{/if}}	
+								{{else}}
+								&lt;input type="checkbox" id="checkboxId{{:index}}" data-met-idCount="{{:index}}" dependentAdded="" value="on" name="appDataMap[&amp;#39;DependentData.Dependents.Dependent:{{:index}}.check&amp;#39;]" data-met-disableAllSpouse="" /&gt;		
+							{{/if}}	
+							&lt;/div&gt;  
+                          &lt;div class="depententRow marginTop10px width92Percent fl"&gt;  
+                            &lt;p&gt;&lt;a id="dependentNameLink{{:index}}" data-met-idCount="{{:index}}"&gt;{{:dependentFirstName}}&lt;/a&gt;&lt;/p&gt;
+                            &lt;span class="Smallfont" id="spnDependentRelationship{{:index}}" data-met-idCount="{{:index}}"&gt;{{:dependentRelationship}},&lt;/span&gt;
+							&lt;span class="Smallfont" id="spnDependentAge{{:index}}" data-met-idCount="{{:index}}"&gt;{{:dependentAge}}&lt;/span&gt;&amp;nbsp;&lt;span id="spnYears"&gt;Año(s)&lt;/span&gt;
+						  &lt;/div&gt;  
+						   &lt;input id="hidSelectedDepCount{{:index}}" type="hidden" value="{{:index}}" /&gt;
+						   &lt;input id="hidDependentAge{{:index}}" type="hidden" name="appDataMap[&amp;#39;CustomerData.Dependents.Dependent:{{:index}}.Person.Age&amp;#39;]" value="{{:dependentAge}}" /&gt;
+						&lt;/div&gt; 
+						
+                    
+                   
+	</script>
+	</div>
+					<div id="addDependentJSRenderTemplate">
+      <script data-met-template="addDependentJSRenderTemplate" type="text/x-jsrender">
+	  
+		
+                &lt;span id="errSpnduplicateDependent{{:index}}" class="clear fl errorLabel"&gt;&lt;/span&gt;
+		&lt;div id="chkDependentsTable{{:index}}" class="marginTop5px"&gt;
+		&lt;div class="row"&gt;
+			&lt;div class="form-group col-md-4"&gt;
+				 &lt;label for="firstName" class="overflow"&gt;&lt;span&gt;Primer Nombre&lt;/span&gt; &lt;span class="mandatory"&gt;&lt;/span&gt;&lt;/label&gt;
+				 &lt;input id="txtCustMgmtDependentFirstName{{:index}}" style="height: 36px;" maxlength="20" type="text" data-met-keypress="alphabets_allowed;specialChars_specific_allowed" data-met-mand="mandatory" data-met-criticalField="" data-met-errorDiv="errSpnTxtCustMgmtDependentFirstName{{:index}}" name="appDataMap[&amp;#39;CustomerData.Dependents.Dependent:{{:index}}.Person.FirstName&amp;#39;]" /&gt;
+				 &lt;span id="errSpnTxtCustMgmtDependentFirstName{{:index}}" class="clear fl errorLabel width125px"&gt;&lt;/span&gt;
+			&lt;/div&gt;
+			&lt;div class="form-group  col-md-4"&gt;
+			   &lt;label class="fl clear"&gt;&lt;span id="spnCustMgmtDependentMiddleName{{:index}}"&gt;Segundo Nombre&lt;/span&gt;&lt;/label&gt;
+			   &lt;input id="txtCustMgmtDependentMiddleName{{:index}}" style="height: 36px;" maxlength="20" type="text" data-met-keypress="alphabets_allowed;specialChars_specific_allowed" name="appDataMap[&amp;#39;CustomerData.Dependents.Dependent:{{:index}}.Person.MiddleName&amp;#39;]" data-met-errorDiv="errSpntxtCustMgmtDependentMiddleName{{:index}}" /&gt;
+			   &lt;span id="errSpntxtCustMgmtDependentMiddleName{{:index}}" class="clear fl errorLabel width125px"&gt;&lt;/span&gt;
+			&lt;/div&gt;
+			
+			&lt;div class="form-group col-md-4"&gt;
+			   &lt;label class="fl clear"&gt;&lt;span id="spnCustMgmtDependentSecondMiddleName{{:index}}"&gt;Tercer Nombre&lt;/span&gt;&lt;/label&gt;
+			   &lt;input id="txtCustMgmtDependentSecondMiddleName{{:index}}" style="height: 36px;" maxlength="20" type="text" data-met-keypress="alphabets_allowed;specialChars_specific_allowed" name="appDataMap[&amp;#39;CustomerData.Dependents.Dependent:{{:index}}.Person.SecondMiddleName&amp;#39;]" data-met-errorDiv="errSpntxtCustMgmtDependentSecondMiddleName{{:index}}" /&gt;
+			   &lt;span id="errSpntxtCustMgmtDependentSecondMiddleName{{:index}}" class="clear fl errorLabel width125px"&gt;&lt;/span&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;			
+		&lt;div class="row"&gt;
+			&lt;div class="form-group col-md-4"&gt;
+				 &lt;label for="lastName" class="overflow"&gt;&lt;span&gt;Primer Apellido&lt;/span&gt; &lt;span class="mandatory"&gt;&lt;/span&gt;&lt;/label&gt;
+				 &lt;input id="txtCustMgmtDependentLastName{{:index}}" style="height: 36px;" maxlength="20" type="text" data-met-keypress="alphabets_allowed;specialChars_specific_allowed" data-met-mand="mandatory" data-met-criticalField="" data-met-errorDiv="errSpnTxtCustMgmtDependentLastName{{:index}}" name="appDataMap[&amp;#39;CustomerData.Dependents.Dependent:{{:index}}.Person.Surname&amp;#39;]" /&gt;
+				 &lt;span id="errSpnTxtCustMgmtDependentLastName{{:index}}" class="clear fl errorLabel width125px"&gt;&lt;/span&gt;
+			&lt;/div&gt;
+			&lt;div class="form-group col-md-4"&gt;
+				 &lt;label class="fl clear"&gt;&lt;span&gt;Segundo Apellido&lt;/span&gt;&lt;/label&gt;
+				 &lt;input id="txtCustMgmtDependentsecondLastName{{:index}}" style="height: 36px;" name="appDataMap[&amp;#39;CustomerData.Dependents.Dependent:{{:index}}.Person.SecondLastName&amp;#39;]" maxlength="20" type="text" data-met-keypress="alphabets_allowed;specialChars_specific_allowed" data-met-errorDiv="errSpnTxtCustMgmtDependentsecondLastName{{:index}}" /&gt;
+				 &lt;span id="errSpnTxtCustMgmtDependentsecondLastName{{:index}}" class="clear fl errorLabel width125px"&gt;&lt;/span&gt;
+			&lt;/div&gt;		
+		&lt;/div&gt;		
+		&lt;div class="row"&gt;
+			&lt;div class="form-group col-md-4 relationshipContainer"&gt;
+	
+				  &lt;label for="relationship" class="overflow"&gt;&lt;span&gt;Relación con el asegurado&lt;/span&gt; &lt;span class="mandatory"&gt;&lt;/span&gt;&lt;/label&gt;
+				   &lt;div&gt;
+	
+					   &lt;select id="selectCustMgmtRelationship{{:index}}" data-met-checks="select" data-met-mand="mandatory" style="height: 36px;width: 100%;" data-met-errorDiv="errSpnSelectCustMgmtRelationship{{:index}}" name="appDataMap[&amp;#39;CustomerData.Dependents.Dependent:{{:index}}.Person.Relationship&amp;#39;]"&gt;
+							 &lt;option value="-1"&gt;Seleccione&lt;/option&gt;
+	         				&lt;option value="1"&gt;Asegurado principal&lt;/option&gt;&lt;option value="2"&gt;Conyuge&lt;/option&gt;&lt;option value="8"&gt;Hijo (a)&lt;/option&gt;
+						&lt;/select&gt;
+				  &lt;/div&gt;
+				  &lt;span id="errSpnSelectCustMgmtRelationship{{:index}}" class="clear fl errorLabel"&gt;&lt;/span&gt;
+			  &lt;/div&gt;
+			&lt;div class="form-group col-md-4" id="divtxtCustMgmtOthrRelationship{{:index}}"&gt;
+                  &lt;label for="relation" class="overflow"&gt;&lt;span&gt;Ocupación/Cargo/Profesión&lt;/span&gt;
+					 
+					 &lt;span id="labelidRelation{{:index}}" style="display:none;"&gt;*&lt;/span&gt;	
+         		  &lt;/label&gt;
+                  &lt;input type="text" placeholder="Ocupacion" id="txtCustMgmtOthrRelationship{{:index}}" style="height: 36px;" maxlength="50" data-provide="typeahead" autocomplete="off" data-gsp-forField="forSearch" class="form-control ui-autocomplete-input" data-met-errorDiv="errSpnTxtCustMgmtOthrRelationship{{:index}}" data-met-keypress="specialChars_allowed;alphabets_allowed" name="appDataMap[&amp;#39;CustomerData.Dependents.Dependent:{{:index}}.Person.OthrRelationship&amp;#39;]" /&gt;
+         		  &lt;p class="error" id="errSpnTxtCustMgmtOthrRelationship{{:index}}"&gt;&lt;/p&gt;
+   			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="row"&gt;
+			&lt;div class="form-group col-md-4"&gt;
+				  &lt;label for="txtCustMgmtDependentDateOfBith{{:index}}" class="overflow"&gt;&lt;span&gt;Fecha de Nacimiento&lt;/span&gt; &lt;span class="mandatory"&gt;&lt;/span&gt;&lt;/label&gt;
+                   &lt;div class="input-group parentDiv-datepicker" id="parentDivDependent_{{:index}}"&gt;
+				   &lt;div class="input-group date datepickerEvent1" data-provide="datepicker" id="clientDobDatePickerDiv1" style="width: 100%;" placeholder="DD/MM/YYYY" data-date-end-date="today" data-date-start-date="01/01/1900" data-date-language="es-co" data-date-format="dd/mm/yyyy"&gt;
+					&lt;input id="txtCustMgmtDependentDateOfBith{{:index}}" readonly="true" type="text" style="height: 36px;border: 1px solid #999999;border-right: 0px;margin-bottom: 0px;" maxlength="10" data-met-mand="mandatory" data-met-errordiv="errSpnTxtCustMgmtDependentDateOfBith{{:index}}" data-met-criticalfield="" class="form-control ie10Specific disabledFields" data-met-showage="txtAge" placeholder="DD/MM/YYYY" name="appDataMap[&amp;#39;CustomerData.Dependents.Dependent:{{:index}}.Person.DateOfBirth&amp;#39;]" value="" capturedvalue="" /&gt;
+					&lt;span id="custMgmtDateOfBirthspan" class="input-group-addon srchBorderIE8" style="border: 1px solid #999999;border-left: 0px;"&gt;&lt;i class="fa fa-calendar"&gt;&lt;/i&gt;&lt;/span&gt;
+			&lt;/div&gt;
+         					
+                &lt;/div&gt;
+   				&lt;p class="error" id="errSpnTxtCustMgmtDependentDateOfBith{{:index}}" data-met-parentDiv="parentDivDependent_{{:index}}"&gt;&lt;/p&gt;
+            &lt;/div&gt;
+
+			&lt;div class="form-group col-md-4"&gt;
+				&lt;label for="txtCustMgmtDependentAge" class="overflow"&gt;&lt;span&gt;Edad&lt;/span&gt;&lt;/label&gt;        									
+				&lt;input type="text" id="txtCustMgmtDependentAge" readonly="true" disabled="disabled" style="height: 36px;" name="appDataMap[&amp;#39;CustomerData.Dependents.Dependent:{{:index}}.Person.Age1&amp;#39;]" class="disabled form-control" /&gt;
+							
+			&lt;/div&gt;
+			
+			&lt;div class="form-group col-sm-12 col-md-4"&gt;
+				 &lt;label for="gender" class="overflow"&gt;&lt;span&gt;Género&lt;/span&gt; &lt;span class="mandatory"&gt;&lt;/span&gt;&lt;/label&gt;
+				 &lt;div class="button-group"&gt;&lt;!--&lt;div class="checkbox unchecked"&gt;&lt;/div&gt;--&gt;
+					
+					&lt;div class="fl radio-inline"&gt;&lt;input type="radio" class="fl" style="float: left;width: 15px;margin-top: 10px;margin-left: -20px;" id="male{{:index}}" data-met-checks="radio" data-met-errorDiv="errSpnRdnCustMgmtGender{{:index}}" name="appDataMap[&amp;#39;CustomerData.Dependents.Dependent:{{:index}}.Person.Gender&amp;#39;]" value="1" /&gt; &lt;span class="fl" style="margin-left:0px;margin-top:8px"&gt;Masculino&lt;/span&gt;&lt;/div&gt;
+					&lt;div class="fl radio-inline"&gt;&lt;input type="radio" class="fl" style="float: left;width: 15px;margin-top: 10px;margin-left: 0px;" id="female{{:index}}" data-met-checks="radio" data-met-errorDiv="errSpnRdnCustMgmtGender{{:index}}" name="appDataMap[&amp;#39;CustomerData.Dependents.Dependent:{{:index}}.Person.Gender&amp;#39;]" value="2" /&gt; &lt;span class="fl" style="margin-left:20px;margin-top:8px"&gt;Femenino&lt;/span&gt;&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;span id="errSpnRdnCustMgmtGender{{:index}}" class="clear fl errorLabel"&gt;&lt;/span&gt;
+			&lt;/div&gt;
+		 &lt;/div&gt;	
+		 
+		&lt;/div&gt;
+		
+		&lt;div class="row"&gt;
+				&lt;div class="form-group col-md-4 idDocumentContainer"&gt;
+				  &lt;label&gt;&lt;span data-met-mandDepClass=""&gt;Documento de Identificación&lt;/span&gt; &lt;span class="mandatory"&gt;&lt;/span&gt;&lt;/label&gt;
+				 &lt;div&gt;
+					   &lt;select name="appDataMap[&amp;#39;CustomerData.Dependents.Dependent:{{:index}}.Person.DocIdType&amp;#39;]" style="height: 36px;width: 100%;" data-met-checks="select" data-met-mand="mandatory" id="selectCustMgmtDocIdType{{:index}}" data-met-idCount="{{:index}}" data-met-mandDepField="" data-met-errorDiv="errSpnTxtCustMgmtDependentIdType{{:index}}"&gt;
+							&lt;option value="-1"&gt;Seleccione&lt;/option&gt;
+							&lt;option value="C"&gt;Cédula Ciudadanía&lt;/option&gt;&lt;option value="E"&gt;Cédula de Extranjería&lt;/option&gt;&lt;option value="N"&gt;NIT&lt;/option&gt;&lt;option value="U"&gt;NIUP&lt;/option&gt;&lt;option value="O"&gt;Otro&lt;/option&gt;&lt;option value="P"&gt;Passport&lt;/option&gt;&lt;option value="R"&gt;Registro Civil&lt;/option&gt;&lt;option value="M"&gt;Registro Medico&lt;/option&gt;&lt;option value="T"&gt;Tarjeta de Identidad&lt;/option&gt;
+						&lt;/select&gt;
+				  &lt;/div&gt;
+				  &lt;span id="errSpnTxtCustMgmtDependentIdType{{:index}}" class="clear fl errorLabel"&gt;&lt;/span&gt;
+			 &lt;/div&gt;
+			 &lt;div class="form-group col-md-4" id="divCustMgmtIdNumber{{:index}}"&gt;
+				 &lt;label&gt;&lt;span id="labelidnumber{{:index}}"&gt;Número de Documento&lt;/span&gt;  &lt;span class="mandatory"&gt;&lt;/span&gt; &lt;/label&gt;
+				 &lt;input id="txtCustMgmtDependentIdNumber{{:index}}" data-met-mand="mandatory" maxlength="11" type="text" style="height: 36px;" data-met-errorDiv="errSpnTxtCustMgmtDependentIdNumber{{:index}}" data-met-keypress="numeric_allowed" name="appDataMap[&amp;#39;CustomerData.Dependents.Dependent:{{:index}}.Person.DocIdNumber&amp;#39;]" disabled="disabled" class="disabled" /&gt;
+				 &lt;span id="errSpnTxtCustMgmtDependentIdNumber{{:index}}" class="clear fl errorLabel"&gt;&lt;/span&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		
+		&lt;div class="row "&gt;  
+			&lt;button type="button" class="greenBtn fl marginLeft15px marginTop25px" id="btnCustMgmtaddDependent{{:index}}" data-met-idCount="{{:index}}"&gt;Guardar&lt;/button&gt;
+				&lt;span class="cancelDependentLink"&gt;&lt;a href="#" id="cancelLink{{:index}}" data-met-idCount="{{:index}}" style="display:none"&gt;Cancelar&lt;/a&gt;&lt;/span&gt;
+		&lt;/div&gt;&lt;!-- &lt;td&gt;&lt;span class="mandatory" th:utext="#{${ tenantCode}+'.firstName'}"&gt;&lt;/span&gt;&lt;br/&gt;
+         	&lt;span id="errSpnTxtCustMgmtDependentFirstName{{:index}}" class="erroTxt"&gt;&lt;/span&gt;
+         	&lt;input id="txtCustMgmtDependentFirstName{{:index}}"  maxlength="20" type="text" style="height: 36px;" data-met-keypress="alphabets_allowed" data-met-mand="mandatory" data-met-errorDiv="errSpnTxtCustMgmtDependentFirstName{{:index}}" name="appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.FirstName']"/&gt;
+			&lt;/td&gt;
+         		
+         	&lt;td&gt;&lt;span id="spnCustMgmtDependentMiddleName{{:index}}" class="colan" th:utext="#{${ tenantCode}+'.middleName'}"&gt;&lt;/span&gt;&lt;br/&gt;
+         		&lt;input id="txtCustMgmtDependentMiddleName{{:index}}" maxlength="20" type="text" style="height: 36px;" data-met-keypress="alphabets_allowed" name="appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.MiddleName']"/&gt;
+         	&lt;/td&gt;
+         
+         &lt;tr&gt;
+         					&lt;td&gt;&lt;span class="mandatory" th:utext="#{${ tenantCode}+'.lastName'}"&gt;&lt;/span&gt;&lt;br/&gt;
+         					&lt;span id="errSpnTxtCustMgmtDependentLastName{{:index}}" class="erroTxt"&gt;&lt;/span&gt;
+                                      &lt;input id="txtCustMgmtDependentLastName{{:index}}" maxlength="20" type="text"  data-met-keypress="alphabets_allowed" data-met-mand="mandatory" data-met-errorDiv="errSpnTxtCustMgmtDependentLastName{{:index}}" name="appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.LastName']"/&gt;
+         					&lt;/td&gt;
+         					&lt;td&gt;&lt;span class="colan" th:utext="#{${ tenantCode}+'.secondLastName'}"&gt;&lt;/span&gt;&lt;br/&gt;
+         						&lt;input id="txtCustMgmtDependentsecondLastName{{:index}}" name="appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.SecondLastName']" maxlength="20" type="text" data-met-keypress="alphabets_allowed"/&gt;
+         					&lt;/td&gt;
+         				&lt;/tr&gt;
+         				&lt;tr&gt;
+         					&lt;td&gt;&lt;span class="mandatory" th:utext="#{${ tenantCode}+'.dob'}"&gt;&lt;/span&gt;&lt;br/&gt;
+         						&lt;span id="errSpnTxtCustMgmtDependentDateOfBith{{:index}}" class="erroTxt"&gt;&lt;/span&gt;
+         						&lt;input type="text" class="calender" name="appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.DateOfBirth']" id="txtCustMgmtDependentDateOfBith{{:index}}" data-met-forCal="dateOfBirthCal{{:index}}"  data-met-date="pastDate" readonly ="readonly"  data-met-mand="mandatory" data-met-errorDiv="errSpnTxtCustMgmtDependentDateOfBith{{:index}}" data-met-dateFormat="DD/MM/YYYY"/&gt;
+         						&lt;a class="calImg"&gt;
+         						&lt;span data-met-cal-button="dateOfBirthCal{{:index}}" id="dateOfBithCalBtn{{:index}}" class="calendarIcon"&gt;&lt;/span&gt; 
+         						&lt;/a&gt;
+         					&lt;/td&gt;
+         					&lt;td&gt;&lt;span class="mandatory" th:utext="#{${ tenantCode}+'.relationship'}"&gt;&lt;/span&gt;&lt;br/&gt;
+         					&lt;span id="errSpnSelectCustMgmtRelationship{{:index}}" class="erroTxt"&gt;&lt;/span&gt;
+         					   &lt;div class="fl styled-select clear"&gt;
+         						&lt;select id="selectCustMgmtRelationship{{:index}}" data-met-checks="select" data-met-mand="mandatory" data-met-errorDiv="errSpnSelectCustMgmtRelationship{{:index}}" name="appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.Relationship']"&gt;
+         							 &lt;option value="-1" th:utext="#{${ tenantCode}+'.select'}"&gt;&lt;/option&gt;
+         						&lt;option th:each="listCurrency :${gspFlowScopeBean.referenceDataMap['RLTN_CD']}"  th:value="${listCurrency['masterDataValueCode']}" th:text="${listCurrency['masterDataValueName']}"&gt;&lt;/option&gt;
+         				&lt;/select&gt;
+         					&lt;/div&gt; 
+         					&lt;/td&gt;
+         				&lt;/tr&gt;    
+         				 &lt;tr&gt;
+         				   &lt;td colspan="2"&gt;&lt;span class="mandatory" th:utext="#{${ tenantCode}+'.gender'}"&gt;&lt;/span&gt;&lt;br/&gt;
+         				   &lt;span id="errSpnRdnCustMgmtGender{{:index}}" class="erroTxt"&gt;&lt;/span&gt;
+         						&lt;div class="fl clear"&gt;&lt;input type="radio" class="clear" id="male" data-met-checks="radio" data-met-errorDiv="errSpnRdnCustMgmtGender{{:index}}" name="appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.Gender']" value="1"/&gt; &lt;label for="male" th:utext="#{${ tenantCode}+'.male'}"&gt;&lt;/label&gt; &amp;nbsp;&amp;nbsp; &lt;input type="radio" class="clear" id="male" data-met-checks="radio" data-met-errorDiv="errSpnRdnCustMgmtGender{{:index}}" name="appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.Gender']" value="2"/&gt; &lt;label for="female" th:utext="#{${ tenantCode}+'.female'}"&gt;&lt;/label&gt;&lt;/div&gt;
+         					&lt;/td&gt;
+         				&lt;/tr&gt;
+         &lt;/table&gt;--&gt;&lt;!--fields--&gt;&lt;!-- &lt;div class="fileds marginTop20px"&gt;
+         	 &lt;h3 class="fieldsHeaderBoderBtm"&gt;&lt;span th:utext="#{${ tenantCode}+'.idDocDetails'}"/&gt;&lt;/h3&gt;
+         		&lt;table class="fieldsTbl"&gt;
+         			 &lt;tr&gt;
+         				&lt;td&gt;&lt;span class="colan" th:utext="#{${ tenantCode}+'.docIdType'}"&gt;&lt;/span&gt;&lt;br/&gt;
+         					&lt;div class="fl styled-select clear"&gt;
+         					&lt;select name="appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.DocIdType']" id="selectCustMgmtDocIdType{{:index}}" data-met-idCount="{{:index}}"&gt;
+								&lt;option value="-1" th:utext="#{${ tenantCode}+'.select'}"&gt;&lt;/option&gt;
+								&lt;option th:each="listCurrency :${gspFlowScopeBean.referenceDataMap['DOC_ID_TYP_CUST']}"  th:value="${listCurrency['masterDataValueCode']}" th:text="${listCurrency['masterDataValueName']}"&gt;&lt;/option&gt;
+							&lt;/select&gt;
+         				&lt;/div&gt;
+         				&lt;/td&gt;
+         				 &lt;td&gt; &lt;div id="divCustMgmtIdNumber{{:index}}"&gt;&lt;span class="colan" id="labelidnumber{{:index}}" th:class="*{appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.DocIdType']!='-1' and appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.DocIdType']!=null}?'mandatory':'colan'" th:utext="#{${ tenantCode}+'.docIdNumber'}"&gt;&lt;/span&gt;&lt;br/&gt;
+						  &lt;span id="errSpnTxtCustMgmtDependentIdNumber{{:index}}" class="erroTxt"&gt;&lt;/span&gt;
+         					&lt;input id="txtCustMgmtDependentIdNumber{{:index}}" maxlength="11" type="text" data-met-errorDiv="errSpnTxtCustMgmtDependentIdNumber{{:index}}" data-met-keypress="numeric_allowed;alphabets_allowed" name="appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.DocIdNumber']" th:class="*{appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.DocIdType']!='-1' and appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.DocIdType']!=null}?'mandatory':'colan'"/&gt;&lt;/div&gt;
+         				&lt;/td&gt;
+         			&lt;/tr&gt;
+         		&lt;/table&gt; 
+            &lt;/div&gt;
+         	 &lt;div class="fileds marginTop10px"&gt;  
+         		&lt;div class="fr"&gt;
+				&lt;button th:utext="#{${ tenantCode}+'.addDependent'}" type="button" id="btnCustMgmtaddDependent{{:index}}" class="greenBtn" data-met-idCount="{{:index}}"&gt;&lt;/button&gt; --&gt;&lt;!--&lt;button th:utext="#{${ tenantCode}+'.save'}" type="button" id="btnCustMgmtaddDependent{{:index}}" class="greenBtn" data-met-idCount="{{:index}}"&gt;&lt;/button&gt;--&gt;&lt;!-- &lt;button th:utext="#{${ tenantCode}+'.addDependent'}" th:if="*{metaDataMap['linkId']=='createcustomer' or metaDataMap['linkId']=='editCustomer'}" type="button" id="btnCustMgmtaddDependent{{:index}}" class="greenBtn" data-met-idCount="{{:index}}"&gt;&lt;/button&gt;
+				&lt;button th:utext="#{${ tenantCode}+'.save'}" th:if="*{metaDataMap['linkId']=='newQuoteCustomer'}" type="button" id="btnSaveDependent{{:index}}" class="greenBtn" data-met-idCount="{{:index}}"&gt;&lt;/button&gt; --&gt;&lt;!-- &lt;br/&gt;&lt;br/&gt;&lt;/div&gt; 
+         	 &lt;/div&gt; --&gt;	
+             	
+         	 
+         	
+
+				
+
+				
+			 
+			
+			
+         	 
+       </script> 
+   </div>
+					<div id="startQuoteOverlay_JSRenderTemplate">
+	<script data-met-template="startQuoteOverlayJSRenderTemplate" type="text/x-jsrender">
+		&lt;div id="addDependentFromQuote{{:index}}"&gt;
+				&lt;div id="popUpContentDiv"&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	</script>
+	</div>
+					<div id="dependentDetailsFragment">
+						<div id="dependentDetailsAdded">
+   <div id="startQuoteOverlay" class="pop_container">
+   <div id="dependentDetails">
+            
+			
+
+
+
+
+      
+         <div class="popup newUI">
+		
+            <div class=" row newPopHeader planPayHead editDependent">
+               <div class="startQuoteHeader col-xs-6 col-sm-10"><h3>Seleccione un familiar</h3></div>
+			  	 <div class="col-xs-2 closeButtonContainer"><a href="#" id="closeBtn" class="closeBtn" editflag="true" aria-label="Close Window"></a></div> 
+            </div>
+            
+            
+			<div id="checkBoxCount" class="row popupContent">
+			<p class="clear dateTxt marginTop10px">Nota: Hijos con edad superior a 23 años no pueden seleccionarse</p>
+                  <span id="errSpncheckBoxCount" class="clear fl errorLabel"></span>
+				  <div id="divDependentDetails" class="depententDetails width98Percent" style="display:none">
+                   <div id="dependentDetailsContent"></div>
+                    
+                  </div>
+               </div>
+			   <div class="row buttonRow">
+			   		<a href="#" id="cancelLink" data-met-idcount="">Cancelar</a>
+                	<button id="btnAddDependentToQuote" class="greenBtn" type="button" data-met-idcount="" data-met-initjs="quoteSelection">Continuar</button>				  	
+				</div>
+               <div class="clear popupContent" id="addDependent">
+                  <div id="popUpContentDiv">
+				  <div id="starQuoteDependentDetails"></div>
+				  </div>
+               </div>
+               
+                  
+				  <div class="addDependentContainer"><a id="custMgmtaddDependentLink" class="plus_old" href="#">Adicione Familiar</a></div><!--    </div> -->
+            
+            </div>
+         </div>
+		 </div><!--fields-->
+      
+   </div>
+					</div>
+					<input id="hidAddDependentIdCount" type="hidden" name="appDataMap['CustomerData.Dependents.DependentIdCount']" value="0" />
+					<input id="hidActiveClient" type="hidden" value="false" /> 
+					<input id="hidAddDependentCount" type="hidden" name="appDataMap['CustomerData.Dependents.DependentCount']" value="0" />
+					<input id="hidRealAge" type="hidden" value="" />
+					<input id="hidActuarialAge" type="hidden" value="" />
+					<input id="hidUpdateCustomerFlag" type="hidden" value="0" />
+					<input id="hidDepRecalcFlag" type="hidden" value="" name="appDataMap['QuoteData.DepRecalcFlag']" />
+					<input id="hiddenQuoteParams" type="hidden" name="hiddenQuoteParams" value="" />
+					 
+				<input type="hidden" name="metaDataMap[&quot;oldValue&quot;]" id="hidOldValues" value="{}" /></form>
+				<form id="frmAuthConfirmation" name="frmAuthConfirmation" data-met-formtosubmit="">
+					<div id="createQuote_authorizeConfirm">
+	
+	<div id="authorizeConfirmOverlay" class="pop_container">
+      <div class="popup newUI">
+        <div class="newPopHeader row">
+		  <div class="confirmHeader col-xs-7 col-sm-10"><h3><span>Solicitar Autorización de la Cotización</span></h3></div>
+          <div class="col-xs-2 closeButtonContainer"><a href="#" id="hideConfirmAuthorize" class="closeBtn" aria-label="Close Window"></a></div>
+        </div>
+        <div class="fullPart authorization row">
+          <div class="col-sm-10 col-sm-offset-1">
+            
+              <p>Los siguientes planes no cumplen con la validación de prima mínima. ¿Desea enviar la cotización al Autorizador?</p>
+              <p>Si selecciona "Si" se enviará. Si selecciona "No" deberá ajustar la información y volver a calcular.</p>
+			  <p></p><ol id="invalidPlanList"></ol><p></p>
+              <div class="clear"></div>
+              <div class="fl clear marginTop15px marginRight15px yesBtn">
+                <button type="button" id="btnYes" data-met-showhidediv="authTextArea">Si</button><!-- <button type="button" id="btnYes" th:utext="#{${ tenantCode}+'.yes'}"></button> -->
+				
+              </div>
+              <div class="fl marginTop15px">
+                <button type="button" id="btnNo">No</button>
+              </div>
+              <div class="clear"></div><!-- <div id="authTextArea" class="authTextArea marginTop20px" style="display:none;"> -->
+              
+              <div id="authTextArea" class="authTextArea marginTop20px" style="display:none;">
+                <textarea id="authComment" maxlength="1000" data-met-mand="mandatory" data-met-errordiv="errSpnTxtAgentComment" name="appDataMap['notificationComments']">Comentarios del Asesor..</textarea>
+				<span id="errSpnTxtAgentComment" class="clear fl errorLabel" style="display: none;"></span>
+				<input type="hidden" value="PND" name="appDataMap['QT_STTS_CD']" />
+                <button type="button" id="authConfirmSubmit" class="greenBtn fl marginTop15px" data-met-initjs="quoteSelection">Enviar</button>
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+	</div>
+				</form>
+				<div id="tempHtml" style="display: none;"></div>
+				<div id="invalidPlanJSRenderTemplate">
+          <script data-met-template="invalidPlanJSRenderTemplate" type="text/x-jsrender">
+					&lt;li&gt;{{:index}}. {{:planName}}&lt;/li&gt;
+          </script>
+	</div>
+				<div id="reviewQuoteHtml" style="display: none;"></div>
+			</div>
+			<input type="hidden" id="hidQtShowROField" value="false" /> <input type="hidden" id="hidEntCrtEditQt" value="true" /> <input type="hidden" id="hidEntAuthQt" value="false" />
+				<input type="hidden" id="hidLockStatus" value="false" /> <input type="hidden" id="hidEnt" value="{AUTH_DECL_QT=false, UPD_ADMIN_PARMS=false, EAPP_NOTFY=true, EDT_ACTV_CUST=false, EAPP_MGMT=true, QT_EMAIL_PRNT=true, CRT_EDT_QT=true, EAPP_SRCH=true, EAPP_VIEW=true, QT_OPER_OBS=false, VIEW_CUST_DETL=true, QT_EDT_PLAN=true, QT_SHW_RO_FLD=false, QT_OPER_SLD=false, CRT_EDT_CUST=true, GNRL_RPT=true, EAPP_EMAIL=true, disabledFieldClass=, PRNT_EMAIL_QT=true, VIEW_QT=true, UNLOCK_QT=false}" />
+			<input type="hidden" id="hidEntCommQtSld" value="false" />
+			<input type="hidden" id="hidQuoteId" name="quoteId" value="0" />
+			<input id="hiddenLinkId" type="hidden" name="metaDataMap['linkId']" />
+			<input type="hidden" id="statusOBSField" value="false" />
+			
+		</div>
+	</div>
+
+</div>
+                     </div><!--   </div> --><!-- throbber supported fields-->
+                     
+                     
+                     <div id="throbberDiv"><div class="loader"></div><div class="loaderBG"></div></div>
+                      <div id="fg_backgroundpopup"></div>
+                  </div>
+               </section>
+               <div id="overlay_ImportFragment">
+        <div id="createNewClient_overlay">
+	
+	
+	<div class="modal fade" id="createNewClientOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                   <p></p><h1><span>CLIENTE</span></h1><p></p>
+                </div><!-- <div class="modal-body">
+                  	<p><span th:utext="#{${ tenantCode}+'.clientInfoSaved'}"></span></p>
+                </div> -->
+                
+                 <div class="modal-body">
+                  	<p>
+                  	<span>La información del cliente ha sido actualizada</span>
+                  	
+                  	</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" id="btnSearchClient" class="btn btn-primary btn-lg pull-left">Menú de Clientes</button>
+                  <button type="button" data-met-initjs="needsAnalysis" id="btnContinueToNeeds" class="btn btn-primary btn-lg pull-left">Análisis de Necesidades</button>
+				     
+ 				    
+ 				    
+	            </div>
+              </div>
+            </div>
+          </div>
+		 
+	</div>
+		<div id="createNewClientConfirm_Overlay"><!--  <div id="createNewClientConfirmOverlay" class="pop_container popSaveSuccess" th:with="tenantCode =${session.tenantDetailTO.tenantCode}">
+         <div class="popup Width400px">
+            <div class="popHeader">
+               <p>
+                  <a href="#" class="closeBtn" data-met-hidepopup="createNewClientConfirmOverlay" id="clientConfirmCloseBtn"><span th:utext="#{${ tenantCode}+'.closeWindow'}"/></a>
+               </p>
+            </div>
+            <div class="sampleTxt">
+               <p><span th:utext="#{${ tenantCode}+'.createClientConfirm'}"></span></p>
+               
+         <article class="row">
+                    <div class="col-sm-12">
+                      <div class="btn-wrap btn-wrap-primary btn-wrap-right">
+                        <div class="form-group">
+                         <button  class="btn btn-primary btn-mobile btn-form-submit" id="btnCreateClientOK" type="button" th:utext="#{${ tenantCode}+'.createClientOK'}"></button>
+         <button  class="btn btn-secondary btn-mobile" th:utext="#{${ tenantCode}+'.createClientCancel'}" id="btnCreateClientCancel" type="button" data-met-initjs="planSelection"></button>
+            
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+            </div>
+         </div>
+         
+         </div>
+         </div>
+         </html> -->
+      
+      <div class="modal fade" id="createNewClientConfirmOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close fa fa-times" data-dismiss="modal" aria-hidden="true"></button>
+                  <h2 class="modal-title" id="myModalLabel-1"></h2>
+               </div>
+               <div class="modal-body">
+                  <p><span>¿Está seguro de crear?</span></p>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-primary btn-lg pull-left" id="btnCreateClientOK" data-met-initjs="createNewClient">Si</button>
+                  <button type="button" id="btnCreateClientCancel" class="btn btn-primary btn-lg pull-left">No</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+		<div id="cancelOverlay_overlay"><!-- <div id="cancelOverlay" class="pop_container popSaveSuccess" th:with="tenantCode =${session.tenantDetailTO.tenantCode}">
+			<div class="popup Width400px">
+				<div class="popHeader">
+				<p>
+				   <a href="#" class="closeBtn" data-met-hidepopup="cancelOverlay" id="cancelOverlayCloseBtn"><span th:utext="#{${ tenantCode}+'.closeWindow'}"/></a>
+				</p>
+				</div>
+				<div class="sampleTxt">
+					<p><span th:utext="#{${ tenantCode}+'.cancelText'}"></span></p>
+					<p class="marginTop20px" align="center">
+						<button id="btnCancelYes" type="button" th:utext="#{${ tenantCode}+'.yes'}"></button>						
+						<button id="btnCancelNo" type="button" data-met-hidepopup="cancelOverlay" th:utext="#{${ tenantCode}+'.no'}"></button>						
+					</p>
+				</div>
+			</div>
+		</div>	
+    </div>
+</html> -->
+		
+
+<div class="modal fade" id="cancelOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close fa fa-times" data-dismiss="modal" aria-hidden="true"></button>
+                  <h2 class="modal-title" id="myModalLabel-1"></h2>
+                </div>
+                <div class="modal-body">
+                  	<p><span>La información ingresada se perdera. ¿Desea continuar?</span></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" id="btnCancelYes" class="btn btn-primary btn-lg pull-left">Si</button>
+                  <button type="button" id="btnCancelNo" class="btn btn-primary btn-lg pull-left" data-dismiss="modal">No</button>
+                </div>
+              </div>
+            </div>
+          </div>
+		  <div class="modal fade" id="cancelOverlayNeedsAnalysis" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close fa fa-times" data-dismiss="modal" aria-hidden="true"></button>
+                  <h2 class="modal-title" id="myModalLabel-1"></h2>
+                </div>
+                <div class="modal-body">
+                  	<p><span>La información ingresada se perdera. ¿Desea continuar?</span></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" id="btnNeedsCancelYes" class="btn btn-primary btn-lg pull-left">Si</button>
+                  <button type="button" id="btnCancelNo" class="btn btn-primary btn-lg pull-left" data-dismiss="modal">No</button>
+                </div>
+              </div>
+            </div>
+          </div>
+	</div>
+		<div id="profileUpdate_overlay"><!-- <div id="profileUpdateOverlay" class="pop_container popSaveSuccess" th:with="tenantCode =${session.tenantDetailTO.tenantCode}">
+         <div class="popup Width400px">
+         <div class="popHeader">
+         <p>
+                  <a href="#" class="closeBtn" id="btnUpdateProfileOverlayClose" data-met-initjs="userProfile" data-met-hidepopup="profileUpdateOverlay" data-met-overlay="profileUpdateOverlay"><span th:utext="#{${ tenantCode}+'.closeWindow'}"/></a>
+               </p>
+         </div>
+         <div class="sampleTxt">
+         <p><span th:utext="#{${ tenantCode}+'.profileUpdatedSuccess'}"></span></p>
+         <p class="marginTop20px" align="center">
+         <button id="btnUpdateProfileSuccessOverlayOk" type="button" th:utext="#{${ tenantCode}+'.ok'}" data-met-hidepopup="profileUpdateOverlay" data-met-initjs="userProfile" data-met-overlay="profileUpdateOverlay"></button>
+         </p>
+         </div>
+         </div>
+         </div>
+         
+         
+           </div>
+         </html> -->
+      
+      <div class="modal fade" id="profileUpdateOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close fa fa-times" data-dismiss="modal" aria-hidden="true" id="btnUpdateProfileOverlayClose" data-met-initjs="userProfile" data-met-hidepopup="profileUpdateOverlay" data-met-overlay="profileUpdateOverlay"></button>
+                  <h2 class="modal-title" id="myModalLabel-1"></h2>
+               </div>
+               <div class="modal-body">
+                  <p><span>Perfil salvado exitosamente</span></p>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-primary btn-lg pull-left" id="btnUpdateProfileSuccessOverlayOk" data-dismiss="modal" data-met-initjs="userProfile" data-met-overlay="profileUpdateOverlay">De acuerdo</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+		<div id="changePasswordSuccess_Overlay"><!-- <div id="changePasswordSuccessOverlay" class="pop_container popSaveSuccess" th:with="tenantCode =${session.tenantDetailTO.tenantCode}">
+         <div class="popup Width400px">
+         <div class="popHeader">
+         <p>
+                  <a href="#" class="closeBtn" id="btnChngPwdOverlayClose" data-met-initjs="userProfile" data-met-overlay="changePasswordSuccessOverlay"><span th:utext="#{${ tenantCode}+'.closeWindow'}"/></a>
+               </p>
+         </div>
+         <div class="sampleTxt">
+         <p><span th:utext="#{${ tenantCode}+'.changePasswordSuccess'}"></span></p>
+         <p class="marginTop20px" align="center">
+         <button id="btnChngPwdSuccessOverlayOk" type="button" th:utext="#{${ tenantCode}+'.ok'}" data-met-initjs="userProfile"  data-met-overlay="changePasswordSuccessOverlay"></button>
+         </p>
+         </div>
+         </div>
+         </div>
+         
+         
+           </div>
+         </html> -->
+      
+
+
+      <div class="modal fade" id="changePasswordSuccessOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close fa fa-times" data-dismiss="modal" aria-hidden="true" id="btnChngPwdOverlayClose" data-met-initjs="userProfile" data-met-overlay="changePasswordSuccessOverlay"></button>
+                  <h2 class="modal-title" id="myModalLabel-1"></h2>
+               </div>
+               <div class="modal-body">
+                  <p><span>Su contraseña se ha cambiado exitosamente</span></p>
+               </div>
+               <div class="modal-footer">
+                 <button class="btn btn-primary btn-lg pull-left" data-dismiss="modal" id="btnChngPwdSuccessOverlayOkAgent" type="button" data-met-initjs="userProfile" data-met-overlay="changePasswordSuccessOverlay">De acuerdo</button>
+             
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+		<div id="logout_overlay"><!-- <div id="logoutOverlay"  th:with="tenantCode =${session.tenantDetailTO.tenantCode}">
+			<div class="popup Width400px">
+				<div class="popHeader">
+				<p>
+				   <a href="#" class="closeBtn" id="logoutOverlayCloseBtn" ><span th:utext="#{${ tenantCode}+'.closeWindow'}"/></a>
+				</p>
+				</div>
+				<div class="sampleTxt">
+					<p><span th:utext="#{${ tenantCode}+'.logoutText'}"></span></p>
+					<p class="marginTop20px" align="center">
+						<button id="btnlogoutYes" type="button" th:utext="#{${ tenantCode}+'.yes'}"></button>						
+						<button id="btnlogoutNo" type="button" data-met-hidepopup="logoutOverlay" th:utext="#{${ tenantCode}+'.no'}"></button>						
+					</p>
+				</div>
+			</div>
+		</div>	 -->
+		
+		<div class="modal fade" id="logoutOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+		<form id="frmLogoutOverlay" data-met-logoutformtosubmit="" data-met-formmethod="POST">
+			<input type="hidden" id="hidLastVisitedPage" name="lastVisitedPage" value="" />
+			<input type="hidden" id="CN" name="CN" value="COL" />
+		</form>
+          <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close fa fa-times" data-dismiss="modal" aria-hidden="true"></button>
+                  <h2 class="modal-title" id="myModalLabel-1"></h2>
+                </div>
+                <div class="modal-body">
+                  	<p><span>¿Esta seguro que quiere salir? </span></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" id="btnlogoutYes" class="btn btn-primary btn-lg pull-left">Si</button>
+                  <button type="button" class="btn btn-primary btn-lg pull-left" data-dismiss="modal">No</button>
+                </div>
+              </div>
+            </div>
+          </div>
+	</div>
+       <div id="resetPassword_successOverlay"><!--  <div id='resetPasswordSuccessOverlay' class="pop_container forgotPassword_Popup"> -->
+     
+         <div class="modal fade" id="resetPasswordSuccessOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true"> 
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h3>Cambiar Contraseña</h3>
+                 
+               </div>
+               <div class="modal-body">
+                  <form class="fl">
+                     <p><span>La contraseña ha sido cambiada exitosamente.</span>
+                        <span>Por favor ingrese de nuevo</span>
+                     </p>
+					 </form>
+               
+                    </div>
+                     <div class="clear"></div>
+                     <div class="modal-footer" align="center">
+                        <button id="btnloginAfterReset" class="btn btn-primary btn-lg pull-left" type="button">De acuerdo</button>
+                     </div>
+            </div>
+         </div>
+          </div><!--  </div> --> 
+     
+   </div>
+        <div id="sessionPopUp"><!--  <div id="fg_sessPopUp_Container" class="pop_container" th:with="tenantCode =${session.tenantDetailTO.tenantCode}">
+         <div id="fg_container_header"></div>
+         <div class="pop_box" >
+            <div class="pop_title" th:utext="#{${ tenantCode}+'.sessionTimeOutMessage'}"> </div>
+            <div class="fl pop_txt" id="sessRemainTime"> </div>
+            <div class="fr">
+      <button id="btnClose" th:utext="#{${ tenantCode}+'.close'}"></button>
+            </div>
+            <input type="hidden" id="stopTimecount" name="stopTimecount" />  
+            <input type="hidden" id="maxInactiveInterval" name="maxInactiveInterval" th:value="${session.MAXSESSINTERVAL}" />
+            <input type="hidden" id="timeBeforeSessExpire" name="timeBeforeSessExpire" th:value="${session.timeBeforeSessExpire}" />
+			<input type="hidden" id="mouseLeftFlag" name="mouseLeftFlag" th:value="1" />
+            <input type="hidden" id="isIdle" name="isIdle" />  
+         </div>
+      </div>
+      <div id="fg_backgroundpopup"></div>
+   </div>
+</html> -->
+     
+
+<div class="modal fade" id="fg_sessPopUp_Container" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+          <div class="modal-dialog" id="fg_container_header">
+              <div class="modal-content">
+                <div class="modal-header">
+                 
+                  <h2 class="modal-title" id="myModalLabel-1"></h2>
+                </div>
+                <div class="modal-body">
+				<div class="fl pop_txt" id="sessRemainTime"> </div>
+					<p><span>Esta sesión está a punto de agotar el tiempo. Guarde su trabajo para evitar la pérdida de datos.</span></p>
+                     <input type="hidden" id="stopTimecount" name="stopTimecount" />  
+            <input type="hidden" id="maxInactiveInterval" name="maxInactiveInterval" value="1800" />
+            <input type="hidden" id="timeBeforeSessExpire" name="timeBeforeSessExpire" value="5" />
+			<input type="hidden" id="mouseLeftFlag" name="mouseLeftFlag" value="1" />
+            <input type="hidden" id="isIdle" name="isIdle" />  
+                </div>
+                <div class="modal-footer">
+                  
+                  <button type="button" id="btnClose" class="btn btn-primary btn-lg pull-left" data-dismiss="modal">Cerrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+	</div> 
+   </div>
+			   <input type="hidden" id="flowStatus" value="1" /><!-- <div class="modal-backdrop fade in"></div> -->
+			   
+            
+         </body></html>

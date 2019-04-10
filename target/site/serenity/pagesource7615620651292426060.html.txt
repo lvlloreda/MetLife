@@ -1,0 +1,2017 @@
+<!DOCTYPE html><!--[if lt IE 7]>      
+<html class='no-js lt-ie9 lt-ie8 lt-ie7'>
+   <![endif]--><!--[if IE 7]>         
+   <html class='no-js lt-ie9 lt-ie8'>
+      <![endif]--><!--[if IE 8]>         
+      <html class='no-js lt-ie9'>
+         <![endif]--><!--[if gt IE 8]><!--><html xmlns="http://www.w3.org/1999/xhtml" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><!--<![endif]--><head>
+               <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+               <meta http-equiv="x-ua-compatible" content="IE=Edge,chrome=1" />
+               <meta http-equiv="X-UA-Compatible" value="IE=Edge,chrome=1" />
+               <meta http-equiv="CACHE-CONTROL" content="NO-CACHE" />
+               <meta http-equiv="PRAGMA" content="NO-CACHE" />
+               <meta name="description" content="" />
+               <meta name="viewport" content="width=device-width, initial-scale=1.0" /><!-- Place favicon.ico and apple-touch-icon.png in the root directory --><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --><!-- build:js scripts/vendor/ie.js --><!--[if lt IE 9]>
+               <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+               <script src="bower_components/respond/src/respond.js"></script>
+               <![endif]--><!-- endbuild -->
+               
+               
+               
+               
+               
+               <title>Core GSP</title>
+			   <link rel="stylesheet" type="text/css" href="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/css/bootstrap.min.css" />
+               <link rel="stylesheet" type="text/css" href="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/css/style.css" />
+			   <link rel="stylesheet" type="text/css" href="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/css/datepicker3.css" />
+			   <link rel="stylesheet" type="text/css" href="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/css/ion.rangeSlider.css" />
+        	   <link rel="stylesheet" type="text/css" href="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/css/ion.rangeSlider.skinHTML5.css" />
+               </head><body class="ml"><div id="webrespath">
+  <script>
+  /*&lt;![CDATA[*/
+  var webResource = 'https:\/\/qa.salespilot.metlife.com.co\/DataCenter_LATAM';
+  var coreFolder = 'GSP_CORE';
+  var tenantFolder = 'Tenant_COLOMBIA';
+  var locale = 'es_CO';
+  var needAnalysisFlow = '';
+  if(locale == null) {
+    locale = 'es-co';
+  }
+  var appDateFormat = "DD/MM/YYYY";
+  var webResourceAbsolute = 'https:\/\/qa.salespilot.metlife.com.co';
+	var digSeparator=".";
+	var decimalPoint=",";
+  var appendDigit = "0";
+  var appCurMaxLength = 15;
+  var decimalPointRegExp = new RegExp("[" + decimalPoint + "]", "g");
+  var digSeparatorRegExp = new RegExp("[" + digSeparator + "]", "g");
+  /*]]&gt;*/
+  </script><!--[if lt IE 9]>
+		  <script  th:src="@{${application.webresource }+'/'+${ coreFolder }+'/WebContent/scripts/components/bower_components/html5shiv/dist/html5shiv.js'}"></script>
+		  <script th:src="@{${application.webresource }+'/'+${ coreFolder }+'/WebContent/scripts/components/bower_components/respond/src/respond.js'}"></script>
+        <![endif]-->
+  
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/Calendar/dhtmlxcalendar.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jsrender.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/initGomez.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/gomez.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jQuery/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jQuery/Bootstrap/bootstrap.min.js"></script><!-- <script th:src="@{${application.webresource }+'/'+${ coreFolder }+'/WebContent/scripts/components/jQuery/Bootstrap/bootstrap.js'}" type="text/javascript"></script> --> 
+  
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jQuery/Bootstrap/bootstrap-multiselect.js"></script>
+		<script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jQuery/Bootstrap/prettify.js"></script>
+   <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jQuery/Bootstrap/isotope.pkgd.min.js"></script>
+ 
+  <script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/throbber.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/adminLeftNav.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/sessionUtil.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/dashBoard.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/parent.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/gspAjaxDataConfigObj.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/utils.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/gspBaseController.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/gspConstants.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/gspCalendarWidget.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/html.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/urlMappings.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/request/iframe.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/gspValidateElements.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/gspCommonUtils.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/gspShowHideElements.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/paginationConfigObj.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/gspPagination.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/date.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/string.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/number.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/lang/functional.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/parser.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/gspCore/gspValidations.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/regExp.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/validations/nls/messages.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/cldr/nls/number.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/regexp.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/date/locale.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/lang/functional/lambda.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/lang/functional/array.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/lang/functional/object.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/_base/url.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/promise/all.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/date/stamp.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/cldr/nls/en/number.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/cldr/nls/es/number.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/cldr/supplemental.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/cldr/nls/gregorian.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/validations/nls/en-us/messages.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/validations/nls/es-co/messages.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojox/main.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/cldr/nls/en/gregorian.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/cldr/nls/es/gregorian.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/createNewClient.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/window.js"></script><script type="text/javascript" charset="utf-8" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/quoteSelection.js"></script><script type="text/javascript" data-dojo-config="parseOnLoad: true, async: true,locale:'es-co',isDebug:true, extraLocale: ['en-us']" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/dojo/dojo.js"></script><!--  <script th:if="${session.langDefault =='en_US'}" th:src="@{${application.webresource }+'/'+${ coreFolder }+'/WebContent/scripts/dojo/dojo.js'}" type="text/javascript" data-dojo-config="parseOnLoad: true, async: true,locale:'en-us',isDebug:true"></script> --><!--this is added temporarly to work with sfdc integration of needs analysis screen, need to be removed later onwards -->
+ 
+  
+  
+  <script src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/bower_components/html5shiv/dist/html5shiv.min.js"></script>
+  <script src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/bower_components/modernizr/modernizr.js"></script>
+  <script src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/bower_components/respond/src/respond.min.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/bower_components/respond/src/matchmedia.polyfill.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/bower_components/respond/src/matchmedia.addListener.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jQuery/Bootstrap/bootstrap-typeahead.min.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/scripts/main.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jQuery/Bootstrap/bootstrap-datepicker.js"></script>
+  <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jQuery/Bootstrap/locales-datepicker/bootstrap-datepicker.es-co.js"></script>
+</div>
+               <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/components/jQuery/Bootstrap/bootstrap-slider.min.js"></script>
+               <script type="text/javascript" src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/GSP_CORE/WebContent/scripts/CanvasSDK/canvas-all.js"></script>
+               <script type="text/javascript">
+                  require([ webResource + '/' + coreFolder + '/WebContent/scripts/components/throbber.js',"dojo/domReady!"],function(throbber){  
+                  	throbber.showThrobber("throbberDiv", false);
+                  });
+                  require([webResource+'/'+tenantFolder+'/WebContent/scripts/adminLeftNav.js',webResource+'/'+tenantFolder+'/WebContent/scripts/sessionUtil.js',webResource+'/'+tenantFolder+'/WebContent/scripts/dashBoard.js',webResource + '/' + coreFolder + '/WebContent/scripts/components/throbber.js',"dojo/domReady!"],function(adminLeftNav,sessionUtil,dashBoard,throbber){  
+                  	adminLeftNav.init();
+                  	sessionUtil.init();
+                  	dashBoard.init();
+                  	throbber.removeThrobber();
+                  });
+                  require([ webResource+'/'+tenantFolder+'/WebContent/scripts/parent.js'],function(parent){  
+                  	parent.init();
+                  });
+                  
+               </script>
+               <style>
+                  .content-wrap .contentClient {
+                  margin: 0 20px 0 10px;
+                  }
+               </style>
+            
+            
+               <section class="content-wrap">
+                  <a class="nav-expand" href="" data-original-title="" title=""><i class="fa fa-bars"></i></a>
+                  <div id="wrapper">
+                  <div></div>
+                     <div><!--Left Nav--><!-- navFragment starts-->
+                        	
+                        
+                        <a class="nav-expand" href="" data-original-title="" title=""><i class="fa fa-bars"></i></a>
+                        <nav class="main-nav">
+                           <div>
+						   <div>
+                              <div id="leftNavigationFragment">   
+   <input type="hidden" id="maxInactiveInterval" name="maxInactiveInterval" value="1800" />
+   <input type="hidden" id="timeBeforeSessExpire" name="timeBeforeSessExpire" value="5" />
+   <input type="hidden" id="CN" name="CN" value="COL" /><!--Left Nav-->
+   
+   <div>
+      <div></div>
+         <ul class="nav nav-pills nav-stacked">
+            <li class="profile" id="profileIcon">
+               <img src="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/images/employee.jpg" />
+               <div class="userMenu" id="userMenu">
+                  <span class="arrow">Arrow</span>
+                  <ul>
+                     <li><a href="#" id="viewProfileLink" data-met-initjs="userProfile" data-original-title="" title="">Ver Perfil</a></li>
+                     <li><a href="#" data-toggle="modal" id="logoutLink" data-original-title="" title="">Salir</a></li>
+                  </ul>
+               </div>
+            </li><!-- DashBoard Tab -->
+			
+            <li class="home"><a href="#" id="dashboardTab" data-original-title="" title=""> 
+			<i class="gsp-icon home"></i><span>Menú Principal</span></a></li><!-- Auditor Dashboard -->
+			
+						
+			<!-- Reassign Tab -->
+			
+			<!-- Client Tab -->
+			
+			
+            <li class="customer active">
+			<a href="#" id="clientsTab" data-met-initjs="search" data-original-title="" title=""><i class="gsp-icon customer"></i><span>Clientes</span></a></li><!-- NeedAnalysis Tab -->
+			
+			
+			<li id="needAnalysisTab" class="need"><a id="needAnalysisTab" href="#" data-original-title="" title=""><i class="gsp-icon need"></i><span><span>Análisis de Necesidades</span></span></a></li><!-- Illustration Tab -->
+			
+			
+			<li class="illustration"><a id="illustrationTab" href="#" data-original-title="" title=""><i class="gsp-icon illustration"></i><span><span>Cotizaciones</span></span></a></li><!-- ApplicationSearch Tab -->	
+			
+			
+			<li class="application">
+			<a href="#" id="applicationTab" data-original-title="" title=""><i class="gsp-icon application"></i><span>Solicitud</span></a></li><!-- Reports Tab -->
+			
+			
+			<li class="product">
+			<a href="#" id="reportsTab" data-original-title="" title="">
+			<i class="gsp-icon product"></i><span>Reportes</span></a></li><!-- Orphan Tab  th:if="${(session.userDetailMap['ROLE_CD'] =='15901' and session.userHierarchyMap['userLevel'] !='4') or session.userDetailMap['ROLE_CD'] =='15907' or session.userDetailMap['ROLE_CD'] =='15908'}"--> 
+			
+			
+			<!-- GlobalSearch Tab --><!-- <li th:class="${globalSearchTab != null and globalSearchTab == 'true'} ? 'search active' : 'search'" th:if="${session.userDetailMap['ROLE_CD'] =='15901' or session.userDetailMap['ROLE_CD'] =='15905' or session.userDetailMap['ROLE_CD'] =='15907' or session.userDetailMap['ROLE_CD'] =='15908'}"><a href="#" id="globalSearchTab"><i class='gsp-icon search'></i><span
+			th:utext="#{${ tenantCode}+'.globalSearch'}"></span></a></li>	 -->
+			
+			
+			
+         </ul>
+      </div>
+   </div></div>
+                           </div>  
+						    
+						    
+						   
+						   
+						   
+						    
+						    
+						      
+						     
+						    
+						   
+						   
+						   
+						   
+						     
+						    
+						    
+						    
+						   
+                           
+                        </nav><!--Left Nav--><!-- navFragment ends-->
+                        
+                        	
+                     </div><!--Slice--><!--  <div class="content"> -->
+                     
+                     
+                     <div id="mainContentDiv">
+                        <div id="appContent">
+
+
+   
+   <div id="createNewClient_contentFragment">
+   <link rel="stylesheet" type="text/css" href="https://qa.salespilot.metlife.com.co/DataCenter_LATAM/Tenant_COLOMBIA/WebContent/css/style.css" />
+   <div class="content">
+   <div>  
+   <div>
+     <input id="hiddenTabId" type="hidden" name="hiddenTabId" value="false" /> 
+      <div id="createNewClientBar">
+      <header class="primary client-header-block">
+         <div class="row">
+            <div class="col-lg-9 col-sm-7">
+               <div>
+                  
+                  <h1 class="client-page-header">Nuevo Cliente</h1>
+               </div>
+            </div>
+         </div>
+      </header>
+        
+   </div> 
+      </div>
+   </div>
+   <p><!-- <span th:utext="#{${ tenantCode}+'.clientInstruction'}"/><span class="pull-right" th:utext="#{${ tenantCode}+'.requiredFields'}"/> --><!-- <span class="mandatory pull-right">*</span> -->
+      
+   </p>
+   <form id="frmCreateNewClient" name="frmCreateNewClient" data-met-formtosubmit=""> 
+   
+   <div></div>
+   <div>
+   <div>
+  
+	 <input type="hidden" name="flowExecUrl" id="flowExecUrl" value="/sales/parentflow?execution=e2s2&amp;TOKEN_CLT_TRNS=E3B3CY4Z708J30A9" />	 
+ <input id="hiddenneedsStatus" type="hidden" value="" /> 
+<input id="hidLinkId1" type="hidden" name="metaDataMap['linkId']" value="createcustomer" /> 
+	  
+	  <input id="duplicateId" type="hidden" value="" /><!-- <input type="text" th:value="*{metaDataMap['linkId']}" />  -->
+     
+      
+      <section class="fact-finder">
+         <div></div>
+         <div><!-- <input id="hiddenQuoteParams" type="hidden" name="hiddenQuoteParams" value=""></input> -->
+         
+         <div id="hiddenVariablesToSubmit_fragment">
+		<input id="queryBuilderParam" type="hidden" name="queryBuilderParam" value="" />
+		<input id="pageToLoad" type="hidden" name="pageToLoad" value="" />
+		<input id="searchCriteriaInputs" type="hidden" name="searchCriteriaInputs" value="FullName|custId|QuoteStatus|QuoteNumber|quoteStartDate|quoteExperiedDate|illustrationSearch|product|IllustrationStatus|IllustrationName|NeedStatus|FirstName|LastName|CUST_ID|AGNT_ID|AGNT_ID_FROM|TASK_STTS_NM|USR_ID|taskRef|MultipleSearchCriteria|ApplicationStatus|FirstNameField|LastNameField|DateOfBirth|DocIdNumber|AppId|ApplicationStartDate|ApplicationEndDate" />
+<input id="hiddenQuoteParams" type="hidden" name="hiddenQuoteParams" value="" />
+		<input id="nativeQueryFlag" type="hidden" name="nativeQueryFlag" value="false" />
+		<input id="nativeQuerySQLKey" type="hidden" name="nativeQuerySQLKey" value="" />
+		<input id="inputList" type="hidden" name="inputList" value="" />
+		<input id="inputListCount" type="hidden" name="inputListCount" value="" />
+		<input id="nativeQuerySQLKeyCount" type="hidden" name="nativeQuerySQLKeyCount" value="" />
+		<input id="fragmentToLoad" type="hidden" name="fragmentToLoad" value="" />
+		<input id="multipleNativeQueryFlag" type="hidden" name="multipleNativeQueryFlag" value="false" />
+		<input id="nativeQueryMultipleSql" type="hidden" name="nativeQueryMultipleSql" value="" />
+		<input id="mulQueryIpList" type="hidden" name="mulQueryIpList" value="" />
+		<input id="resultSetKeysList" type="hidden" name="resultSetKeysList" value="" />
+		<input id="queryBuilderFlagActv" type="hidden" name="queryBuilderFlagActv" value="true" />
+		<input id="getTypeAheadDataFlag" type="hidden" name="getTypeAheadDataFlag" value="" />
+		<input id="criteriaSearchFlag" type="hidden" name="criteriaSearchFlag" value="" />
+		<input id="criteriaSearchCountQuery" type="hidden" name="criteriaSearchCountQuery" value="" /><!-- 	<input id="hiddenCustId" type="hidden" name="hiddenCustId" value=""></input> -->
+	
+		<input id="recordType" type="hidden" name="recordType" value="" />
+		<input id="appendUniqueIdentifier" type="hidden" name="appendUniqueIdentifier" value="" />  
+		<input id="perPage" type="hidden" name="perPage" value="" />
+		<input id="leftJoinKey" type="hidden" name="leftJoinKey" value="" />
+		<input id="queryBuilderParamCount" type="hidden" name="queryBuilderParamCount" value="" />
+		<input id="globalSearchDefaultPage" type="hidden" name="globalSearchDefaultPage" value="" />
+		<input id="taskFlag" type="hidden" name="taskFlag" value="" />
+<input id="viewAllFlag" type="hidden" name="viewAllFlag" value="" />
+		<input id="hidWhereClauseTextBox" type="hidden" name="whereClauseTextBox" value="" />
+		<input id="dashBoardStatusType" type="hidden" name="dashBoardStatusType" value="" />
+            <input id="dynamicParamsForStatus" type="hidden" name="dynamicParamsForStatus" value="" />
+            <input id="advancedSearchFlag" type="hidden" name="advancedSearchFlag" value="" />
+            <input id="advancedSearch" type="hidden" name="advancedSearch" value="" />
+           <input id="advancedSearchSQLPart1" type="hidden" name="advancedSearchSQLPart1" value="" />
+           <input id="advancedSearchSQLPart2" type="hidden" name="advancedSearchSQLPart2" value="" />
+           <input id="nativeQueryKeyCountForScroll" type="hidden" name="nativeQueryKeyCountForScroll" value="" /> 
+            <input id="searchFlag" type="hidden" name="searchFlag" value="" />
+            <input id="searchPageParam" type="hidden" name="searchPageParam" value="" />
+            <input id="role_code" type="hidden" name="role_code" value="15901" />
+            <input id="polHolderType" type="hidden" name="polHolderType" />
+	</div>
+         <div id="businessErrorMessagesFragment">
+ <div id="businessErrorMessagesDiv" style="display:none"><!--  <div class="errorMsg" >
+		<div class="errorHeader"><span th:utext="#{${ tenantCode}+'.businessError'}"/></div>
+		<div class="errorBox">
+			<p id="businessErrorMsgText"></p>
+		</div>
+	</div> -->
+  
+	 <div class="errorBox"><!-- <p id="errorHeaderPara" class="errorHeader" th:utext="#{${ tenantCode}+'.businessError'}"></p> -->
+		
+		 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">
+            <i class="fa fa-times"></i>
+          </button>
+		<p class="errorBody marginTop10px alert alert-danger alert-dismissable" id="businessErrorMsgText"></p>
+		<p class="errorBody"></p>
+	  </div>
+</div>
+</div>
+         <div id="contentArea">
+         <div id="personalDetails">
+	<p id="errSpnTxtDependentPopUp" class="error"></p>
+	<h2 class="form-group">
+		<span>Información personal</span>
+	</h2>
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="row">
+				<div class="form-group col-sm-6 col-md-4">
+					<label for="firstName"><span>Primer Nombre</span><span class="mandatory">*</span></label> <input type="text" class="form-control" placeholder="Primer Nombre" id="txtCustMgmtFirstName" data-met-keypress="specialChars_specific_allowed;alphabets_allowed" data-met-mand="mandatory" maxlength="20" data-met-errordiv="errSpnTxtCustMgmtFirstName" name="appDataMap['CustomerData.Party.Person.FirstName']" value="" />
+					<p id="errSpnTxtCustMgmtFirstName" class="error"></p>
+				</div>
+				<div class="form-group col-sm-6 col-md-4">
+					<label for="secondName"><span>Segundo Nombre</span></label> <input type="text" class="form-control" placeholder="Segundo Nombre" id="txtCustMgmtSecondName" data-met-keypress="specialChars_specific_allowed;alphabets_allowed" maxlength="20" data-met-errordiv="errSpnTxtCustMgmtSecondName" name="appDataMap['CustomerData.Party.Person.SecondName']" value="" />
+					<p id="errSpnTxtCustMgmtSecondName" class="error"></p>
+				</div>
+				<div class="form-group col-sm-6 col-md-4">
+					<label for="secondMiddleName"><span>Tercer Nombre</span></label> <input type="text" class="form-control" placeholder="Tercer Nombre" id="txtCustMgmtSecondMiddleName" data-met-keypress="specialChars_specific_allowed;alphabets_allowed" maxlength="20" data-met-errordiv="errSpnTxtCustMgmtSecondMiddleName" name="appDataMap['CustomerData.Party.Person.SecondMiddleName']" value="" />
+					<p id="errSpnTxtCustMgmtSecondMiddleName" class="error"></p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-sm-6 col-md-4">
+					<label for="lastName"><span>Primer Apellido</span><span class="mandatory">*</span></label>
+					<input type="text" placeholder="Primer Apellido" class="form-control" id="txtCustMgmtLastName" maxlength="20" data-met-mand="mandatory" data-met-keypress="specialChars_specific_allowed;alphabets_allowed" data-met-errordiv="errSpnTxtCustMgmtLastName" name="appDataMap['CustomerData.Party.Person.LastName']" value="" />
+					<p class="error" id="errSpnTxtCustMgmtLastName"></p>
+				</div>
+				<div class="form-group col-sm-6 col-md-4">
+					<label for="secondSurname"><span>Segundo Apellido</span></label> <input type="text" class="form-control" placeholder="Segundo Apellido" id="txtCustMgmtSecondSurname" data-met-keypress="specialChars_specific_allowed;alphabets_allowed" maxlength="20" data-met-errordiv="errSpnTxtCustMgmtSecondSurname" name="appDataMap['CustomerData.Party.Person.SecondSurname']" value="" />
+					<p id="errSpnTxtCustMgmtSecondSurname" class="error"></p>
+				</div><!-- <div class="form-group col-sm-6 col-md-4">
+                                       <label for="nickname"><span th:utext="#{${ tenantCode}+'.NickName'}"/></label>
+                                       <input type="text" data-met-blur="checkName" th:field="*{appDataMap['CustomerData.Party.Person.NickName']}" placeholder="Nick Name" class="form-control" id="txtCustMgmtNickName" maxlength="50" data-met-keypress="alphabets_allowed;specialChars_underscore_allowed;num_Allowed"  data-met-errorDiv="errSpnTxtCustMgmtNickName"/>
+									   <p id="errSpnTxtCustMgmtNickName" class="error"></p>
+                                    </div> -->
+				
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="row">
+				<div class="form-group col-sm-6 col-md-4">
+					<label for="birthDate"><span>Fecha de Nacimiento</span><span class="mandatory">*</span></label><!-- <div class="input-group"> -->
+					
+					
+					<div id="testid">
+					<div class="input-group date datepickerEvent" id="clientDobDatePickerDiv" placeholder="DD/MM/YYYY" data-date-end-date="today" data-date-start-date="01/01/1900" data-date-language="es-co" data-date-format="dd/mm/yyyy">
+						<input id="txtCustMgmtDateOfBirth" readonly="true" type="text" maxlength="10" data-met-mand="mandatory" data-met-errordiv="errSpnTxtCustMgmtDateOfBirth" data-met-criticalfield="" class="form-control ie10Specific disabledFields" data-met-showage="txtAge" placeholder="DD/MM/YYYY" name="appDataMap['CustomerData.Party.Person.DateOfBirth']" value="" capturedvalue="25/02/1981" />
+							<span id="custMgmtDateOfBirthspan" class="input-group-addon srchBorderIE8"><i class="fa fa-calendar"></i></span>
+					</div>
+					</div>
+					
+					
+					
+					
+					
+					<p id="errSpnTxtCustMgmtDateOfBirth" class="error" data-met-parentdiv="clientDobDatePickerDiv" style="display: none;"></p><!-- </div> --><!--       <p class="error" id="errSpnTxtCustMgmtDateOfBirth"></p> -->
+					
+					
+				</div>
+
+				<div class="form-group col-sm-6 col-md-4">
+					<label class="overflow" for="countryBirth"><span>Nacionalidad</span></label> <select class="form-control" id="countryBirth" name="appDataMap['CustomerData.Party.Person.NationalCountry']">
+						<option value="-1">Seleccione</option>
+						<option value="1">AFGANISTÁN</option><option value="300">AKROTIRI</option><option value="2">ALBANIA</option><option value="3">ALEMANIA</option><option value="4">ANDORRA</option><option value="5">ANGOLA</option><option value="6">ANGUILA</option><option value="7">ANTIGUA Y BARBUDA</option><option value="302">ANTILLAS NEERLANDESAS</option><option value="301">ANTÁRTIDA</option><option value="303">ARABIA SAUDÍ</option><option value="304">ARCTIC OCEAN</option><option value="13">ARGELIA</option><option value="14">ARGENTINA</option><option value="15">ARMENIA</option><option value="16">ARUBA</option><option value="305">ASHMORE AND CARTIER ISLANDS</option><option value="306">ATLANTIC OCEAN</option><option value="17">AUSTRALIA</option><option value="19">AUSTRIA</option><option value="20">AZERBAIYÁN</option><option value="21">BAHAMAS</option><option value="307">BAHRÁIN</option><option value="23">BANGLADESH</option><option value="24">BARBADOS</option><option value="27">BELICE</option><option value="28">BENÍN</option><option value="29">BERMUDAS</option><option value="25">BIELORRUSIA</option><option value="308">BIRMANIA; MYANMAR</option><option value="31">BOLIVIA</option><option value="309">BOSNIA Y HERCEGOVINA</option><option value="310">BOTSUANA</option><option value="34">BRASIL</option><option value="35">BRUNÉI</option><option value="36">BULGARIA</option><option value="37">BURKINA FASO</option><option value="38">BURUNDI</option><option value="30">BUTÁN</option><option value="26">BÉLGICA</option><option value="39">CABO VERDE</option><option value="41">CAMBOYA</option><option value="42">CAMERÚN</option><option value="43">CANADÁ</option><option value="54">CHAD</option><option value="55">CHILE</option><option value="56">CHINA</option><option value="57">CHIPRE</option><option value="311">CLIPPERTON ISLAND</option><option value="44">COLOMBIA</option><option value="45">COMORAS</option><option value="46">CONGO</option><option value="312">CORAL SEA ISLANDS</option><option value="48">COREA DEL NORTE</option><option value="49">COREA DEL SUR</option><option value="51">COSTA DE MARFIL</option><option value="50">COSTA RICA</option><option value="52">CROACIA</option><option value="53">CUBA</option><option value="313">DHEKELIA</option><option value="58">DINAMARCA</option><option value="60">DOMINICA</option><option value="61">ECUADOR</option><option value="62">EGIPTO</option><option value="63">EL SALVADOR</option><option value="211">EL VATICANO</option><option value="314">EMIRATOS ÁRABES UNIDOS</option><option value="65">ERITREA</option><option value="66">ESLOVAQUIA</option><option value="67">ESLOVENIA</option><option value="68">ESPAÑA</option><option value="69">ESTADOS UNIDOS</option><option value="70">ESTONIA</option><option value="71">ETIOPÍA</option><option value="73">FILIPINAS</option><option value="74">FINLANDIA</option><option value="315">FIYI</option><option value="75">FRANCIA</option><option value="76">GABÓN</option><option value="77">GAMBIA</option><option value="316">GAZA STRIP</option><option value="78">GEORGIA</option><option value="79">GHANA</option><option value="317">GIBRALTAR</option><option value="80">GRANADA</option><option value="81">GRECIA</option><option value="318">GROENLANDIA</option><option value="83">GUAM</option><option value="84">GUATEMALA</option><option value="319">GUERNSEY</option><option value="86">GUINEA</option><option value="88">GUINEA ECUATORIAL</option><option value="320">GUINEA-BISSAU</option><option value="89">GUYANA</option><option value="90">HAITÍ</option><option value="91">HONDURAS</option><option value="321">HONG KONG</option><option value="92">HUNGRÍA</option><option value="93">INDIA</option><option value="322">INDIAN OCEAN</option><option value="94">INDONESIA</option><option value="95">IRAQ</option><option value="97">IRLANDA</option><option value="96">IRÁN</option><option value="323">ISLA BOUVET</option><option value="324">ISLA CHRISTMAS</option><option value="325">ISLA NORFOLK</option><option value="98">ISLANDIA</option><option value="326">ISLAS CAIMÁN</option><option value="327">ISLAS COCOS</option><option value="10">ISLAS COOK</option><option value="328">ISLAS FEROE</option><option value="329">ISLAS GEORGIA DEL SUR Y SANDWICH DEL SUR</option><option value="330">ISLAS HEARD Y MCDONALD</option><option value="331">ISLAS MALVINAS</option><option value="127">ISLAS MARIANAS DEL NORTE</option><option value="129">ISLAS MARSHALL</option><option value="156">ISLAS PITCAIRN</option><option value="171">ISLAS SALOMÓN</option><option value="202">ISLAS TURCAS Y CAICOS</option><option value="332">ISLAS VÍRGENES AMERICANAS</option><option value="333">ISLAS VÍRGENES BRITÁNICAS</option><option value="99">ISRAEL</option><option value="100">ITALIA</option><option value="101">JAMAICA</option><option value="334">JAN MAYEN</option><option value="102">JAPÓN</option><option value="335">JERSEY</option><option value="103">JORDANIA</option><option value="336">KAZAJISTÁN</option><option value="106">KENIA</option><option value="337">KIRGUIZISTÁN</option><option value="108">KIRIBATI</option><option value="109">KUWAIT</option><option value="110">LAOS</option><option value="111">LESOTO</option><option value="112">LETONIA</option><option value="114">LIBERIA</option><option value="115">LIBIA</option><option value="116">LIECHTENSTEIN</option><option value="117">LITUANIA</option><option value="118">LUXEMBURGO</option><option value="113">LÍBANO</option><option value="119">MACAO</option><option value="120">MACEDONIA</option><option value="121">MADAGASCAR</option><option value="122">MALASIA</option><option value="123">MALAUI</option><option value="124">MALDIVAS</option><option value="126">MALTA</option><option value="125">MALÍ</option><option value="338">MAN, ISLE OF</option><option value="128">MARRUECOS</option><option value="339">MAURICIO</option><option value="131">MAURITANIA</option><option value="340">MAYOTTE</option><option value="133">MICRONESIA</option><option value="134">MOLDAVIA</option><option value="136">MONGOLIA</option><option value="341">MONTENEGRO</option><option value="137">MONTSERRAT</option><option value="138">MOZAMBIQUE</option><option value="342">MUNDO</option><option value="132">MÉXICO</option><option value="135">MÓNACO</option><option value="140">NAMIBIA</option><option value="141">NAURU</option><option value="343">NAVASSA ISLAND</option><option value="142">NEPAL</option><option value="143">NICARAGUA</option><option value="145">NIGERIA</option><option value="11">NIUE</option><option value="146">NORUEGA</option><option value="104">NUEVA CALEDONIA</option><option value="9">NUEVA ZELANDA</option><option value="344">NÍGER</option><option value="147">OMÁN</option><option value="345">PACIFIC OCEAN</option><option value="149">PAKISTÁN</option><option value="150">PALAOS</option><option value="152">PANAMÁ</option><option value="346">PAPÚA-NUEVA GUINEA</option><option value="347">PARACEL ISLANDS</option><option value="154">PARAGUAY</option><option value="148">PAÍSES BAJOS</option><option value="155">PERÚ</option><option value="157">POLINESIA FRANCESA</option><option value="158">POLONIA</option><option value="159">PORTUGAL</option><option value="160">PUERTO RICO</option><option value="161">QATAR</option><option value="162">REINO UNIDO</option><option value="348">REPÚBLICA CENTROAFRICANA</option><option value="349">REPÚBLICA CHECA</option><option value="350">REPÚBLICA DEMOCRÁTICA DEL CONGO</option><option value="351">REPÚBLICA DOMINICANA</option><option value="169">RUANDA</option><option value="167">RUMANIA</option><option value="168">RUSIA</option><option value="172">SAMOA</option><option value="352">SAMOA AMERICANA</option><option value="173">SAN CRISTÓBAL Y NIEVES</option><option value="174">SAN MARINO</option><option value="353">SAN PEDRO Y MIQUELÓN</option><option value="175">SAN VICENTE Y LAS GRANADINAS</option><option value="176">SANTA HELENA</option><option value="177">SANTA LUCÍA</option><option value="354">SANTO TOMÉ Y PRÍNCIPE</option><option value="179">SENEGAL</option><option value="355">SERBIA</option><option value="180">SEYCHELLES</option><option value="181">SIERRA LEONA</option><option value="182">SINGAPUR</option><option value="183">SIRIA</option><option value="184">SOMALIA</option><option value="356">SOUTHERN OCEAN</option><option value="357">SPRATLY ISLANDS</option><option value="185">SRI LANKA</option><option value="191">SUAZILANDIA</option><option value="186">SUDÁFRICA</option><option value="187">SUDÁN</option><option value="188">SUECIA</option><option value="189">SUIZA</option><option value="190">SURINAM</option><option value="358">SVALBARD Y JAN MAYEN</option><option value="170">SÁHARA OCCIDENTAL</option><option value="192">TAILANDIA</option><option value="193">TAIWÁN</option><option value="194">TANZANIA</option><option value="195">TAYIKISTÁN</option><option value="359">TERRITORIO BRITÁNICO DEL OCÉANO INDICO</option><option value="360">TERRITORIOS AUSTRALES FRANCESES</option><option value="196">TIMOR ORIENTAL</option><option value="197">TOGO</option><option value="198">TOKELAU</option><option value="199">TONGA</option><option value="361">TRINIDAD Y TOBAGO</option><option value="203">TURKMENISTÁN</option><option value="204">TURQUÍA</option><option value="205">TUVALU</option><option value="201">TÚNEZ</option><option value="206">UCRANIA</option><option value="207">UGANDA</option><option value="362">UNIÓN EUROPEA</option><option value="208">URUGUAY</option><option value="209">UZBEKISTÁN</option><option value="210">VANUATU</option><option value="212">VENEZUELA</option><option value="213">VIETNAM</option><option value="363">WAKE ISLAND</option><option value="364">WALLIS Y FUTUNA</option><option value="365">WEST BANK</option><option value="216">YEMEN</option><option value="59">YIBUTI</option><option value="218">ZAMBIA</option><option value="219">ZIMBABUE</option>
+					</select>
+				</div>
+				<div class="form-group col-sm-6 col-md-4"><!--    <label for="age"><span th:utext="#{${ tenantCode}+'.Age'}"/></label> -->
+					
+					<input type="hidden" placeholder="Age" class="form-control" id="txtAge" readonly="true" name="appDataMap['CustomerData.Party.Person.Age']" value="" />
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="row">
+				<div id="genderDiv" class="form-group col-sm-6 col-md-4">
+					<label class="block"><span>Género</span><span class="mandatory">*</span></label>
+					<label class="radio-inline"> <input type="radio" id="male" value="1" data-met-checks="radio" data-met-errordiv="errSpnCreateNewClientCustMgmtGender" data-met-mand="mandatory" name="appDataMap['CustomerData.Party.Person.Gender']" />Masculino
+					</label> <label class="radio-inline"> <input type="radio" id="female" value="2" data-met-checks="radio" data-met-errordiv="errSpnCreateNewClientCustMgmtGender" data-met-mand="mandatory" name="appDataMap['CustomerData.Party.Person.Gender']" />Femenino</label>
+					<p id="errSpnCreateNewClientCustMgmtGender" class="error"></p>
+				</div>
+				<div id="custSmokingDiv" class="form-group col-sm-6 col-md-4 customer-smoking-check">
+					<label class="checkbox-inline"> <input type="checkbox" id="smokingStatus" /><span>Si, cliente es fumador</span> <input type="hidden" id="smokeCheck" value="N" name="appDataMap['CustomerData.Party.Person.SmokingStatus']" />
+					</label>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="row">
+				<div id="maritalStatusDev" class="form-group col-sm-6 col-md-4">
+					<label class="overflow" for="maritalStatus"><span>Estado Civil</span></label> <select class="form-control" id="selectMaritalStatus" name="appDataMap['CustomerData.Party.Person.MaritalStatus']" data-met-errordiv="errSpnSelectMaritalStatus"><!-- <option value="-1" th:utext="#{${ tenantCode}+'.Select'}" ></option> --><!-- <option value="1" th:utext="#{${ tenantCode}+'.single'}"></option>
+					<option value="2" th:utext="#{${ tenantCode}+'.married'}"></option>
+					<option value="3" th:utext="#{${ tenantCode}+'.other'}"></option> -->
+						
+					
+					<option value="-1">Seleccione</option>
+						<option value="CAS">Casado</option><option value="NIN">No informado</option><option value="SEP">Separado</option><option value="SOL">Soltero</option><option value="UNI">Unión Libre</option><option value="VIU">Viudo</option>
+					</select>
+					<p id="errSpnSelectMaritalStatus" class="error"></p>
+				</div><!--  <div id="maritalStatusDiv" class="form-group col-sm-6 col-md-4">
+                                       <label class="block"><span th:utext="#{${ tenantCode}+'.MaritalStatus'}"/>
+									    <span th:style="(*{appDataMap['CustomerData.Party.OtherMarital']!='-1' and appDataMap['CustomerData.Party.OtherMarital']!=null})? 'display:inline-block' : 'display:none'" id="mandatorystar"  class="mandatory">*</span>	
+									   </label>
+                                       <label class="radio-inline" for="single">
+                                       <input type="radio"  id="rdnSingle" th:field="*{appDataMap['CustomerData.Party.Person.MaritalStatus']}" class="other_radio"  value="1" data-met-errorDiv="errSpnCreateNewClientCustMgmtMaritalStatus"/><span th:utext="#{${ tenantCode}+'.Single'}" /></label>
+                                       <label class="radio-inline" for="married">
+                                       <input type="radio"  id="rdnMarried"  th:field="*{appDataMap['CustomerData.Party.Person.MaritalStatus']}" class="other_radio" value="2" data-met-errorDiv="errSpnCreateNewClientCustMgmtMaritalStatus"/><span th:utext="#{${ tenantCode}+'.Married'}"/></label>
+                                       <label class="radio-inline" for="other">
+                                       <input type="radio"  id="rdnOther"  th:field="*{appDataMap['CustomerData.Party.Person.MaritalStatus']}" class="other_radio" value="3" data-met-errorDiv="errSpnCreateNewClientCustMgmtMaritalStatus"/><span th:utext="#{${ tenantCode}+'.Other'}" /></label>
+									    <p id="errSpnCreateNewClientCustMgmtMaritalStatus" class="error"></p>
+                                    </div> -->
+				
+			</div><!-- <div class="row">
+                                    <div class="col-sm-6 col-md-4 marTop10" id="otherMartialTxtdiv" >
+                                     <input type="text"  class="form-control" id="otherMartialTxt" th:field="*{appDataMap['CustomerData.Party.Person.OtherMarital']}"
+                                     th:style="(*{appDataMap['CustomerData.Party.OtherMarital']!='-1' and appDataMap['CustomerData.Party.OtherMarital']!=null})? 'display:block' : 'display:none'" data-met-errorDiv="errSpnTxtotherMartialTxt" data-met-blur="checkName" data-met-keypress="alphabets_allowed;specialChars_underscore_allowed;num_Allowed" maxlength="50"/>
+								
+									 <p id="errSpnTxtotherMartialTxt" class="error"></p>
+                                    </div>
+                                 </div> -->
+			
+		</div>
+	</div><!--   <div class="panel panel-default">
+                              <div class="panel-body">
+                                 <div class="row">
+								
+                                    <div id = "occupationDiv"  class="form-group col-sm-6 col-md-4">
+                                       <label for="occupation"><span th:utext="#{${ tenantCode}+'.occupation'}" ></span> <span class="mandatory">*</span>
+									   
+									       
+									   </label>
+                                <input type="text" data-met-mand="mandatory" placeholder="Occupation" class="form-control" id="txtCustMgmtOccupation" name="txtCustMgmtOccupation" th:field="*{appDataMap['CustomerData.Party.Person.Occupation']}" maxlength="100" data-met-errorDiv="errSpnTxtCustMgmtOccupation"/>   
+								
+									   <p id="errSpnTxtCustMgmtOccupation" class="error"></p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div> -->
+
+	
+
+	<div class="panel panel-default">
+		<div class="panel-body">
+
+			<div id="occupationDiv">
+				<div>
+					<div>
+						<div id="occupation0" data-met-idcount="0">
+							<div class="row">
+								<div class="form-group col-sm-6 col-md-4">
+									<label class="overflow" for="Occupation"><span>Ocupación/Cargo/Profesión</span></label><!-- <select
+										id="selectOccupation"
+										th:attrappend="id=${countStat.index}, data-met-idCount=${countStat.index},data-met-errorDiv='errSpnTxtCustMgmtOccupation__${countStat.index}__'"
+										class="form-control form-group"
+										th:field="*{appDataMap['CustomerData.Party.Person.Occupations.Occupation__${countStat.index}__']}" th:disabled ="${isActiveCust} or ${showROFields}" >
+
+										<option value="-1" th:utext="#{${ tenantCode}+'.Select'}"></option>
+										<option
+											th:each="listCurrency :${gspFlowScopeBean.referenceDataMap['OCCUP_TYP_CD']}"
+											th:value="${listCurrency['masterDataValueCode']}"
+											th:text="${listCurrency['masterDataValueName']}"></option>
+									</select> --> 
+									
+									<input type="text" id="selectOccupation0" maxlength="60" data-provide="typeahead" autocomplete="off" data-gsp-forfield="forSearch" placeholder="" class="form-control ui-autocomplete-input" data-met-idcount="0" data-met-errordiv="errSpnTxtCustMgmtOccupation0" name="appDataMap['CustomerData.Party.Person.Occupations.Occupation0']" value="" /><ul class="typeahead dropdown-menu"></ul>
+					 <input type="hidden" id="selectOccupationCode0" data-met-idcount="0" name="appDataMap['CustomerData.Party.Person.Occupations.OccupationCode0']" value="" />
+									<p id="errSpnTxtCustMgmtOccupation0" class="error"></p>
+										<span id="diverror" style="color:red"></span>
+								</div>
+
+
+
+
+								
+								<div id="otherOccupation0" class="form-group col-sm-6 col-md-4" style="display: none" data-met-idcount="0">
+									<label for="occupation"><span>otro Ocupación</span> <span class="mandatory">*</span></label> <input type="text" id="otherOccupationText0" class="form-control" data-met-idcount="0" data-met-errordiv="errSpnTxtCustMgmtOccupation0" name="appDataMap['CustomerData.Party.Person.Occupations.OtherOccupation0']" value="" />
+								</div>
+
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div id="customerOccupationDiv" class="form-group col-sm-6 col-md-4" style="display: block">
+					<p>
+						<a id="addOccupation" class="marTop10 Contact" href="#">Añadir Otra Ocupación</a>
+					</p>
+				</div>
+
+			</div><!-- newly added for need analysis -->
+
+
+<div>
+			<input id="hiddenNeedReqd" type="hidden" name="appDataMap['CustomerData.Party.Person.needsRequired']" value="true" />
+</div><!-- newly added for need analysis --><!--   <div class="form-group col-sm-6 col-md-4">
+                                       
+                                     <input type="checkbox"  id="smokingStatus" />
+                                    <label for="smokingStatus" class="checkbox-inline" th:inline="text"><span th:utext="#{${ tenantCode}+'.smokingStatus'}"></span></label>
+                                   
+                                   </div>  -->
+
+
+
+			
+		</div>
+	</div><!-- <datalist id="occupations">
+	<option value="-1" th:utext="#{${ tenantCode}+'.Select'}"></option>
+										<option
+											th:each="listCurrency :${gspFlowScopeBean.referenceDataMap['OCCUP_TYP_CD']}"
+											th:value="${listCurrency['masterDataValueName']}"
+											></option>
+	
+	</datalist>
+      <input type="text" list="occupations"  placeholder="Occupation" class="form-control" id="txtCustMgmtOccupat" /> -->
+	
+</div>
+         <div id="createNewClient_identificationDocDetails">
+	<div class="panel panel-default">
+
+		<div class="panel-body">
+			<div class="row">
+				<div class="form-group col-sm-6 col-md-4">
+					<label for="documentType"><span>Tipo de Identificación</span></label> <select class="form-control" id="documentType" name="appDataMap['CustomerData.Party.GovtIDInfo.DocIDType']">
+						<option value="-1">Seleccione</option>
+						<option value="C">Cedula</option><option value="E">Cedula de Extranjeria</option><option value="N">NIT</option><option value="U">NUIP</option><option value="O">Otro</option><option value="P">Pasaporte</option><option value="R">Registro Civil</option><option value="M">Registro Medico</option><option value="T">Tarjeta de Identidad</option>
+					</select>
+				</div><!-- <div class="form-group col-sm-6 col-md-4 pull-left">
+                                       <label for="birthDate col-sm-12 pull-left">
+									   <span  class="pull-left" id="labeldocumentNumber" th:utext="#{${ tenantCode}+'.IdentityDocumentExpiryDate'}"></span>
+									      <span  th:style="(*{appDataMap['CustomerData.Party.GovtIDInfo.DocIDType']!='-1' and appDataMap['CustomerData.Party.GovtIDInfo.DocIDType']!=null})? 'display:inline-block' : 'display:none'" id="spantxtCustMgmtExpDate"  class="mandatory pull-left">*</span>	
+									   
+									   </label> --><!-- <div class="input-group"> --><!-- <div id="divtxtCustMgmtExpDate" style="">  
+								     <div id="datePickerDiv" class="input-group date"  placeholder="DD/MM/YYYY"  data-date-language="es-co" data-date-start-date="today"  data-date-format="dd/mm/yyyy">
+								     <input  id="txtCustMgmtExpDate" type="text" data-met-docField = "" data-met-driverLicense = ""  th:disabled="!(*{appDataMap['CustomerData.Party.GovtIDInfo.DocIDType']!='-1' and appDataMap['CustomerData.Party.GovtIDInfo.DocIDType']!=null})" th:field="*{appDataMap['CustomerData.Party.GovtIDInfo.GovtIDExpDate']}" data-met-errorDiv="errSpnTxtCustMgmtexpDate" maxlength="10" readonly="true" class="form-control disabledFields" placeholder="DD/MM/YYYY"/><span class="input-group-addon srchBorderIE8" id="txtCustMgmtSpan" data-met-driverLicense = ""><i  class="fa fa-calendar"></i></span>
+								     </div>
+								   </div> --><!-- <p id="errSpnTxtCustMgmtexpDate" class="error" data-met-parentDiv="datePickerDiv" style="display:none;"></p> --><!--  </div> --><!-- <p class="error" id="IdentityExpiryDate"></p> --><!--  </div> -->
+				
+
+				
+				
+
+				
+				
+				
+				
+				<div class="form-group col-sm-6 col-md-4">
+					<label for="documentNumber"> <span id="labeldocumentNumber">Número de Identificación</span> <span id="spandocumentNumber" class="mandatory" style="display:none">*</span>
+					</label>
+
+					<div id="divdocumentNumber" class="width100px">
+						<input type="text" id="documentNumber" data-met-docfield="" data-met-errordiv="errSpnDocumentNumberClient" class="form-control" data-met-keypress="num_Allowed" maxlength="11" placeholder="Número de Documento" disabled="disabled" name="appDataMap['CustomerData.Party.GovtIDInfo.DocIdNumber']" value="" />
+						<p id="errSpnDocumentNumberClient" class="error"></p>
+					</div>
+				</div>
+				<div class="form-group col-sm-6 col-md-4">
+					<label for="monthlyIncome"><span>Ingresos Mensuales</span></label><span class="mandatory">*</span><!-- <input type="text" class="form-control" id="txtCustMgmtMonthlySalary"   th:field="*{appDataMap['CustomerData.Party.Person.MonthlySalary']}" data-met-keypress="num_Allowed" data-met-mand="mandatory" placeholder="Monthly Salary" maxlength="10" data-met-errorDiv="errSpnTxtCustMgmtMonthlySalary"/> -->
+					
+					<input type="text" data-met-keypress="Comma_allowed;Dot_allowed;num_Allowed" data-met-mand="mandatory" class="form-control" id="txtCustMgmtMonthlySalary" places="2" placeholder="Ingresos Mensuales" data-met-errordiv="errSpnTxtCustMgmtMonthlySalary" maxlength="30" data-met-currency="" maxdigitlength="30" data-met-minlength="5" data-met-blur="currMinLength" name="appDataMap['CustomerData.Party.Person.MonthlySalary']" value="" currencyflag="true" />
+					<p id="errSpnTxtCustMgmtMonthlySalary" class="error"></p>
+				</div>
+			</div><!--  <div class="row">
+                                    <div class='form-group col-sm-6 col-md-4'>
+                                       <label class="width100px" for='Identify with '>
+									   <span id="labeldocumentNumber" th:utext="#{${ tenantCode}+'.Identifywith'}"></span>
+									   <span th:style="(*{appDataMap['CustomerData.Party.GovtIDInfo.DocIDType']!='-1' and appDataMap['CustomerData.Party.GovtIDInfo.DocIDType']!=null})? 'display:inline-block' : 'display:none'" id="spantxtIdentifyWith"  class="mandatory">*</span>
+									   </label>
+									   <div id="divtxtIdentifyWith" class="width100px">
+                                       <input type='text' class='form-control' data-met-docField = "" id="txtIdentifyWith" th:field="*{appDataMap['CustomerData.Party.GovtIDInfo.GovtIDIdentifyWith']}" th:disabled="!(*{appDataMap['CustomerData.Party.GovtIDInfo.DocIDType']!='-1' and appDataMap['CustomerData.Party.GovtIDInfo.DocIDType']!=null})" data-met-errorDiv="errSpnTxtCustMgmtIdentifyWith" maxlength="50"/>
+									   <p id="errSpnTxtCustMgmtIdentifyWith" class="error"></p>
+									   </div>
+                                    </div>
+                                    <div class='form-group col-sm-6 col-md-4'>
+                                       <label class="width100px" for='Series'><span id="labeldocumentNumber" th:utext="#{${ tenantCode}+'.Series'}"></span>
+									   <span th:style="(*{appDataMap['CustomerData.Party.GovtIDInfo.DocIDType']!='-1' and appDataMap['CustomerData.Party.GovtIDInfo.DocIDType']!=null})? 'display:inline-block' : 'display:none'" id="spantxtSeries"  class="mandatory">*</span>
+									   </label>
+									   <div id="divtxtSeries" class="width100px">
+                                        <input type='text' class='form-control' id='txtSeries' data-met-docField = "" th:disabled="!(*{appDataMap['CustomerData.Party.GovtIDInfo.DocIDType']!='-1' and appDataMap['CustomerData.Party.GovtIDInfo.DocIDType']!=null})" th:field="*{appDataMap['CustomerData.Party.GovtIDInfo.Met_GovtIDInfoKey_Series']}" data-met-errorDiv="errSpnTxtCustMgmtSeries" maxlength="50"/>
+									    <p id="errSpnTxtCustMgmtSeries" class="error"></p>
+										</div>
+                                    </div>
+                                    <div class='form-group col-sm-6 col-md-4'>
+                                       <label class="width100px" for='Number'>
+									   <span id="labeldocumentNumber" th:utext="#{${ tenantCode}+'.Number'}"></span>
+									   <span th:style="(*{appDataMap['CustomerData.Party.GovtIDInfo.DocIDType']!='-1' and appDataMap['CustomerData.Party.GovtIDInfo.DocIDType']!=null})? 'display:inline-block' : 'display:none'" id="spantxtNumber"  class="mandatory">*</span>
+									   </label>
+									   <div id="divtxtNumber" class="width100px">
+                                       <input id="txtNumber"  type="text" data-met-docField = "" class='form-control' data-met-keypress="alphabets_allowed;num_Allowed"  maxlength="50" th:disabled="!(*{appDataMap['CustomerData.Party.GovtIDInfo.DocIDType']!='-1' and appDataMap['CustomerData.Party.GovtIDInfo.DocIDType']!=null})" th:field="*{appDataMap['CustomerData.Party.GovtIDInfo.GovtIDNumber']}" data-met-errorDiv="errSpnTxtCustMgmtNumber"/>
+									     <p id="errSpnTxtCustMgmtNumber" class="error"></p>
+										</div> 
+                                    </div>
+                  </div>
+           -->
+			
+		</div><!--fields-->
+		
+	</div>
+</div><!-- <div id="createNewClient_Nationality" th:include="'/UIFragments/Fragment/createNewClient_Nationality' :: createNewClient_Nationality"/> -->
+         
+          <div id="occupationJSRenderTemplate">
+      <script data-met-template="occupationJSRenderTemplate" type="text/x-jsrender">
+	   &lt;div id="occupation{{:index}}"&gt;
+		&lt;div class="row occupationDiv" id="selectOccupation"&gt;
+                                    &lt;div class="form-group col-sm-6 col-md-4 occupationDiv"&gt;
+                                       &lt;label for="middleName2"&gt;&lt;span&gt;Ocupación&lt;/span&gt;&lt;/label&gt;&lt;!--  &lt;select id="selectOccupation{{:index}}"  class="form-control form-group" th:field="*{appDataMap['CustomerData.Party.Person.Occupations.Occupation{{:index}}']}"&gt;
+                                           &lt;option value="-1" th:utext="#{${ tenantCode}+'.Select'}"&gt;&lt;/option&gt;                    
+							  
+								&lt;option th:each="listCurrency :${gspFlowScopeBean.referenceDataMap['OCCUP_TYP_CD']}"  th:value="${listCurrency['masterDataValueCode']}" th:text="${listCurrency['masterDataValueName']}"&gt;&lt;/option&gt;
+                              &lt;/select&gt; --&gt;
+									   
+									  
+                              &lt;input type="text" id="selectOccupation{{:index}}" maxlength="60" data-provide="typeahead" autocomplete="off" data-gsp-forField="forSearch" placeholder="" class="form-control ui-autocomplete-input" name="appDataMap[&amp;#39;CustomerData.Party.Person.Occupations.Occupation{{:index}}&amp;#39;]" value="" /&gt;
+								&lt;input type="hidden" id="selectOccupationCode{{:index}}" name="appDataMap[&amp;#39;CustomerData.Party.Person.Occupations.OccupationCode{{:index}}&amp;#39;]" value="" /&gt;
+								&lt;p id="errSpnTxtCustMgmtOccupation{{:index}}" class="error"&gt;&lt;/p&gt;
+                                    &lt;/div&gt;
+									&lt;div class="form-group col-sm-6 col-md-4"&gt;
+                                     &lt;div&gt;
+                                       &lt;a href="#" id="btnDeleteOccupation{{:index}}" class="deleteOccupation marTop35px pull-left" data-original-title="" title="" data-met-idCount="{{:index}}"&gt;Borrar&lt;/a&gt;
+									   &lt;/div&gt;
+                                    &lt;/div&gt;
+							    &lt;/div&gt;
+		&lt;/div&gt;							
+	 </script>
+   </div><!-- <div id="citizenshipJSRenderTemplate" th:include="'/UIFragments/Fragment/citizenshipJSRenderTemplate' :: citizenshipJSRenderTemplate"/> -->
+         
+         <div id="contactDetails">
+   <div class="panel panel-default">
+                              <div id="customerAddressParentDiv" class="panel-body">
+                              <div id="createNewClient_AddressDetails">
+        <div id="addressDetails">
+            <div>
+                
+            </div>
+            <div id="addedAddressDiv" class="table-responsive addMoreContent form-group" style="display:none">
+                <table border="1" class="table" id="addressTable">
+                    <tbody>
+                        <tr>
+                            <th class="report-value"><span>País de residencia </span></th>
+                            <th class="report-value"><span>detalles de dirección</span></th>
+                            <th class="report-value"><span>Acción</span></th>
+                        </tr><!-- <tr th:if="*{appDataMap['CustomerData.Party.Person.Addresses.AnotherAddressIdCount']==null}? 'false':*{appDataMap['CustomerData.Party.Person.Addresses.Address:__${countStat.index}__.ResidentCountry']!=null}" class="spouse" th:each="count :*{appDataMap['CustomerData.Party.Person.Addresses.AnotherAddressIdCount']==null}?*{new int['1']}:*{new int[appDataMap['CustomerData.Party.Person.Addresses.AnotherAddressIdCount']]}"> 
+                        <tr th:if="*{appDataMap['CustomerData.Party.Person.Addresses.AnotherAddressIdCount']==null}? 'false':*{appDataMap['CustomerData.Party.Person.Addresses.Address:__${countStat.index}__.ResidentCountry'] == null}" class="spouse" th:each="count :*{appDataMap['CustomerData.Party.Person.Addresses.AnotherAddressIdCount']==null}?*{new int['1']}:*{new int[appDataMap['CustomerData.Party.Person.Addresses.AnotherAddressIdCount']]}">-->
+                        
+                        <tr class="spouse">
+                        
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div> 
+                                 <div id="customerAddressDiv" class="col-sm-12 row">                     
+                                    <a href="#" id="addAnotherAddressLink" class="addDependent" data-toggle="modal" data-target="#AddAddress">Añadir la dirección</a>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="panel panel-default">
+                              <div class="panel-body">
+                                 <div class="row ">
+                                    <div class="form-group col-sm-6 col-md-4 ">
+                                       <label for="emailAddress"><span>Dirección de correo electrónico</span></label>
+                                       <input type="email" class="form-control" placeholder="Dirección de correo electrónico" id="txtEmailAddr" maxlength="50" data-met-blur="minLength;email" data-met-minlength="5" data-met-errordiv="errSpnTxtCustMgmtEmailID" name="appDataMap['CustomerData.Party.EMailAddresses.EMailAddress:0.EMailAddr']" value="" />
+                                     <span id="errSpnTxtCustMgmtEmailID" class="error"></span>
+                                    </div>
+                                 </div><!--  <div id="createNewClient_EmailDetails" th:include="'/UIFragments/Fragment/createNewClient_EmailDetails' :: createNewClient_EmailDetailsFragment"/>
+                                 <div id="customerEmailDiv" class="col-sm-12 row">
+                                    <a class="Details" href="#" data-clicked="no" id="addAnotherEmailAddressLink" data-toggle="modal" data-target="#anotherEmail"><span th:utext="#{${ tenantCode}+'.AddAnotherEmailAddress'}"/></a>
+                                 </div> -->
+								   
+                              </div>
+							 
+                           </div>
+                           <div class="panel panel-default">
+                              <div class="panel-body">
+                                 <div class="row">
+									<div class="form-group col-sm-6 col-md-3">
+                                      <label for="middleName2"><span>Tipo de teléfono</span><span class="mandatory">*</span></label>
+                                      <select class="form-control" id="selectPhnType0" data-met-checks="select" data-met-mand="mandatory" data-met-idcount="0" data-met-errordiv="errSpnSelectPhnType" name="appDataMap['CustomerData.Party.Person.Phones.Phone:0.PhoneType']">
+								      <option value="-1">Seleccione</option>
+								      <option value="H">Casa</option><option value="M">Celular</option><option value="W">Oficina</option>
+                                       </select>
+                                       <p class="error" id="errSpnSelectPhnType"></p>
+                                    </div><!--     
+                                    <div class='form-group col-sm-6 col-md-4'>
+                                       <label for="txtPhnNumber"><span th:utext="#{${ tenantCode}+'.PhoneNumber'}"/><span class="mandatory">*</span>
+									   <span th:style="(*{appDataMap['CustomerData.Party.Person.Phones.Phone:0.PhoneType']!='-1' and appDataMap['CustomerData.Party.Person.Phones.Phone:0.PhoneType']!=null})? 'display:inline-block' : 'display:none'" id="spantxtPhnNumber0"  class="mandatory">*</span>
+									   </label>
+									   <div id="divtxtPhnNumber" class="width100px">
+                                       <input type="text" class="form-control" placeholder="Phone Number" id="txtPhnNumber0" th:field="*{appDataMap['CustomerData.Party.Person.Phones.Phone:0.PhoneNumber']}"  data-met-keypress="num_Allowed" maxlength="10" data-met-minLength="10" data-met-blur="minLength" data-met-mand="mandatory"  data-met-errorDiv="errSpnTxtPhnNumber"  data-met-idCount="0"/>
+                                       <p class="error" id="errSpnTxtPhnNumber"></p>
+									   </div>
+                                    </div>   -->
+                                   
+                                 
+                                    <div class="form-group col-sm-6 col-md-4">
+                                       <label for="txtPhnNumber"><span>Número de teléfono</span>
+									   <span id="spantxtPhnNumber0" class="mandatory" style="display:none">*</span>
+									   </label>
+									   <div id="divtxtPhnNumber" class="width100px">
+                                       <input type="text" data-met-phnfield="true" data-met-mand="mandatory" class="form-control" placeholder="Número de teléfono" id="txtPhnNumber0" data-met-keypress="num_Allowed" data-met-blur="minLength" maxlength="10" data-met-minlength="5" data-met-errordiv="errSpnTxtPhnNumber" data-met-idcount="0" disabled="disabled" name="appDataMap['CustomerData.Party.Person.Phones.Phone:0.PhoneNumber']" value="" />
+                                       <p class="error" id="errSpnTxtPhnNumber"></p>
+									   </div>
+                                    </div>   
+                                     <div id="phExtnDiv0" style="display:none" class="phExtnDiv0 form-group col-sm-2" data-met-idcount="0">
+										<label><span>Ext</span></label>
+										<input type="text" value="" maxlength="5" id="phExtn0" data-met-keypress="num_Allowed" data-met-idcount="0" class="form-control" name="appDataMap['CustomerData.Party.Person.Phones.Phone:0.PhoneExtNumber']" />
+									</div>                              
+                                 </div>
+								   <div id="createNewClient_PhoneDetails">
+   <div id="phones">
+      <div id="addedPhonesDiv" style="display:none">
+        <div>
+		
+         </div>
+      </div>
+   </div>
+   </div>
+                                 <div id="customerPhoneNumDiv" class="col-sm-12 row">
+                                    <a href="#" id="addAnotherPhoneNumberLink" class="Details" data-clicked="no" data-toggle="modal" data-target="#phoneNumber_contact">Agregar otro número de teléfono</a>
+                                 </div>
+                              </div>
+                           </div>
+   </div>  
+         </div>
+         <div id="createNewClient_family">
+      <div class="panel panel-default"><!-- <div class="panel-heading">
+            <form> 
+            <h3 class="panel-title"><span th:utext="#{${ tenantCode}+'.family'}"/></h3>
+         </div> -->
+         
+         <div id="customerDependentParentDiv" class="panel-body">
+            <div class="row">
+               <div class="col-sm-12">
+			   <div id="dependentDetailsFragment">
+         <div id="dependentDetailsAdded">
+        <div id="dependentDetails">
+         <div>
+            
+         </div><!-- <input th:value="*{appDataMap['CustomerData.Dependents.DependentCount']}"/> -->
+         
+         <div id="addedDependentsDiv" class="table-responsive addMoreContent form-group" style="display:none">
+            <table border="1" class="table" id="depTable">
+               <tbody>
+                  <tr>
+                     <th class="report-value">Primer Nombre</th><!-- <th class="report-value">Middle Name</th> --><!-- <th class="report-value" th:utext="#{${ tenantCode}+'.lastName'}"></th> --><!--  <th class="report-value">2nd Last Name</th> -->
+                     
+                     
+                     
+                     <th class="report-value">Primer Apellido</th><!--  <th class="report-value" th:utext="#{${ tenantCode}+'.secondMiddleName'}"></th> -->
+                    
+                     <th class="report-value">Relación con el asegurado</th>
+                     <th class="report-value">Edad</th>
+                     <th class="report-value">Acción</th>
+                  </tr><!-- <div  >
+                     <div > -->
+                  
+                  <!-- 						<div id="dependentDetailsFragment" ></div> -->
+                  
+               </tbody>
+               <tfoot>
+               </tfoot>
+            </table><!--   </div>
+               </div> -->
+            
+         </div>
+      </div><!--fields-->
+      
+   </div>   
+         </div>
+                  
+                  <span id="errSpnselectMaritalStatus" class="error"></span>
+                  <div id="customerDependentDiv" class="row col-sm-12">
+                     <p><a href="#" data-toggle="modal" data-target="#addDependentOverlay" id="custMgmtaddDependentLink" class="Addspouse"><span>Adicione Familiar</span></a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+         <div id="createNewClient_footer">
+      <article class="row">
+         <div class="col-sm-12">
+            <div class="btn-wrap btn-wrap-primary btn-wrap-right">
+               <div class="form-group">
+                  <button type="button" id="custCancelLink" class="btn btn-secondary btn-mobile btn-form-cancel">CANCELAR</button>
+				  
+				  
+				  
+				   
+				   
+                  <button type="button" class="btn btn-primary btn-mobile btn-form-submit" data-toggle="modal" data-target="#needsconfirm" id="btnCreateClientConfirm" data-met-initjs="createNewClient">GUARDAR</button><!-- <button type="button" class="btn btn-primary btn-mobile btn-form-submit"  data-toggle='modal'  data-met-initjs="createNewClient" data-target='#needsconfirm' th:utext="#{${ tenantCode}+'.Save'}" id="btnUpdateClient" th:if="*{metaDataMap['linkId']!='createcustomer'}" data-met-initjs="createNewClient"></button> -->  
+                  
+                   
+				    
+				   
+               </div>
+            </div>
+         </div>
+      </article>
+   </div>
+         <div id="webFlowVariables_fragment">
+		<div style="display:none;">
+			<span id="flowExecutionUrl">/sales/parentflow?execution=e2s2&amp;TOKEN_CLT_TRNS=E3B3CY4Z708J30A9</span>
+			<span id="flowExecutionKey">e2s2</span>
+			
+		</div>
+	</div>
+         <div id="dependentDetails"></div>
+         <div id="createClient_dependentDetailsJSRenderTemplate">
+	<script data-met-template="dependentDetailsJSRenderTemplate" type="text/x-jsrender">
+                     &lt;tr class="spouse" id="dependentDetailsForClient{{:index}}"&gt;
+						  &lt;td class="report-value"&gt;&lt;label class="wordBreak" id="dependentName{{:index}}" data-met-idCount="{{:index}}"&gt;{{:dependentFirstName}}&lt;/label&gt; &lt;/td&gt;&lt;!-- &lt;td class="report-value"&gt;&lt;label  class="wordBreak" id="dependentLastName{{:index}}" data-met-idCount="{{:index}}"&gt;{{:dependentLastName}}&lt;/label&gt; &lt;/td&gt;--&gt;
+						 
+						&lt;td class="report-value"&gt;&lt;label class="wordBreak" id="dependentSurname{{:index}}" data-met-idCount="{{:index}}"&gt;{{:dependentSurname}}&lt;/label&gt; &lt;/td&gt;&lt;!--&lt;td class="report-value"&gt;&lt;label  class="wordBreak" id="dependentSecondMiddleName{{:index}}" data-met-idCount="{{:index}}"&gt;{{:dependentSecondMiddleName}}&lt;/label&gt; &lt;/td&gt;--&gt;
+						
+  					
+						&lt;td class="report-value"&gt;
+					   &lt;label id="spnDependentRelationship{{:index}}" data-met-idCount="{{:index}}"&gt;{{:dependentRelationship}}&lt;/label&gt;
+						&lt;/td&gt;
+                          &lt;td class="report-value"&gt; 
+						  &lt;label id="spnDependentAge{{:index}}" data-met-idCount="{{:index}}"&gt;{{:dependentAge}}&lt;/label&gt;&amp;nbsp;&lt;label id="spnYears"&gt;Año(s)&lt;/label&gt;
+						  &lt;input id="hidDependentAge{{:index}}" type="hidden" name="appDataMap[&amp;#39;CustomerData.Dependents.Dependent:{{:index}}.Person.Age&amp;#39;]" value="{{:dependentAge}}" /&gt;
+						  &lt;/td&gt;
+                          &lt;td class="report-value"&gt;
+						  &lt;div class="no-wrap"&gt; 					  
+                            &lt;a href="#" class="dropdown-primary" id="dependentNameLink{{:index}}" data-met-idCount="{{:index}}" data-toggle="modal"&gt;Editar&lt;/a&gt;&lt;span class="SeparatorColor"&gt;|&lt;/span&gt;
+							&lt;a id="deleteDependentLink{{:index}}" class="dropdown-primary deleteRow" data-met-idCount="{{:index}}" data-clicked="no" data-original-title="" title=""&gt;Borrar&lt;/a&gt;&lt;/div&gt; 
+                          &lt;/td&gt;
+                        &lt;/tr&gt;
+	</script>
+	</div>
+         <div id="addDependentJSRenderTemplate">
+       <script data-met-template="addDependentJSRenderTemplate" type="text/x-jsrender">  
+         &lt;div id="chkDependentsTable{{:index}}" class="modal-body"&gt;
+                             &lt;div class="row"&gt;
+         			  &lt;p id="errSpnduplicateDependent{{:index}}" class="error"&gt;&amp;nbsp;&lt;/p&gt;
+                             &lt;div class="form-group col-sm-6 col-md-4"&gt;
+                               &lt;label for="firstName" class="overflow"&gt;&lt;span&gt;Primer Nombre&lt;/span&gt;&lt;span class="mandatory"&gt;*&lt;/span&gt;&lt;/label&gt;
+                               &lt;input type="text" class="form-control" placeholder="Primer Nombre" id="txtCustMgmtDependentFirstName{{:index}}" maxlength="30" data-met-keypress="specialChars_allowed;alphabets_allowed" data-met-mand="mandatory" data-met-errorDiv="errSpnTxtCustMgmtDependentFirstName{{:index}}" name="appDataMap[&amp;#39;CustomerData.Dependents.Dependent:{{:index}}.Person.FirstName&amp;#39;]" /&gt;
+                               &lt;p class="error " id="errSpnTxtCustMgmtDependentFirstName{{:index}}"&gt;&lt;/p&gt;
+                             &lt;/div&gt;&lt;!-- &lt;div class="form-group col-sm-6 col-md-4"&gt;
+                               &lt;label for="LastName" class="overflow"&gt;&lt;span th:utext="#{${ tenantCode}+'.lastName'}"/&gt;&lt;span class="mandatory"&gt;*&lt;/span&gt;&lt;/label&gt;
+                               &lt;input type="text" placeholder="Last Name" data-met-blur="checkName" class="form-control" id="txtCustMgmtDependentLastName{{:index}}"  maxlength="20" data-met-keypress="alphabets_allowed;specialChars_underscore_allowed;num_Allowed" data-met-mand="mandatory"  data-met-errorDiv="errSpnTxtCustMgmtDependentLastName{{:index}}" name="appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.LastName']"/&gt;
+         				       &lt;p class="error" id="errSpnTxtCustMgmtDependentLastName{{:index}}"&gt;&lt;/p&gt;
+                             &lt;/div&gt;--&gt;
+							
+							&lt;div class="form-group col-sm-6 col-md-4"&gt;
+                               &lt;label for="secondName" class="overflow"&gt;&lt;span&gt;Segundo Nombre&lt;/span&gt;&lt;/label&gt;
+                               &lt;input type="text" placeholder="Segundo Nombre" class="form-control" id="txtCustMgmtDependentSecondName{{:index}}" maxlength="20" data-met-keypress="specialChars_allowed;alphabets_allowed" data-met-errorDiv="errSpnTxtCustMgmtDependentSecondName{{:index}}" name="appDataMap[&amp;#39;CustomerData.Dependents.Dependent:{{:index}}.Person.SecondName&amp;#39;]" /&gt;
+                                &lt;p class="error" id="errSpnTxtCustMgmtDependentSecondName{{:index}}"&gt;&lt;/p&gt;
+                             &lt;/div&gt;
+							 &lt;div class="form-group col-sm-6 col-md-4"&gt;
+                               &lt;label for="secondMiddleName" class="overflow"&gt;&lt;span&gt;Tercer Nombre&lt;/span&gt;&lt;/label&gt;
+                               &lt;input type="text" placeholder="Tercer Nombre" class="form-control" id="txtCustMgmtDependentSecondMiddleName{{:index}}" maxlength="20" data-met-keypress="specialChars_allowed;alphabets_allowed" data-met-errorDiv="errSpnTxtCustMgmtDependentSecondMiddleName{{:index}}" name="appDataMap[&amp;#39;CustomerData.Dependents.Dependent:{{:index}}.Person.SecondMiddleName&amp;#39;]" /&gt;
+                                &lt;p class="error" id="errSpnTxtCustMgmtDependentSecondMiddleName{{:index}}"&gt;&lt;/p&gt;
+                             &lt;/div&gt;
+&lt;/div&gt;
+						&lt;div class="row"&gt;
+							&lt;div class="form-group col-sm-6 col-md-4"&gt;
+                               &lt;label for="surname" class="overflow"&gt;&lt;span&gt;Primer Apellido&lt;/span&gt;&lt;span class="mandatory"&gt;*&lt;/span&gt; &lt;/label&gt;
+                               &lt;input type="text" placeholder="Primer Apellido" class="form-control" id="txtCustMgmtDependentSurname{{:index}}" maxlength="20" data-met-keypress="specialChars_allowed;alphabets_allowed" data-met-mand="mandatory" data-met-errorDiv="errSpnTxtCustMgmtDependentSurname{{:index}}" name="appDataMap[&amp;#39;CustomerData.Dependents.Dependent:{{:index}}.Person.Surname&amp;#39;]" /&gt;
+                                &lt;p class="error" id="errSpnTxtCustMgmtDependentSurname{{:index}}"&gt;&lt;/p&gt;
+                             &lt;/div&gt;
+							 &lt;div class="form-group col-sm-6 col-md-4"&gt;
+                               &lt;label for="secondSurname" class="overflow"&gt;&lt;span&gt;Segundo Apellido&lt;/span&gt;&lt;/label&gt;
+                               &lt;input type="text" placeholder="Segundo Apellido" class="form-control" id="txtCustMgmtDependentSecondSurname{{:index}}" maxlength="20" data-met-keypress="specialChars_allowed;alphabets_allowed" data-met-errorDiv="errSpnTxtCustMgmtDependentSecondSurname{{:index}}" name="appDataMap[&amp;#39;CustomerData.Dependents.Dependent:{{:index}}.Person.SecondSurname&amp;#39;]" /&gt;
+                                &lt;p class="error" id="errSpnTxtCustMgmtDependentSecondSurname{{:index}}"&gt;&lt;/p&gt;
+                             &lt;/div&gt;&lt;!-- &lt;div class="form-group col-sm-6 col-md-4"&gt;
+                               &lt;label for="middleName" class="overflow"&gt;&lt;span th:utext="#{${ tenantCode}+'.NickName'}"/&gt; &lt;/label&gt;
+                               &lt;input type="text" placeholder="Nick Name" data-met-blur="checkName" class="form-control" id="txtCustMgmtDependentMiddleName{{:index}}"  maxlength="50" data-met-keypress="alphabets_allowed;specialChars_underscore_allowed;num_Allowed" name="appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.NickName']" data-met-errorDiv="errSpntxtCustMgmtDependentMiddleName{{:index}}"/&gt;
+                                &lt;p class="error" id="errSpntxtCustMgmtDependentMiddleName{{:index}}"&gt;&lt;/p&gt;
+                             &lt;/div&gt;--&gt;&lt;!--  &lt;div class="form-group col-sm-3"&gt;
+                               &lt;label for="2ndLast" class="overflow"&gt;&lt;span th:utext="#{${ tenantCode}+'.secondLastName'}"/&gt;&lt;/label&gt;
+                               &lt;input type="text" placeholder="2nd Last Name" class="form-control" id="txtCustMgmtDependentsecondLastName{{:index}}" name="appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.SecondLastName']" maxlength="20" data-met-keypress="alphabets_allowed;specialChars_specific_allowed" data-met-errorDiv="errSpnTxtCustMgmtDependentsecondLastName{{:index}}"/&gt;
+         				&lt;p class="error" id="errSpnTxtCustMgmtDependentsecondLastName{{:index}}"&gt;&lt;/p&gt;
+                             &lt;/div&gt; --&gt;
+                            
+                             
+         			 
+                           &lt;/div&gt;
+                           &lt;div class="row"&gt;
+                             &lt;div class="form-group col-sm-6 col-md-4"&gt;
+                               &lt;label for="relationship1"&gt;&lt;span&gt;Relación con el asegurado&lt;/span&gt;&lt;span class="mandatory"&gt;*&lt;/span&gt;&lt;/label&gt;
+                               &lt;select class="form-control" id="selectCustMgmtRelationship{{:index}}" data-met-checks="select" data-met-mand="mandatory" data-met-idCount="{{:index}}" data-met-errorDiv="errSpnSelectCustMgmtRelationship{{:index}}" name="appDataMap[&amp;#39;CustomerData.Dependents.Dependent:{{:index}}.Person.Relationship&amp;#39;]"&gt;
+                                 &lt;option value="-1"&gt;Seleccione&lt;/option&gt;
+                				&lt;option value="1"&gt;Asegurado principal&lt;/option&gt;&lt;option value="2"&gt;Conyuge&lt;/option&gt;&lt;option value="8"&gt;Hijo (a)&lt;/option&gt;
+                               &lt;/select&gt;
+         				&lt;p class="error" id="errSpnSelectCustMgmtRelationship{{:index}}"&gt;&lt;/p&gt;
+                             &lt;/div&gt;
+                              &lt;div class="form-group col-sm-6 col-md-4" id="divtxtCustMgmtOthrRelationship{{:index}}"&gt;
+                               &lt;label for="relation" class="overflow"&gt;&lt;span&gt;Ocupación/Cargo/Profesión&lt;/span&gt;
+						         
+						         &lt;span id="labelidRelation{{:index}}" style="display:none;"&gt;*&lt;/span&gt;	
+         					   &lt;/label&gt;
+                               &lt;input type="text" placeholder="Ocupación" id="txtCustMgmtOthrRelationship{{:index}}" maxlength="50" data-provide="typeahead" autocomplete="off" data-gsp-forField="forSearch" class="form-control ui-autocomplete-input" data-met-errorDiv="errSpnTxtCustMgmtOthrRelationship{{:index}}" data-met-keypress="specialChars_allowed;alphabets_allowed" name="appDataMap[&amp;#39;CustomerData.Dependents.Dependent:{{:index}}.Person.OthrRelationship&amp;#39;]" /&gt;
+
+         				        &lt;p class="error" id="errSpnTxtCustMgmtOthrRelationship{{:index}}"&gt;&lt;/p&gt;
+                             
+   &lt;/div&gt;
+                           &lt;/div&gt;
+                           &lt;div class="row"&gt;
+                             &lt;div class="form-group col-sm-6 col-md-4"&gt;
+                               &lt;label for="birthDateSpouse"&gt;&lt;span&gt;Fecha de Nacimiento&lt;/span&gt;&lt;span class="mandatory"&gt;*&lt;/span&gt;&lt;/label&gt;
+                               &lt;div class="input-group parentDiv-datepicker" id="parentDivDependent_{{:index}}"&gt;
+							   
+							   &lt;div class="input-group date datepickerEvent1" data-provide="datepicker" id="clientDobDatePickerDiv1" placeholder="DD/MM/YYYY" data-date-end-date="today" data-date-start-date="01/01/1900" data-date-language="es-co" data-date-format="dd/mm/yyyy"&gt;
+						&lt;input id="txtCustMgmtDependentDateOfBith{{:index}}" readonly="true" type="text" maxlength="10" data-met-mand="mandatory" data-met-errordiv="errSpnTxtCustMgmtDependentDateOfBith{{:index}}" data-met-criticalfield="" class="form-control ie10Specific disabledFields" data-met-showage="txtAge" placeholder="DD/MM/YYYY" name="appDataMap[&amp;#39;CustomerData.Dependents.Dependent:{{:index}}.Person.DateOfBirth&amp;#39;]" value="" capturedvalue="" /&gt;&lt;span id="custMgmtDateOfBirthspan" class="input-group-addon srchBorderIE8"&gt;&lt;i class="fa fa-calendar"&gt;&lt;/i&gt;&lt;/span&gt;
+					&lt;/div&gt;
+					
+					
+         					
+                               &lt;/div&gt;
+         				&lt;p class="error" id="errSpnTxtCustMgmtDependentDateOfBith{{:index}}" data-met-parentDiv="parentDivDependent_{{:index}}"&gt;&lt;/p&gt;
+                             &lt;/div&gt;&lt;!-- &lt;div class='form-group col-sm-6 col-md-4'&gt;
+                             &lt;label for='birthDateSpouse'&gt;&lt;span th:utext="#{${ tenantCode}+'.Age'}"/&gt;&lt;/label&gt;
+                             &lt;input type="text" class="form-control" placeholder="Edad" id="dependentAge_{{:index}}" name="appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.Age']" readonly="true"/&gt;
+                             &lt;/div&gt; --&gt;
+                            
+							 &lt;div class="form-group col-sm-6 col-md-4"&gt;
+								&lt;label for="txtCustMgmtDependentAge" class="overflow"&gt;&lt;span&gt;Edad&lt;/span&gt;&lt;/label&gt;        									
+								&lt;input type="text" id="txtCustMgmtDependentAge" readonly="true" disabled="disabled" name="appDataMap[&amp;#39;CustomerData.Dependents.Dependent:{{:index}}.Person.Age1&amp;#39;]" class="disabled form-control" /&gt;
+							
+							&lt;/div&gt;
+                             
+         			    &lt;div class="form-group col-sm-6 col-md-4"&gt;
+                               &lt;label class="block"&gt;&lt;span&gt;Género&lt;/span&gt;&lt;span class="mandatory"&gt;*&lt;/span&gt;&lt;/label&gt;
+                               &lt;label class="radio-inline"&gt;
+                               &lt;input type="radio" id="male{{:index}}" data-met-checks="radio" data-met-errorDiv="errSpnRdnCustMgmtGender{{:index}}" name="appDataMap[&amp;#39;CustomerData.Dependents.Dependent:{{:index}}.Person.Gender&amp;#39;]" value="1" /&gt;&lt;span&gt;Masculino&lt;/span&gt; 
+                               &lt;/label&gt;
+                               &lt;label class="radio-inline"&gt;
+                               &lt;input type="radio" id="female{{:index}}" data-met-checks="radio" data-met-errorDiv="errSpnRdnCustMgmtGender{{:index}}" name="appDataMap[&amp;#39;CustomerData.Dependents.Dependent:{{:index}}.Person.Gender&amp;#39;]" value="2" /&gt; &lt;span&gt;Femenino&lt;/span&gt;
+                               &lt;/label&gt;
+         				&lt;p class="error" id="errSpnRdnCustMgmtGender{{:index}}"&gt;&lt;/p&gt;
+                             &lt;/div&gt;
+         
+                           &lt;/div&gt;
+                           &lt;div class="row"&gt;
+                             &lt;div class="form-group col-sm-6 col-md-4"&gt;
+                               &lt;label for="identificationDocument1" class="overflow"&gt;&lt;span&gt;Documento de Identificación&lt;/span&gt;&lt;/label&gt;
+                               &lt;select class="form-control" name="appDataMap[&amp;#39;CustomerData.Dependents.Dependent:{{:index}}.Person.DocIdType&amp;#39;]" id="selectCustMgmtDocIdType{{:index}}" data-met-idCount="{{:index}}"&gt;
+                                 &lt;option value="-1"&gt;Seleccione&lt;/option&gt;
+         				&lt;option value="C"&gt;Cedula&lt;/option&gt;&lt;option value="E"&gt;Cedula de Extranjeria&lt;/option&gt;&lt;option value="N"&gt;NIT&lt;/option&gt;&lt;option value="U"&gt;NUIP&lt;/option&gt;&lt;option value="O"&gt;Otro&lt;/option&gt;&lt;option value="P"&gt;Pasaporte&lt;/option&gt;&lt;option value="R"&gt;Registro Civil&lt;/option&gt;&lt;option value="M"&gt;Registro Medico&lt;/option&gt;&lt;option value="T"&gt;Tarjeta de Identidad&lt;/option&gt;
+                               &lt;/select&gt;
+         				&lt;p class="error" id="errSpnTxtCustMgmtDependentIdType{{:index}}"&gt;&lt;/p&gt;
+                             &lt;/div&gt;&lt;!--&lt;div class='form-group col-sm-6 col-md-4' id="divtxtCustMgmtDependentDocExpiryDate{{:index}}"&gt;
+                                    &lt;label for="birthDate" class='overflow'&gt;&lt;span th:utext="#{${ tenantCode}+'.DependentExpDate'}"&gt;&lt;/span&gt;
+									&lt;span th:if="*{appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.DocIdType']!='-1' and appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.DocIdType']!=null}" id="labelidExDate{{:index}}" th:class="*{appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.DocIdType']!='-1' and appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.DocIdType']!=null}?'mandatory':''" style="display:inline-block;"&gt;*&lt;/span&gt;
+									&lt;span th:if="!(*{appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.DocIdType']!='-1' and appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.DocIdType']!=null})" id="labelidExDate{{:index}}" th:class="*{appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.DocIdType']!='-1' and appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.DocIdType']!=null}?'mandatory':''" style="display:none;"&gt;*&lt;/span&gt;	
+									&lt;/label&gt;
+									&lt;div id="datePickerDateDiv{{:index}}" class="date" data-date-start-date="today" data-date-language="es-co" data-provide="datepicker" data-date-format="dd/mm/yyyy"&gt;
+                                   &lt;input type='text' readonly="true" class='form-control datepicker hasDatepicker catch'  name="appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.DocExpiryDate']" id="txtCustMgmtDependentDocExpiryDate{{:index}}" data-met-date="pastDate" th:disabled="!(*{appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.DocIdType']!='-1' and appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.DocIdType']!=null})"   data-met-mand="mandatory" placeholder="DD/MM/YYYY" data-met-errorDiv="errSpnTxtCustMgmtDependentDocExpiryDate{{:index}}"/&gt;
+         				            &lt;span class="input-group-addon srchBorderIE8 hide" id="dateIconSpan"&gt;&lt;i  class="fa fa-calendar"&gt;&lt;/i&gt;&lt;/span&gt;
+                                    &lt;/div&gt;
+									&lt;p class="error" id="errSpnTxtCustMgmtDependentDocExpiryDate{{:index}}"&gt;&lt;/p&gt;
+                                 &lt;/div&gt;--&gt;
+                            
+                               
+								 
+								  &lt;div class="form-group col-sm-6 col-md-4" id="divtxtCustMgmtDependentIdNumber{{:index}}"&gt;
+                               &lt;label for="documentNumber1" class="overflow"&gt;&lt;span&gt;Número de Documento&lt;/span&gt;&lt;!-- 	&lt;span id="labelidnumber{{:index}}" th:class="*{appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.DocIdType']!='-1' and appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.DocIdType']!=null}?'mandatory':''"&gt;*&lt;/span&gt; --&gt;
+          
+         			
+         
+         
+         
+         
+         
+         &lt;span id="labelidnumber{{:index}}" style="display:none;"&gt;*&lt;/span&gt;	
+         &lt;/label&gt;
+                               &lt;input type="text" class="form-control" placeholder="Número de Documento" id="txtCustMgmtDependentIdNumber{{:index}}" maxlength="20" data-met-errorDiv="errSpnTxtCustMgmtDependentIdNumber{{:index}}" data-met-keypress="num_Allowed" name="appDataMap[&amp;#39;CustomerData.Dependents.Dependent:{{:index}}.Person.DocIdNumber&amp;#39;]" /&gt;
+         				        &lt;p class="error" id="errSpnTxtCustMgmtDependentIdNumber{{:index}}"&gt;&lt;/p&gt;
+                             
+   &lt;/div&gt;
+					
+   &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class="modal-footer"&gt;
+   &lt;button type="button" class="btn btn-primary  pull-left saveSpouse" id="btnCustMgmtaddDependent{{:index}}" data-met-idCount="{{:index}}"&gt;GUARDAR&lt;/button&gt;&lt;!-- &lt;a href="#" id="cancelLink{{:index}}" th:utext="#{${ tenantCode}+'.cancel'}" data-met-idCount="{{:index}}" th:attrappend="style=*{metaDataMap['linkId']=='newQuoteCustomer'}?'display:none':'display:block'"&gt;&lt;/a&gt; --&gt;&lt;!-- &lt;a href="#" id="cancelLink{{:index}}" th:utext="#{${ tenantCode}+'.cancel'}" data-met-idCount="{{:index}}" th:if="*{metaDataMap['linkId']=='newQuoteCustomer' or metaDataMap['linkId']=='createcustomer'}"&gt;&lt;/a&gt; --&gt;
+  
+   
+   &lt;button id="depCancel{{:index}}" type="button" class="btn btn-primary  pull-left " data-dismiss="" data-met-idCount="{{:index}}"&gt;CANCELAR&lt;/button&gt;
+   
+   &lt;/div&gt;&lt;!--  &lt;span id="errSpnduplicateDependent{{:index}}" class="clear fl errorLabel"/&gt;
+      &lt;div id="chkDependentsTable{{:index}}" class="marginTop5px fl clear w590"&gt;
+      &lt;div class="fl"&gt;
+      	 &lt;label class="fl clear"&gt;&lt;span class="mandatory" th:utext="#{${ tenantCode}+'.firstName'}"&gt;&lt;/span&gt;&lt;/label&gt;
+      	 &lt;input id="txtCustMgmtDependentFirstName{{:index}}"  maxlength="20" type="text" data-met-keypress="alphabets_allowed;specialChars_specific_allowed" data-met-mand="mandatory" data-met-criticalField='' data-met-errorDiv="errSpnTxtCustMgmtDependentFirstName{{:index}}" name="appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.FirstName']" class="text100px"/&gt;
+      	 &lt;span id="errSpnTxtCustMgmtDependentFirstName{{:index}}" class="clear fl errorLabel width125px"&gt;&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class="fl marginLeft15px"&gt;
+         &lt;label class="fl clear"&gt;&lt;span id="spnCustMgmtDependentMiddleName{{:index}}" th:utext="#{${ tenantCode}+'.middleName'}"/&gt;&lt;/label&gt;
+         &lt;input id="txtCustMgmtDependentMiddleName{{:index}}" maxlength="20" type="text" data-met-keypress="alphabets_allowed;specialChars_specific_allowed" name="appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.MiddleName']" data-met-errorDiv="errSpntxtCustMgmtDependentMiddleName{{:index}}"  class="text100px"/&gt;
+         &lt;span id="errSpntxtCustMgmtDependentMiddleName{{:index}}" class="clear fl errorLabel width125px"&gt;&lt;/span&gt;
+      &lt;/div&gt;
+      
+      
+      &lt;div class="fl marginLeft25px"&gt;
+      	 &lt;label class="fl clear"&gt;&lt;span class="mandatory" id="spnCustMgmtDependentLastName{{:index}}" th:utext="#{${ tenantCode}+'.lastName'}"/&gt;&lt;/label&gt;
+      	 &lt;input id="txtCustMgmtDependentLastName{{:index}}" maxlength="20" type="text"  data-met-keypress="alphabets_allowed;specialChars_specific_allowed" data-met-mand="mandatory" data-met-criticalField='' data-met-errorDiv="errSpnTxtCustMgmtDependentLastName{{:index}}" name="appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.LastName']" class="text100px"/&gt;
+      	 &lt;span id="errSpnTxtCustMgmtDependentLastName{{:index}}" class="clear fl errorLabel width125px"&gt;&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class="fl marginLeft15px"&gt;
+      	 &lt;label class="fl clear"&gt;&lt;span th:utext="#{${ tenantCode}+'.secondLastName'}"&gt;&lt;/span&gt;&lt;/label&gt;
+      	 &lt;input id="txtCustMgmtDependentsecondLastName{{:index}}" name="appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.SecondLastName']" maxlength="20" type="text" data-met-keypress="alphabets_allowed;specialChars_specific_allowed" data-met-errorDiv="errSpnTxtCustMgmtDependentsecondLastName{{:index}}"  class="text100px"/&gt;
+      	 &lt;span id="errSpnTxtCustMgmtDependentsecondLastName{{:index}}" class="clear fl errorLabel width125px"&gt;&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class="clear"&gt;&lt;/div&gt;  
+      &lt;div class="fl marginTop20px"&gt;
+      	  &lt;label class="fl clear"&gt;&lt;span class="mandatory" th:utext="#{${ tenantCode}+'.relationship'}"&gt;&lt;/span&gt;&lt;/label&gt;
+      		   &lt;div class="fl styled-select clear"&gt;
+      
+      		   &lt;select id="selectCustMgmtRelationship{{:index}}"  data-met-checks="select" data-met-mand="mandatory" data-met-errorDiv="errSpnSelectCustMgmtRelationship{{:index}}" name="appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.Relationship']" &gt;
+      				 &lt;option value="-1" th:utext="#{${ tenantCode}+'.select'}"&gt;&lt;/option&gt;
+             				&lt;option th:each="listCurrency :${gspFlowScopeBean.referenceDataMap['RELINS_CD']}"  th:value="${listCurrency['masterDataValueCode']}" th:text="${listCurrency['masterDataValueName']}"&gt;&lt;/option&gt;
+      			&lt;/select&gt;
+      	  &lt;/div&gt;
+      	  &lt;span id="errSpnSelectCustMgmtRelationship{{:index}}" class="clear fl errorLabel"&gt;&lt;/span&gt;
+       &lt;/div&gt;	
+      &lt;div class="clear"&gt;&lt;/div&gt;
+      &lt;div class="fl marginTop20px w205"&gt;
+      	 &lt;label class="fl clear"&gt;&lt;span class="mandatory" th:utext="#{${ tenantCode}+'.dob'}"&gt;&lt;/span&gt;&lt;/label&gt;
+      	 &lt;input type="text" class="fl searchTextbox" name="appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.DateOfBirth']" id="txtCustMgmtDependentDateOfBith{{:index}}" data-met-forCal="dateOfBirthCal{{:index}}"  data-met-date="pastDate" readonly ="readonly"  data-met-mand="mandatory" data-met-criticalField="" data-met-errorDiv="errSpnTxtCustMgmtDependentDateOfBith{{:index}}" /&gt;
+      	 	&lt;input type="button" class="fl calenderImg" data-met-cal-button="dateOfBirthCal{{:index}}" id="txtCustMgmtDependentDateOfBirthImg" /&gt; 
+      	 &lt;span id="errSpnTxtCustMgmtDependentDateOfBith{{:index}}" class="clear fl errorLabel"&gt;&lt;/span&gt;
+      &lt;/div&gt;	
+      &lt;div class="fl marginTop20px marginLeft25px"&gt;
+      	 &lt;label class="fl clear"&gt;&lt;span class="mandatory" th:utext="#{${ tenantCode}+'.gender'}"&gt;&lt;/span&gt;&lt;/label&gt;
+      	 &lt;div class="fl clear marginTop5px"&gt;
+      		&lt;div class="fl marginTop5px"&gt;&lt;input type="radio" class="fl" id="male{{:index}}" data-met-checks="radio" data-met-errorDiv="errSpnRdnCustMgmtGender{{:index}}" name="appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.Gender']" value="1"/&gt; &lt;span class="marginLeft20px fl" th:utext="#{${ tenantCode}+'.male'}"&gt;&lt;/span&gt;&lt;/div&gt;
+      		&lt;div class="fl marginTop5px marginLeft25px"&gt;&lt;input type="radio" class="fl" id="female{{:index}}" data-met-checks="radio" data-met-errorDiv="errSpnRdnCustMgmtGender{{:index}}" name="appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.Gender']" value="2"/&gt; &lt;span class="marginLeft20px fl" th:utext="#{${ tenantCode}+'.female'}"&gt;&lt;/span&gt;&lt;/div&gt;
+      	&lt;/div&gt;
+      	&lt;span id="errSpnRdnCustMgmtGender{{:index}}" class="clear fl errorLabel"&gt;&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="clear"&gt;&lt;/div&gt;  
+      	&lt;div class="fl marginTop20px w205"&gt;
+      	  &lt;label class="fl clear"&gt;&lt;span th:utext="#{${ tenantCode}+'.idDocument'}" data-met-mandDepClass=""/&gt;&lt;/label&gt;
+      	 &lt;div class="fl styled-select w200px clear"&gt;
+      		   &lt;select name="appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.DocIdType']" id="selectCustMgmtDocIdType{{:index}}" data-met-idCount="{{:index}}" data-met-mandDepField=""&gt;
+      				&lt;option value="-1" th:utext="#{${ tenantCode}+'.select'}"&gt;&lt;/option&gt;
+      				&lt;option th:each="listCurrency :${gspFlowScopeBean.referenceDataMap['DOC_ID_TYP_CUST']}"  th:value="${listCurrency['masterDataValueCode']}" th:text="${listCurrency['masterDataValueName']}"&gt;&lt;/option&gt;
+      			&lt;/select&gt; 
+      		&lt;/div&gt;
+      	  &lt;span id="errSpnTxtCustMgmtDependentIdType{{:index}}" class="clear fl errorLabel"&gt;&lt;/span&gt;
+       &lt;/div&gt;
+       &lt;div class="fl marginTop20px marginLeft25px" id="divCustMgmtIdNumber{{:index}}"&gt;
+      	 &lt;label class="fl clear"&gt;&amp;nbsp;  &lt;span id="labelidnumber{{:index}}" th:class="*{appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.DocIdType']!='-1' and appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.DocIdType']!=null}?'mandatory':''" th:utext="#{${ tenantCode}+'.docIdNumber'}"/&gt;&lt;/label&gt;
+      	 &lt;input class="form-control" id="txtCustMgmtDependentIdNumber{{:index}}" maxlength="11" type="text"  data-met-errorDiv="errSpnTxtCustMgmtDependentIdNumber{{:index}}" data-met-keypress="num_Allowed" name="appDataMap['CustomerData.Dependents.Dependent:{{:index}}.Person.DocIdNumber']"/&gt;
+      	 &lt;span id="errSpnTxtCustMgmtDependentIdNumber{{:index}}" class="clear fl errorLabel"&gt;&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class="clear"&gt;&lt;/div&gt;  
+      	&lt;button type="button" class="greenBtn fl marginTop25px"  id="btnCustMgmtaddDependent{{:index}}" data-met-idCount="{{:index}}" th:utext="#{${ tenantCode}+'.save'}"&gt;&lt;/button&gt;
+      		&lt;span class="cancelDependentLink"&gt;&lt;a href="#" id="cancelLink{{:index}}" th:utext="#{${ tenantCode}+'.cancel'}" data-met-idCount="{{:index}}" th:attrappend="style=*{metaDataMap['linkId']=='newQuoteCustomer'}?'display:none':'display:block'"&gt;&lt;/a&gt;
+      		&lt;/span&gt;	 --&gt;
+    
+   </script>
+   </div>
+         <div id="addDependentOverlayJSRenderTemplate">
+      <script data-met-template="addDependentOverlayJSRenderTemplate" type="text/x-jsrender">
+         &lt;div id="addDependentOverlay{{:index}}" class="modal fade"&gt;
+         	&lt;div class="modal-dialog"&gt;
+                     &lt;div class="modal-content"&gt;
+         	  &lt;div class="modal-header"&gt;
+                         &lt;button type="button" class="close fa fa-times" id="closeBtn{{:index}}" data-met-idCount="{{:index}}" data-dismiss="modal" aria-hidden="true"&gt;&lt;/button&gt;
+                         &lt;h2 class="modal-title" id="myModalLabel-1"&gt;Adicione Familiar&lt;/h2&gt;
+                       &lt;/div&gt;&lt;!-- &lt;div class="modal-body"&gt; --&gt;
+         		
+         		&lt;div id="popUpContentDiv"&gt;&lt;/div&gt;&lt;!-- &lt;/div&gt; --&gt;
+         		
+         		
+   &lt;/div&gt;
+   &lt;/div&gt;&lt;!-- &lt;div class="popup newUI"&gt;
+      &lt;div class="popHeader"&gt;
+      	 &lt;h3&gt;&lt;span th:utext="#{${ tenantCode}+'.addDependent'}"/&gt;&lt;/h3&gt;
+      	 &lt;p&gt;&lt;a href="#" class="closeBtn" id="closeBtn{{:index}}" data-met-idCount="{{:index}}"&gt;&lt;span th:utext="#{${ tenantCode}+'.closeWindow'}"/&gt;&lt;/a&gt;&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="fullPart popupWidth103Per"&gt;
+       &lt;div class="innerPart"&gt;
+      
+      
+      &lt;div id="popUpContentDiv"&gt;&lt;/div&gt;
+      
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;  --&gt;
+   
+   &lt;/div&gt;
+   </script>
+   </div>
+         <div id="emailDetails"></div>
+         <div id="addEmailAddressOverlayJSRenderTemplate">
+      <script data-met-template="addEmailAddressOverlayJSRenderTemplate" type="text/x-jsrender">
+         &lt;div id="addEmailAddressOverlay{{:index}}" class="modal fade"&gt;
+         	&lt;div class="modal-dialog"&gt;
+                     &lt;div class="modal-content"&gt;
+         	  &lt;div class="modal-header"&gt;
+                         &lt;button type="button" class="close fa fa-times" id="closeEmailBtn{{:index}}" data-met-idCount="{{:index}}" data-dismiss="" aria-hidden="true"&gt;&lt;/button&gt;
+                         &lt;h2 class="modal-title" id="myModalLabel-1"&gt;Dirección de correo electrónico&lt;/h2&gt;
+                       &lt;/div&gt;&lt;!-- &lt;div class="modal-body"&gt; --&gt;
+				
+         		&lt;div id="popUpContentDiv"&gt;&lt;/div&gt;&lt;!-- &lt;/div&gt; --&gt;
+         		
+         		
+   &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;/div&gt;
+   </script>
+   </div>
+         <div id="addEmailAddressJSRenderTemplate">
+   <script data-met-template="addEmailAddressJSRenderTemplate" type="text/x-jsrender">
+      &lt;div class="modal-body"&gt;&lt;!-- &lt;form role='form'&gt; --&gt;
+                        
+                           &lt;div class="row USA_Phone"&gt;
+                              &lt;div class="form-group col-sm-6"&gt;
+                                 &lt;label for="Number"&gt;&lt;span&gt;Dirección de correo electrónico&lt;/span&gt;&lt;span class="mandatory"&gt;*&lt;/span&gt;&lt;/label&gt;
+                                 &lt;input type="text" id="txtEmailAddress{{:index}}" class="form-control" data-met-mand="mandatory" maxlength="60" data-met-blur="minLength;email" data-met-minLength="7" data-met-errorDiv="errSpnTxtCustMgmtEmailID{{:index}}" name="appDataMap[&amp;#39;CustomerData.Party.EMailAddresses.EMailAddress:{{:index}}.EMailAddr&amp;#39;]" value="" /&gt;
+								  &lt;span id="errSpnTxtCustMgmtEmailID{{:index}}" class="error"&gt;&lt;/span&gt;
+                              &lt;/div&gt;
+                           &lt;/div&gt;&lt;!-- &lt;/form&gt; --&gt;
+                        
+                     &lt;/div&gt;
+                     &lt;div class="modal-footer"&gt;
+                        &lt;button type="button" class="btn btn-primary pull-left saveChildren Contact" id="btnSaveEmail{{:index}}" data-met-idCount="{{:index}}"&gt;GUARDAR&lt;/button&gt;
+                        &lt;button type="button" id="btnEmailCancel{{:index}}" data-met-idCount="{{:index}}" class="btn btn-primary  pull-left saveSpouse" data-dismiss=""&gt;CANCELAR&lt;/button&gt;
+                     &lt;/div&gt;
+   </script>
+   </div>
+         <div id="emailAddressDetailsJSRenderTemplate">
+      <script data-met-template="emailAddressDetailsJSRenderTemplate" type="text/x-jsrender">
+         &lt;div id="email{{:index}}" class="row "&gt;
+                       &lt;div class="form-group col-sm-4 "&gt;
+         		     &lt;label for="emailAddress"&gt;&lt;span&gt;Dirección de correo electrónico&lt;/span&gt;&lt;/label&gt;
+                               &lt;input for="emailAddress " class="col-sm-12 form-control" id="emailAddress{{:index}}" data-met-idCount="{{:index}}" value="{{:clientEmailAddress}}" data-met-blur="minLength;email" data-met-minLength="5" data-met-errorDiv="errSpnTxtCustMgmtEmailID" /&gt;
+							   &lt;span id="errSpnTxtCustMgmtEmailID{{:index}}" class="error"&gt;&lt;/span&gt;
+         				   &lt;/div&gt;
+						   &lt;div&gt;
+						   &lt;a class="deleteContact marTop35px pull-left" id="btnDeleteEmail{{:index}}" data-met-idCount="{{:index}}"&gt;Borrar&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+                                         
+      </script>
+   </div><!-- Client JSRender Templates Start -->
+         
+         <div id="phoneDetails"></div>
+         <div id="addPhoneNumberOverlayJSRenderTemplate">
+      <script data-met-template="addPhoneNumberOverlayJSRenderTemplate" type="text/x-jsrender">
+         &lt;div id="addPhoneNumberOverlay{{:index}}" class="modal fade"&gt;
+         	&lt;div class="modal-dialog"&gt;
+                     &lt;div class="modal-content"&gt;
+         	  &lt;div class="modal-header"&gt;
+                         &lt;button type="button" class="close fa fa-times" id="closePhoneBtn{{:index}}" data-met-idCount="{{:index}}" data-dismiss="" aria-hidden="true"&gt;&lt;/button&gt;
+                         &lt;h2 class="modal-title" id="myModalLabel-1"&gt;Añadir teléfono&lt;/h2&gt;
+                       &lt;/div&gt;
+				
+         		&lt;div id="popUpContentDiv"&gt;&lt;/div&gt;
+         		
+         		
+   &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;/div&gt;
+   </script>
+   </div>
+         <div id="addPhoneNumberJSRenderTemplate">
+   <script data-met-template="addPhoneNumberJSRenderTemplate" type="text/x-jsrender">
+       &lt;div class="modal-body"&gt;&lt;!-- &lt;form role='form'&gt; --&gt;
+                           
+                              &lt;div class="row USA_Phone"&gt;
+							        &lt;div class="form-group col-sm-3"&gt;
+									  &lt;label for="middleName2"&gt;&lt;span&gt;Tipo de teléfono&lt;/span&gt;&lt;span class="mandatory"&gt;*&lt;/span&gt;&lt;/label&gt;
+										&lt;select class="form-control" id="selectPhoneType{{:index}}" data-met-idCount="{{:index}}" data-met-checks="select" data-met-mand="mandatory" data-met-errorDiv="errSpnSelectPhoneType{{:index}}" name="appDataMap[&amp;#39;CustomerData.Party.Person.Phones.Phone:{{:index}}.PhoneType&amp;#39;]"&gt;
+											&lt;option value="-1"&gt;Seleccione&lt;/option&gt;
+											&lt;option value="H"&gt;Casa&lt;/option&gt;&lt;option value="M"&gt;Celular&lt;/option&gt;&lt;option value="W"&gt;Oficina&lt;/option&gt;
+										&lt;/select&gt;
+										 &lt;p class="error" id="errSpnSelectPhoneType{{:index}}"&gt;&lt;/p&gt;
+									 &lt;/div&gt;
+										
+									 &lt;div class="form-group col-sm-6"&gt;
+										&lt;label for="Number"&gt;&lt;span&gt;Número de teléfono&lt;/span&gt;
+										&lt;span style="display:none;" id="spantxtPhoneNumber{{:index}}" class="mandatory"&gt;*&lt;/span&gt;
+										&lt;/label&gt;
+										&lt;input type="text" class="form-control" data-met-phoneField="true" id="txtPhoneNumber{{:index}}" data-met-mand="mandatory" data-met-keypress="num_Allowed" maxlength="10" data-met-blur="minLength" data-met-errorDiv="errSpnTxtCustMgmtPhoneNumberAdd{{:index}}" data-met-idCount="{{:index}}" placeholder="Número de teléfono" disabled="disabled" name="appDataMap[&amp;#39;CustomerData.Party.Person.Phones.Phone:{{:index}}.PhoneNumber&amp;#39;]" value="" /&gt;
+										&lt;span id="errSpnTxtCustMgmtPhoneNumberAdd{{:index}}" class="error"&gt;&lt;/span&gt;
+									 &lt;/div&gt;	
+										&lt;div id="phExtnDiv{{:index}}" style="display:none" class="phExtnDiv{{:index}} form-group col-sm-2"&gt;
+											&lt;label&gt;&lt;span&gt;Ext&lt;/span&gt;&lt;/label&gt;
+											&lt;input type="text" value="" maxlength="5" id="phExtn{{:index}}" data-met-keypress="num_Allowed" data-met-idcount="{{:index}}" class="form-control" name="appDataMap[&amp;#39;CustomerData.Party.Person.Phones.Phone:{{:index}}.PhoneExtNumber&amp;#39;]" /&gt;
+										&lt;/div&gt;								 
+                              &lt;/div&gt;&lt;!-- &lt;/form&gt; --&gt;
+							
+        &lt;/div&gt;
+            &lt;div class="modal-footer"&gt;
+				&lt;button type="button" class="btn btn-primary pull-left saveChildren Contact" id="btnSavePhoneNumber{{:index}}" data-met-idCount="{{:index}}"&gt;GUARDAR&lt;/button&gt;
+				&lt;button type="button" id="btnPhoneCancel{{:index}}" data-met-idCount="{{:index}}" class="btn btn-primary  pull-left saveSpouse" data-dismiss=""&gt;CANCELAR&lt;/button&gt;
+            &lt;/div&gt;
+    </script>
+   </div>
+         <div id="phoneNumberDetailsJSRenderTemplate">
+      <script data-met-template="phoneNumberDetailsJSRenderTemplate" type="text/x-jsrender">
+         &lt;div id="otherphoneNumberDiv{{:index}}" class="row"&gt;
+		                &lt;div class="form-group col-sm-6 col-md-3"&gt;
+                          &lt;label for="middleName2"&gt;&lt;span&gt;Tipo de teléfono&lt;/span&gt;&lt;/label&gt;
+						  &lt;select class="form-control" id="selectPhnType{{:index}}" data-met-idCount="{{:index}}"&gt;&lt;!-- &lt;option value="{{:phoneType}}"&gt;{{:phoneType}}&lt;/option&gt; --&gt;
+                           
+							
+         		           &lt;option value="H"&gt;Casa&lt;/option&gt;&lt;option value="M"&gt;Celular&lt;/option&gt;&lt;option value="W"&gt;Oficina&lt;/option&gt;
+                          &lt;/select&gt;
+                        &lt;/div&gt;
+						
+                       &lt;div class="form-group col-sm-6 col-md-4"&gt;
+                          &lt;label for="emailAddress"&gt;&lt;span&gt;Número de teléfono&lt;/span&gt;&lt;/label&gt;
+                          &lt;input type="text" data-met-phnField="true" class="form-control" id="txtPhnNumber{{:index}}" value="{{:phoneNumber}}" data-met-idCount="{{:index}}" data-met-errorDiv="errSpnTxtPhnNumber{{:index}}" data-met-keypress="num_Allowed" maxlength="10" data-met-mand="mandatory" data-met-blur="minLength" /&gt;
+                          &lt;p class="error" id="errSpnTxtPhnNumber{{:index}}"&gt;&lt;/p&gt;
+                       &lt;/div&gt;   
+							&lt;div id="phExtnDiv{{:index}}" style="display:none" data-met-idcount="{{:index}}" class="phExtnDiv{{:index}} form-group col-sm-2"&gt;
+											&lt;label&gt;&lt;span&gt;Ext&lt;/span&gt;&lt;/label&gt;
+											&lt;input type="text" maxlength="5" id="phExtn{{:index}}" value="{{:phoneExt}}" data-met-keypress="num_Allowed" data-met-idcount="{{:index}}" class="form-control" /&gt;
+										&lt;/div&gt;
+						&lt;div&gt;
+					   &lt;a id="btnDeletePhone{{:index}}" data-met-idCount="{{:index}}" class="deleteContact marTop35px pull-left" data-original-title="" title="" style=""&gt;Borrar&lt;/a&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+		</script>
+   </div>
+         <div id="addrDetails"></div>
+         <div id="addAnotherAddressOverlayJSRenderTemplate">
+      <script data-met-template="addAnotherAddressOverlayJSRenderTemplate" type="text/x-jsrender">
+         &lt;div id="addAnotherAddressOverlay{{:index}}" class="modal fade"&gt;
+         	&lt;div class="modal-dialog"&gt;
+                     &lt;div class="modal-content"&gt;
+         	  &lt;div class="modal-header"&gt;
+                         &lt;button type="button" class="close fa fa-times" id="closeAddressBtn{{:index}}" data-met-idCount="{{:index}}" data-dismiss="" aria-hidden="true"&gt;&lt;/button&gt;
+                          &lt;h2 class="modal-title" id="myModalLabel-2"&gt;&lt;span&gt;Añadir la dirección&lt;/span&gt;&lt;/h2&gt;
+                       &lt;/div&gt;&lt;!-- &lt;div class="modal-body"&gt; --&gt;
+				
+         		&lt;div id="popUpContentDiv"&gt;&lt;/div&gt;&lt;!-- &lt;/div&gt; --&gt;
+         		
+         		
+   &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;/div&gt;
+   </script>
+   </div>
+            <div id="addAnotherAddressJSRenderTemplate">
+   <script data-met-template="addAnotherAddressJSRenderTemplate" type="text/x-jsrender">
+       &lt;div class="modal-body"&gt;&lt;!--  &lt;form role='form'&gt; --&gt;
+                          
+                              &lt;div class="row_Address"&gt;
+                                &lt;div class="row_Address"&gt;
+                                 &lt;div class="residential_Address" id="residentialAddress{{:index}}"&gt;&lt;!--&lt;div class="row"&gt;
+                                       &lt;div class="form-group col-sm-6"&gt;
+                                          &lt;label for="AddressType"&gt;&lt;span th:utext="#{${ tenantCode}+'.AddressType'}"/&gt;&lt;span class="mandatory"&gt;*&lt;/span&gt;&lt;/label&gt;
+                                          &lt;select id="selectAddressType{{:index}}"  data-met-idCount="{{:index}}" data-met-checks="select" data-met-mand="mandatory" class="form-control" data-met-errorDiv="errSpnSelectAddressType{{:index}}" th:field="*{appDataMap['CustomerData.Party.Person.Addresses.Address:{{:index}}.AddressType']}"&gt;
+										  &lt;option value="-1" th:utext="#{${ tenantCode}+'.Select'}"&gt;&lt;/option&gt;
+											&lt;option th:each="listCurrency :${gspFlowScopeBean.referenceDataMap['ADDR_TYP_CD']}"  th:value="${listCurrency['masterDataValueCode']}" th:text="${listCurrency['masterDataValueName']}"&gt;&lt;/option&gt;
+                                          &lt;/select&gt;
+										   &lt;p class="error" id="errSpnSelectAddressType{{:index}}"&gt;&lt;/p&gt;
+                                       &lt;/div&gt;
+                                    &lt;/div&gt;--&gt;
+                                    
+									&lt;div&gt;
+										&lt;label for="Residential Address "&gt;&lt;span&gt;Dirección&lt;/span&gt;
+										  &lt;span id="spantxtAddressLineOne{{:index}}" class="mandatory"&gt;*&lt;/span&gt;
+										  &lt;/label&gt;
+									&lt;div class="row"&gt;
+                                       &lt;div class="form-group col-sm-6" id="divtxtAddressLineOne{{:index}}"&gt;
+                                          
+                                          &lt;input type="text" class="form-control" data-met-errorDiv="errSpnTxtAddressLineOne{{:index}}" maxLength="100" id="txtAddressLineOne{{:index}}" data-met-addressField="" data-met-idCount="{{:index}}" data-met-mand="mandatory" placeholder="Dirección" name="appDataMap[&amp;#39;CustomerData.Party.Person.Addresses.Address:{{:index}}.AddressLine1&amp;#39;]" value="" /&gt;
+										  &lt;p class="error" id="errSpnTxtAddressLineOne{{:index}}"&gt;&lt;/p&gt;
+                                       &lt;/div&gt;&lt;!--	&lt;div class="form-group col-sm-6" id="divtxtAddressLineTwo{{:index}}"&gt;
+                                          &lt;input id="txtAddressLineTwo{{:index}}" type="text" class="form-control" th:placeholder="#{${ tenantCode}+'.DirLine2'}" maxLength="100" data-met-addressField = ""  th:field="*{appDataMap['CustomerData.Party.Person.Addresses.Address:{{:index}}.AddressLine2']}" data-met-idCount="{{:index}}" data-met-errorDiv="errSpnTxtAddressLineTwo{{:index}}"/&gt;
+										  &lt;p class="error" id="errSpnTxtAddressLineTwo{{:index}}"&gt;&lt;/p&gt;
+                                       &lt;/div&gt; --&gt;
+									
+ 									&lt;/div&gt;
+									&lt;/div&gt;&lt;!--&lt;div class="row"&gt;
+                                       &lt;div class="form-group col-sm-6" id="divtxtAddressLineTwo{{:index}}"&gt;
+                                          &lt;input id="txtAddressLineTwo{{:index}}" type="text" class="form-control" placeholder="Address Line 2" maxLength="100" data-met-addressField = "" th:disabled="!(*{appDataMap['CustomerData.Party.Person.Addresses.Address:{{:index}}.ResidentCountry']!='-1' and appDataMap['CustomerData.Party.Person.Addresses.Address:{{:index}}.ResidentCountry']!=null})" th:field="*{appDataMap['CustomerData.Party.Person.Addresses.Address:{{:index}}.AddressLine2']}" data-met-idCount="{{:index}}" data-met-errorDiv="errSpnTxtAddressLineTwo{{:index}}"/&gt;
+										  &lt;p class="error" id="errSpnTxtAddressLineTwo{{:index}}"&gt;&lt;/p&gt;
+                                       &lt;/div&gt;
+                                    &lt;/div&gt;--&gt;
+								
+								&lt;div&gt;
+ 									 &lt;label for="Resident Country"&gt;&lt;span&gt;País de residencia &lt;/span&gt;&lt;span class="mandatory"&gt;*&lt;/span&gt;&lt;/label&gt;
+										&lt;div class="row"&gt;                                      
+ 										&lt;div class="form-group col-sm-6"&gt;
+                                        
+                                          &lt;select id="selectResidentCountry{{:index}}" data-met-idCount="{{:index}}" data-met-checks="select" data-met-mand="mandatory" class="form-control" data-met-errorDiv="errSpnSelectResidentCountry{{:index}}" name="appDataMap[&amp;#39;CustomerData.Party.Person.Addresses.Address:{{:index}}.ResidentCountry&amp;#39;]"&gt;
+										  &lt;option value="-1"&gt;Seleccione&lt;/option&gt;
+											&lt;option value="1"&gt;AFGANISTÁN&lt;/option&gt;&lt;option value="300"&gt;AKROTIRI&lt;/option&gt;&lt;option value="2"&gt;ALBANIA&lt;/option&gt;&lt;option value="3"&gt;ALEMANIA&lt;/option&gt;&lt;option value="4"&gt;ANDORRA&lt;/option&gt;&lt;option value="5"&gt;ANGOLA&lt;/option&gt;&lt;option value="6"&gt;ANGUILA&lt;/option&gt;&lt;option value="7"&gt;ANTIGUA Y BARBUDA&lt;/option&gt;&lt;option value="302"&gt;ANTILLAS NEERLANDESAS&lt;/option&gt;&lt;option value="301"&gt;ANTÁRTIDA&lt;/option&gt;&lt;option value="303"&gt;ARABIA SAUDÍ&lt;/option&gt;&lt;option value="304"&gt;ARCTIC OCEAN&lt;/option&gt;&lt;option value="13"&gt;ARGELIA&lt;/option&gt;&lt;option value="14"&gt;ARGENTINA&lt;/option&gt;&lt;option value="15"&gt;ARMENIA&lt;/option&gt;&lt;option value="16"&gt;ARUBA&lt;/option&gt;&lt;option value="305"&gt;ASHMORE AND CARTIER ISLANDS&lt;/option&gt;&lt;option value="306"&gt;ATLANTIC OCEAN&lt;/option&gt;&lt;option value="17"&gt;AUSTRALIA&lt;/option&gt;&lt;option value="19"&gt;AUSTRIA&lt;/option&gt;&lt;option value="20"&gt;AZERBAIYÁN&lt;/option&gt;&lt;option value="21"&gt;BAHAMAS&lt;/option&gt;&lt;option value="307"&gt;BAHRÁIN&lt;/option&gt;&lt;option value="23"&gt;BANGLADESH&lt;/option&gt;&lt;option value="24"&gt;BARBADOS&lt;/option&gt;&lt;option value="27"&gt;BELICE&lt;/option&gt;&lt;option value="28"&gt;BENÍN&lt;/option&gt;&lt;option value="29"&gt;BERMUDAS&lt;/option&gt;&lt;option value="25"&gt;BIELORRUSIA&lt;/option&gt;&lt;option value="308"&gt;BIRMANIA; MYANMAR&lt;/option&gt;&lt;option value="31"&gt;BOLIVIA&lt;/option&gt;&lt;option value="309"&gt;BOSNIA Y HERCEGOVINA&lt;/option&gt;&lt;option value="310"&gt;BOTSUANA&lt;/option&gt;&lt;option value="34"&gt;BRASIL&lt;/option&gt;&lt;option value="35"&gt;BRUNÉI&lt;/option&gt;&lt;option value="36"&gt;BULGARIA&lt;/option&gt;&lt;option value="37"&gt;BURKINA FASO&lt;/option&gt;&lt;option value="38"&gt;BURUNDI&lt;/option&gt;&lt;option value="30"&gt;BUTÁN&lt;/option&gt;&lt;option value="26"&gt;BÉLGICA&lt;/option&gt;&lt;option value="39"&gt;CABO VERDE&lt;/option&gt;&lt;option value="41"&gt;CAMBOYA&lt;/option&gt;&lt;option value="42"&gt;CAMERÚN&lt;/option&gt;&lt;option value="43"&gt;CANADÁ&lt;/option&gt;&lt;option value="54"&gt;CHAD&lt;/option&gt;&lt;option value="55"&gt;CHILE&lt;/option&gt;&lt;option value="56"&gt;CHINA&lt;/option&gt;&lt;option value="57"&gt;CHIPRE&lt;/option&gt;&lt;option value="311"&gt;CLIPPERTON ISLAND&lt;/option&gt;&lt;option value="44"&gt;COLOMBIA&lt;/option&gt;&lt;option value="45"&gt;COMORAS&lt;/option&gt;&lt;option value="46"&gt;CONGO&lt;/option&gt;&lt;option value="312"&gt;CORAL SEA ISLANDS&lt;/option&gt;&lt;option value="48"&gt;COREA DEL NORTE&lt;/option&gt;&lt;option value="49"&gt;COREA DEL SUR&lt;/option&gt;&lt;option value="51"&gt;COSTA DE MARFIL&lt;/option&gt;&lt;option value="50"&gt;COSTA RICA&lt;/option&gt;&lt;option value="52"&gt;CROACIA&lt;/option&gt;&lt;option value="53"&gt;CUBA&lt;/option&gt;&lt;option value="313"&gt;DHEKELIA&lt;/option&gt;&lt;option value="58"&gt;DINAMARCA&lt;/option&gt;&lt;option value="60"&gt;DOMINICA&lt;/option&gt;&lt;option value="61"&gt;ECUADOR&lt;/option&gt;&lt;option value="62"&gt;EGIPTO&lt;/option&gt;&lt;option value="63"&gt;EL SALVADOR&lt;/option&gt;&lt;option value="211"&gt;EL VATICANO&lt;/option&gt;&lt;option value="314"&gt;EMIRATOS ÁRABES UNIDOS&lt;/option&gt;&lt;option value="65"&gt;ERITREA&lt;/option&gt;&lt;option value="66"&gt;ESLOVAQUIA&lt;/option&gt;&lt;option value="67"&gt;ESLOVENIA&lt;/option&gt;&lt;option value="68"&gt;ESPAÑA&lt;/option&gt;&lt;option value="69"&gt;ESTADOS UNIDOS&lt;/option&gt;&lt;option value="70"&gt;ESTONIA&lt;/option&gt;&lt;option value="71"&gt;ETIOPÍA&lt;/option&gt;&lt;option value="73"&gt;FILIPINAS&lt;/option&gt;&lt;option value="74"&gt;FINLANDIA&lt;/option&gt;&lt;option value="315"&gt;FIYI&lt;/option&gt;&lt;option value="75"&gt;FRANCIA&lt;/option&gt;&lt;option value="76"&gt;GABÓN&lt;/option&gt;&lt;option value="77"&gt;GAMBIA&lt;/option&gt;&lt;option value="316"&gt;GAZA STRIP&lt;/option&gt;&lt;option value="78"&gt;GEORGIA&lt;/option&gt;&lt;option value="79"&gt;GHANA&lt;/option&gt;&lt;option value="317"&gt;GIBRALTAR&lt;/option&gt;&lt;option value="80"&gt;GRANADA&lt;/option&gt;&lt;option value="81"&gt;GRECIA&lt;/option&gt;&lt;option value="318"&gt;GROENLANDIA&lt;/option&gt;&lt;option value="83"&gt;GUAM&lt;/option&gt;&lt;option value="84"&gt;GUATEMALA&lt;/option&gt;&lt;option value="319"&gt;GUERNSEY&lt;/option&gt;&lt;option value="86"&gt;GUINEA&lt;/option&gt;&lt;option value="88"&gt;GUINEA ECUATORIAL&lt;/option&gt;&lt;option value="320"&gt;GUINEA-BISSAU&lt;/option&gt;&lt;option value="89"&gt;GUYANA&lt;/option&gt;&lt;option value="90"&gt;HAITÍ&lt;/option&gt;&lt;option value="91"&gt;HONDURAS&lt;/option&gt;&lt;option value="321"&gt;HONG KONG&lt;/option&gt;&lt;option value="92"&gt;HUNGRÍA&lt;/option&gt;&lt;option value="93"&gt;INDIA&lt;/option&gt;&lt;option value="322"&gt;INDIAN OCEAN&lt;/option&gt;&lt;option value="94"&gt;INDONESIA&lt;/option&gt;&lt;option value="95"&gt;IRAQ&lt;/option&gt;&lt;option value="97"&gt;IRLANDA&lt;/option&gt;&lt;option value="96"&gt;IRÁN&lt;/option&gt;&lt;option value="323"&gt;ISLA BOUVET&lt;/option&gt;&lt;option value="324"&gt;ISLA CHRISTMAS&lt;/option&gt;&lt;option value="325"&gt;ISLA NORFOLK&lt;/option&gt;&lt;option value="98"&gt;ISLANDIA&lt;/option&gt;&lt;option value="326"&gt;ISLAS CAIMÁN&lt;/option&gt;&lt;option value="327"&gt;ISLAS COCOS&lt;/option&gt;&lt;option value="10"&gt;ISLAS COOK&lt;/option&gt;&lt;option value="328"&gt;ISLAS FEROE&lt;/option&gt;&lt;option value="329"&gt;ISLAS GEORGIA DEL SUR Y SANDWICH DEL SUR&lt;/option&gt;&lt;option value="330"&gt;ISLAS HEARD Y MCDONALD&lt;/option&gt;&lt;option value="331"&gt;ISLAS MALVINAS&lt;/option&gt;&lt;option value="127"&gt;ISLAS MARIANAS DEL NORTE&lt;/option&gt;&lt;option value="129"&gt;ISLAS MARSHALL&lt;/option&gt;&lt;option value="156"&gt;ISLAS PITCAIRN&lt;/option&gt;&lt;option value="171"&gt;ISLAS SALOMÓN&lt;/option&gt;&lt;option value="202"&gt;ISLAS TURCAS Y CAICOS&lt;/option&gt;&lt;option value="332"&gt;ISLAS VÍRGENES AMERICANAS&lt;/option&gt;&lt;option value="333"&gt;ISLAS VÍRGENES BRITÁNICAS&lt;/option&gt;&lt;option value="99"&gt;ISRAEL&lt;/option&gt;&lt;option value="100"&gt;ITALIA&lt;/option&gt;&lt;option value="101"&gt;JAMAICA&lt;/option&gt;&lt;option value="334"&gt;JAN MAYEN&lt;/option&gt;&lt;option value="102"&gt;JAPÓN&lt;/option&gt;&lt;option value="335"&gt;JERSEY&lt;/option&gt;&lt;option value="103"&gt;JORDANIA&lt;/option&gt;&lt;option value="336"&gt;KAZAJISTÁN&lt;/option&gt;&lt;option value="106"&gt;KENIA&lt;/option&gt;&lt;option value="337"&gt;KIRGUIZISTÁN&lt;/option&gt;&lt;option value="108"&gt;KIRIBATI&lt;/option&gt;&lt;option value="109"&gt;KUWAIT&lt;/option&gt;&lt;option value="110"&gt;LAOS&lt;/option&gt;&lt;option value="111"&gt;LESOTO&lt;/option&gt;&lt;option value="112"&gt;LETONIA&lt;/option&gt;&lt;option value="114"&gt;LIBERIA&lt;/option&gt;&lt;option value="115"&gt;LIBIA&lt;/option&gt;&lt;option value="116"&gt;LIECHTENSTEIN&lt;/option&gt;&lt;option value="117"&gt;LITUANIA&lt;/option&gt;&lt;option value="118"&gt;LUXEMBURGO&lt;/option&gt;&lt;option value="113"&gt;LÍBANO&lt;/option&gt;&lt;option value="119"&gt;MACAO&lt;/option&gt;&lt;option value="120"&gt;MACEDONIA&lt;/option&gt;&lt;option value="121"&gt;MADAGASCAR&lt;/option&gt;&lt;option value="122"&gt;MALASIA&lt;/option&gt;&lt;option value="123"&gt;MALAUI&lt;/option&gt;&lt;option value="124"&gt;MALDIVAS&lt;/option&gt;&lt;option value="126"&gt;MALTA&lt;/option&gt;&lt;option value="125"&gt;MALÍ&lt;/option&gt;&lt;option value="338"&gt;MAN, ISLE OF&lt;/option&gt;&lt;option value="128"&gt;MARRUECOS&lt;/option&gt;&lt;option value="339"&gt;MAURICIO&lt;/option&gt;&lt;option value="131"&gt;MAURITANIA&lt;/option&gt;&lt;option value="340"&gt;MAYOTTE&lt;/option&gt;&lt;option value="133"&gt;MICRONESIA&lt;/option&gt;&lt;option value="134"&gt;MOLDAVIA&lt;/option&gt;&lt;option value="136"&gt;MONGOLIA&lt;/option&gt;&lt;option value="341"&gt;MONTENEGRO&lt;/option&gt;&lt;option value="137"&gt;MONTSERRAT&lt;/option&gt;&lt;option value="138"&gt;MOZAMBIQUE&lt;/option&gt;&lt;option value="342"&gt;MUNDO&lt;/option&gt;&lt;option value="132"&gt;MÉXICO&lt;/option&gt;&lt;option value="135"&gt;MÓNACO&lt;/option&gt;&lt;option value="140"&gt;NAMIBIA&lt;/option&gt;&lt;option value="141"&gt;NAURU&lt;/option&gt;&lt;option value="343"&gt;NAVASSA ISLAND&lt;/option&gt;&lt;option value="142"&gt;NEPAL&lt;/option&gt;&lt;option value="143"&gt;NICARAGUA&lt;/option&gt;&lt;option value="145"&gt;NIGERIA&lt;/option&gt;&lt;option value="11"&gt;NIUE&lt;/option&gt;&lt;option value="146"&gt;NORUEGA&lt;/option&gt;&lt;option value="104"&gt;NUEVA CALEDONIA&lt;/option&gt;&lt;option value="9"&gt;NUEVA ZELANDA&lt;/option&gt;&lt;option value="344"&gt;NÍGER&lt;/option&gt;&lt;option value="147"&gt;OMÁN&lt;/option&gt;&lt;option value="345"&gt;PACIFIC OCEAN&lt;/option&gt;&lt;option value="149"&gt;PAKISTÁN&lt;/option&gt;&lt;option value="150"&gt;PALAOS&lt;/option&gt;&lt;option value="152"&gt;PANAMÁ&lt;/option&gt;&lt;option value="346"&gt;PAPÚA-NUEVA GUINEA&lt;/option&gt;&lt;option value="347"&gt;PARACEL ISLANDS&lt;/option&gt;&lt;option value="154"&gt;PARAGUAY&lt;/option&gt;&lt;option value="148"&gt;PAÍSES BAJOS&lt;/option&gt;&lt;option value="155"&gt;PERÚ&lt;/option&gt;&lt;option value="157"&gt;POLINESIA FRANCESA&lt;/option&gt;&lt;option value="158"&gt;POLONIA&lt;/option&gt;&lt;option value="159"&gt;PORTUGAL&lt;/option&gt;&lt;option value="160"&gt;PUERTO RICO&lt;/option&gt;&lt;option value="161"&gt;QATAR&lt;/option&gt;&lt;option value="162"&gt;REINO UNIDO&lt;/option&gt;&lt;option value="348"&gt;REPÚBLICA CENTROAFRICANA&lt;/option&gt;&lt;option value="349"&gt;REPÚBLICA CHECA&lt;/option&gt;&lt;option value="350"&gt;REPÚBLICA DEMOCRÁTICA DEL CONGO&lt;/option&gt;&lt;option value="351"&gt;REPÚBLICA DOMINICANA&lt;/option&gt;&lt;option value="169"&gt;RUANDA&lt;/option&gt;&lt;option value="167"&gt;RUMANIA&lt;/option&gt;&lt;option value="168"&gt;RUSIA&lt;/option&gt;&lt;option value="172"&gt;SAMOA&lt;/option&gt;&lt;option value="352"&gt;SAMOA AMERICANA&lt;/option&gt;&lt;option value="173"&gt;SAN CRISTÓBAL Y NIEVES&lt;/option&gt;&lt;option value="174"&gt;SAN MARINO&lt;/option&gt;&lt;option value="353"&gt;SAN PEDRO Y MIQUELÓN&lt;/option&gt;&lt;option value="175"&gt;SAN VICENTE Y LAS GRANADINAS&lt;/option&gt;&lt;option value="176"&gt;SANTA HELENA&lt;/option&gt;&lt;option value="177"&gt;SANTA LUCÍA&lt;/option&gt;&lt;option value="354"&gt;SANTO TOMÉ Y PRÍNCIPE&lt;/option&gt;&lt;option value="179"&gt;SENEGAL&lt;/option&gt;&lt;option value="355"&gt;SERBIA&lt;/option&gt;&lt;option value="180"&gt;SEYCHELLES&lt;/option&gt;&lt;option value="181"&gt;SIERRA LEONA&lt;/option&gt;&lt;option value="182"&gt;SINGAPUR&lt;/option&gt;&lt;option value="183"&gt;SIRIA&lt;/option&gt;&lt;option value="184"&gt;SOMALIA&lt;/option&gt;&lt;option value="356"&gt;SOUTHERN OCEAN&lt;/option&gt;&lt;option value="357"&gt;SPRATLY ISLANDS&lt;/option&gt;&lt;option value="185"&gt;SRI LANKA&lt;/option&gt;&lt;option value="191"&gt;SUAZILANDIA&lt;/option&gt;&lt;option value="186"&gt;SUDÁFRICA&lt;/option&gt;&lt;option value="187"&gt;SUDÁN&lt;/option&gt;&lt;option value="188"&gt;SUECIA&lt;/option&gt;&lt;option value="189"&gt;SUIZA&lt;/option&gt;&lt;option value="190"&gt;SURINAM&lt;/option&gt;&lt;option value="358"&gt;SVALBARD Y JAN MAYEN&lt;/option&gt;&lt;option value="170"&gt;SÁHARA OCCIDENTAL&lt;/option&gt;&lt;option value="192"&gt;TAILANDIA&lt;/option&gt;&lt;option value="193"&gt;TAIWÁN&lt;/option&gt;&lt;option value="194"&gt;TANZANIA&lt;/option&gt;&lt;option value="195"&gt;TAYIKISTÁN&lt;/option&gt;&lt;option value="359"&gt;TERRITORIO BRITÁNICO DEL OCÉANO INDICO&lt;/option&gt;&lt;option value="360"&gt;TERRITORIOS AUSTRALES FRANCESES&lt;/option&gt;&lt;option value="196"&gt;TIMOR ORIENTAL&lt;/option&gt;&lt;option value="197"&gt;TOGO&lt;/option&gt;&lt;option value="198"&gt;TOKELAU&lt;/option&gt;&lt;option value="199"&gt;TONGA&lt;/option&gt;&lt;option value="361"&gt;TRINIDAD Y TOBAGO&lt;/option&gt;&lt;option value="203"&gt;TURKMENISTÁN&lt;/option&gt;&lt;option value="204"&gt;TURQUÍA&lt;/option&gt;&lt;option value="205"&gt;TUVALU&lt;/option&gt;&lt;option value="201"&gt;TÚNEZ&lt;/option&gt;&lt;option value="206"&gt;UCRANIA&lt;/option&gt;&lt;option value="207"&gt;UGANDA&lt;/option&gt;&lt;option value="362"&gt;UNIÓN EUROPEA&lt;/option&gt;&lt;option value="208"&gt;URUGUAY&lt;/option&gt;&lt;option value="209"&gt;UZBEKISTÁN&lt;/option&gt;&lt;option value="210"&gt;VANUATU&lt;/option&gt;&lt;option value="212"&gt;VENEZUELA&lt;/option&gt;&lt;option value="213"&gt;VIETNAM&lt;/option&gt;&lt;option value="363"&gt;WAKE ISLAND&lt;/option&gt;&lt;option value="364"&gt;WALLIS Y FUTUNA&lt;/option&gt;&lt;option value="365"&gt;WEST BANK&lt;/option&gt;&lt;option value="216"&gt;YEMEN&lt;/option&gt;&lt;option value="59"&gt;YIBUTI&lt;/option&gt;&lt;option value="218"&gt;ZAMBIA&lt;/option&gt;&lt;option value="219"&gt;ZIMBABUE&lt;/option&gt;
+                                          &lt;/select&gt;
+										   &lt;p class="error" id="errSpnSelectResidentCountry{{:index}}"&gt;&lt;/p&gt;
+                                       &lt;/div&gt;
+ 									&lt;/div&gt;
+                                    &lt;/div&gt;
+                                  &lt;div class="row" id="addresscityDiv"&gt;&lt;!-- Modified for GSPCOLQA-841 - changed swapped the city and state fields--&gt;
+                                       
+                                       &lt;div class="form-group col-sm-6" id="divtxtState{{:index}}"&gt;
+                                       &lt;label class="overflow" for="state"&gt;&lt;span&gt;Departamento&lt;/span&gt;&lt;span class="mandatory"&gt;*&lt;/span&gt;&lt;/label&gt;
+                                          &lt;input id="txtState{{:index}}" type="text" style="display:block" data-met-errorDiv="errSpnTxtState{{:index}}" data-met-keypress="alphabets_allowed" placeholder="Departamento" class="form-control" maxLength="30" data-met-addressField="" data-met-idCount="{{:index}}" disabled="disabled" name="appDataMap[&amp;#39;CustomerData.Party.Person.Addresses.Address:{{:index}}.State&amp;#39;]" value="" /&gt;
+                                          
+										  &lt;select id="selectState{{:index}}" style="display:none" data-met-idCount="{{:index}}" data-met-addressField="" class="form-control" data-met-errorDiv="errSpnTxtState{{:index}}" name="appDataMap[&amp;#39;CustomerData.Party.Person.Addresses.Address:{{:index}}.State&amp;#39;]"&gt;
+										  &lt;option value="-1"&gt;Seleccione&lt;/option&gt;
+											&lt;option value="31"&gt;AMAZONAS&lt;/option&gt;&lt;option value="3"&gt;ANTIOQUIA&lt;/option&gt;&lt;option value="29"&gt;ARAUCA&lt;/option&gt;&lt;option value="54"&gt;ARCHIPIÉLAGO DE SAN ANDRÉS, PROVIDENCIA Y SANTA CATALINA&lt;/option&gt;&lt;option value="16"&gt;ATLANTICO&lt;/option&gt;&lt;option value="17"&gt;BOLIVAR&lt;/option&gt;&lt;option value="8"&gt;BOYACA&lt;/option&gt;&lt;option value="9"&gt;CALDAS&lt;/option&gt;&lt;option value="20"&gt;CAQUETA&lt;/option&gt;&lt;option value="21"&gt;CASANARE&lt;/option&gt;&lt;option value="22"&gt;CAUCA&lt;/option&gt;&lt;option value="98"&gt;CESAR&lt;/option&gt;&lt;option value="25"&gt;CHOCO&lt;/option&gt;&lt;option value="5"&gt;CORDOBA&lt;/option&gt;&lt;option value="1"&gt;CUNDINAMARCA&lt;/option&gt;&lt;option value="30"&gt;GUAINIA&lt;/option&gt;&lt;option value="33"&gt;GUAJIRA&lt;/option&gt;&lt;option value="28"&gt;GUAVIARE&lt;/option&gt;&lt;option value="10"&gt;HUILA&lt;/option&gt;&lt;option value="7"&gt;MAGDALENA&lt;/option&gt;&lt;option value="12"&gt;META&lt;/option&gt;&lt;option value="45"&gt;NARIÑO&lt;/option&gt;&lt;option value="14"&gt;NORTE DE SANTANDER&lt;/option&gt;&lt;option value="26"&gt;PUTUMAYO&lt;/option&gt;&lt;option value="18"&gt;QUINDIO&lt;/option&gt;&lt;option value="6"&gt;RISARALDA&lt;/option&gt;&lt;option value="4"&gt;SANTANDER&lt;/option&gt;&lt;option value="19"&gt;SUCRE&lt;/option&gt;&lt;option value="13"&gt;TOLIMA&lt;/option&gt;&lt;option value="2"&gt;VALLE DEL CAUCA&lt;/option&gt;&lt;option value="97"&gt;VAUPES&lt;/option&gt;&lt;option value="32"&gt;VICHADA&lt;/option&gt;
+                                          &lt;/select&gt;&lt;!-- &lt;input type="text" id="selectState{{:index}}" style="display:none" maxlength="60"  data-provide="typeahead" data-met-errorDiv="errSpnTxtState{{:index}}" th:disabled="!(*{appDataMap['CustomerData.Party.Person.Addresses.Address:{{:index}}.ResidentCountry']!='-1' and appDataMap['CustomerData.Party.Person.Addresses.Address:{{:index}}.ResidentCountry']!=null})" data-met-keypress="alphabets_allowed;spaces_allowed;Dot_allowed" data-met-idCount="{{:index}}" data-met-addressField = ""
+                     th:field="*{appDataMap['CustomerData.Party.Person.Addresses.Address:{{:index}}.State']}" autocomplete="off" data-gsp-forField="forSearch" placeholder=""  class='form-control ui-autocomplete-input' /&gt; --&gt;
+                                        
+										
+										  &lt;p class="error" id="errSpnTxtState{{:index}}"&gt;&lt;/p&gt;&lt;!-- US State --&gt;
+                                         
+                                         &lt;select id="selectUSState{{:index}}" style="display:none" data-met-idCount="{{:index}}" data-met-addressField="" class="form-control" data-met-errorDiv="errSpnTxtUSState{{:index}}" name="appDataMap[&amp;#39;CustomerData.Party.Person.Addresses.Address:{{:index}}.State&amp;#39;]"&gt;
+										  &lt;option value="-1"&gt;Seleccione&lt;/option&gt;
+											&lt;option value="34"&gt;ALABAMA&lt;/option&gt;&lt;option value="35"&gt;ALASKA&lt;/option&gt;&lt;option value="36"&gt;ARIZONA&lt;/option&gt;&lt;option value="37"&gt;ARKANSAS&lt;/option&gt;&lt;option value="38"&gt;CALIFORNIA&lt;/option&gt;&lt;option value="39"&gt;COLORADO&lt;/option&gt;&lt;option value="40"&gt;CONNECTICUT&lt;/option&gt;&lt;option value="57"&gt;DELAWARE&lt;/option&gt;&lt;option value="58"&gt;DISTRICT OF COLUMBIA&lt;/option&gt;&lt;option value="45"&gt;FLORIDA&lt;/option&gt;&lt;option value="50"&gt;GEORGIA&lt;/option&gt;&lt;option value="96"&gt;IDAHO&lt;/option&gt;&lt;option value="61"&gt;ILLINOIS&lt;/option&gt;&lt;option value="62"&gt;INDIANA&lt;/option&gt;&lt;option value="63"&gt;IOWA&lt;/option&gt;&lt;option value="64"&gt;KANSAS&lt;/option&gt;&lt;option value="65"&gt;KENTUCKY&lt;/option&gt;&lt;option value="66"&gt;LOUISIANA&lt;/option&gt;&lt;option value="67"&gt;MAINE&lt;/option&gt;&lt;option value="68"&gt;MARYLAND&lt;/option&gt;&lt;option value="69"&gt;MASSACHUSETTS&lt;/option&gt;&lt;option value="70"&gt;MICHIGAN&lt;/option&gt;&lt;option value="71"&gt;MINNESOTA&lt;/option&gt;&lt;option value="72"&gt;MISSISSIPPI&lt;/option&gt;&lt;option value="73"&gt;MISSOURI&lt;/option&gt;&lt;option value="74"&gt;MONTANA&lt;/option&gt;&lt;option value="75"&gt;NEBRASKA&lt;/option&gt;&lt;option value="76"&gt;NEVADA&lt;/option&gt;&lt;option value="77"&gt;NEW HAMPSHIRE&lt;/option&gt;&lt;option value="78"&gt;NEW JERSEY&lt;/option&gt;&lt;option value="79"&gt;NEW MEXICO&lt;/option&gt;&lt;option value="80"&gt;NEW YORK&lt;/option&gt;&lt;option value="54"&gt;NORTH CAROLINA&lt;/option&gt;&lt;option value="81"&gt;NORTH DAKOTA&lt;/option&gt;&lt;option value="82"&gt;OHIO&lt;/option&gt;&lt;option value="83"&gt;OKLAHOMA&lt;/option&gt;&lt;option value="84"&gt;OREGON&lt;/option&gt;&lt;option value="46"&gt;PENNSYLVANIA&lt;/option&gt;&lt;option value="86"&gt;RHODE ISLAND&lt;/option&gt;&lt;option value="87"&gt;SOUTH CAROLINA&lt;/option&gt;&lt;option value="88"&gt;SOUTH DAKOTA&lt;/option&gt;&lt;option value="89"&gt;TENNESSEE&lt;/option&gt;&lt;option value="90"&gt;TEXAS&lt;/option&gt;&lt;option value="91"&gt;UTAH&lt;/option&gt;&lt;option value="92"&gt;VERMONT&lt;/option&gt;&lt;option value="93"&gt;VIRGINIA&lt;/option&gt;&lt;option value="59"&gt;WASHINGTON&lt;/option&gt;&lt;option value="94"&gt;WEST VIRGINIA&lt;/option&gt;&lt;option value="95"&gt;WISCONSIN&lt;/option&gt;
+                                          &lt;/select&gt;&lt;!--&lt;input type="text" id="selectUSState{{:index}}" style="display:none" maxlength="60"  data-provide="typeahead" data-met-errorDiv="errSpnTxtState{{:index}}" th:disabled="!(*{appDataMap['CustomerData.Party.Person.Addresses.Address:{{:index}}.ResidentCountry']!='-1' and appDataMap['CustomerData.Party.Person.Addresses.Address:{{:index}}.ResidentCountry']!=null})" data-met-keypress="alphabets_allowed;spaces_allowed;Dot_allowed" data-met-idCount="{{:index}}" data-met-addressField = ""
+                     th:field="*{appDataMap['CustomerData.Party.Person.Addresses.Address:{{:index}}.State']}" autocomplete="off" data-gsp-forField="forSearch" placeholder=""  class='form-control ui-autocomplete-input' /&gt; --&gt;
+                                         
+                                         
+										  &lt;p class="error" id="errSpnTxtUSState{{:index}}"&gt;&lt;/p&gt;&lt;!-- US State --&gt;
+                                         
+                                       &lt;/div&gt;
+									   &lt;div class="form-group col-sm-6" id="divtxtCity{{:index}}"&gt;
+                                       &lt;label class="overflow" for="city"&gt;&lt;span&gt;Ciudad&lt;/span&gt;&lt;span class="mandatory"&gt;*&lt;/span&gt;&lt;/label&gt;
+                                          &lt;input id="txtCity{{:index}}" type="text" style="display:block" maxLength="30" data-met-errorDiv="errSpnTxtCity{{:index}}" data-met-keypress="alphabets_allowed" placeholder="Ciudad" class="form-control" data-met-addressField="" data-met-idCount="{{:index}}" disabled="disabled" name="appDataMap[&amp;#39;CustomerData.Party.Person.Addresses.Address:{{:index}}.City&amp;#39;]" value="" /&gt;
+                                          
+										    &lt;select id="selectCity{{:index}}" style="display:none" data-met-idCount="{{:index}}" data-met-addressField="" disabled="disabled" class="form-control" data-met-errorDiv="errSpnTxtCity{{:index}}" name="appDataMap[&amp;#39;CustomerData.Party.Person.Addresses.Address:{{:index}}.City&amp;#39;]"&gt;
+										  &lt;option value="-1"&gt;Seleccione&lt;/option&gt;
+											
+                                          &lt;/select&gt;&lt;!-- &lt;input type="text" id="selectCity{{:index}}" style="display:none" maxlength="60"  data-provide="typeahead" data-met-errorDiv="errSpnTxtCity{{:index}}" th:disabled="!(*{appDataMap['CustomerData.Party.Person.Addresses.Address:{{:index}}.ResidentCountry']!='-1' and appDataMap['CustomerData.Party.Person.Addresses.Address:{{:index}}.ResidentCountry']!=null})" data-met-keypress="alphabets_allowed;spaces_allowed;Dot_allowed" data-met-idCount="{{:index}}" data-met-addressField = ""
+                     th:field="*{appDataMap['CustomerData.Party.Person.Addresses.Address:{{:index}}.City']}" autocomplete="off" data-gsp-forField="forSearch" placeholder=""  class='form-control ui-autocomplete-input' /&gt;  --&gt;
+                                         
+                                         
+										 
+											&lt;p class="error" id="errSpnTxtCity{{:index}}"&gt;&lt;/p&gt;&lt;!-- US City --&gt;
+                                          
+                                          &lt;select id="selectUSCity{{:index}}" style="display:none" data-met-idCount="{{:index}}" data-met-addressField="" disabled="disabled" class="form-control" data-met-errorDiv="errSpnTxtUSCity{{:index}}" name="appDataMap[&amp;#39;CustomerData.Party.Person.Addresses.Address:{{:index}}.City&amp;#39;]"&gt;
+										  &lt;option value="-1"&gt;Seleccione&lt;/option&gt;
+											
+                                          &lt;/select&gt;&lt;!--&lt;input type="text" id="selectUSCity{{:index}}" style="display:none" maxlength="60"  data-provide="typeahead" data-met-errorDiv="errSpnTxtCity{{:index}}" th:disabled="!(*{appDataMap['CustomerData.Party.Person.Addresses.Address:{{:index}}.ResidentCountry']!='-1' and appDataMap['CustomerData.Party.Person.Addresses.Address:{{:index}}.ResidentCountry']!=null})" data-met-keypress="alphabets_allowed;spaces_allowed;Dot_allowed" data-met-idCount="{{:index}}" data-met-addressField = ""
+                     th:field="*{appDataMap['CustomerData.Party.Person.Addresses.Address:{{:index}}.City']}" autocomplete="off" data-gsp-forField="forSearch" placeholder=""  class='form-control ui-autocomplete-input' /&gt;
+										 --&gt;
+                                          
+                                          
+											&lt;p class="error" id="errSpnTxtUSCity{{:index}}"&gt;&lt;/p&gt;&lt;!-- US City --&gt;
+                                          
+                                       &lt;/div&gt;&lt;!--&lt;div class="form-group col-sm-3" id="divtxtZipCode{{:index}}"&gt;
+                                          &lt;input id="txtZipCode{{:index}}" type="text" data-met-errorDiv="errSpnTxtZipCode{{:index}}" placeholder="Zip Code" data-met-minLength="5" maxLength="5" class="form-control" data-met-keypress="num_Allowed" data-met-addressField = "" th:disabled="!(*{appDataMap['CustomerData.Party.Person.Addresses.Address:{{:index}}.AddressType']!='-1' and appDataMap['CustomerData.Party.Person.Addresses.Address:{{:index}}.AddressType']!=null})" th:field="*{appDataMap['CustomerData.Party.Person.Addresses.Address:{{:index}}.Zip']}" data-met-idCount="{{:index}}" data-met-mand="mandatory"/&gt;
+										  &lt;p class="error" id="errSpnTxtZipCode{{:index}}"&gt;&lt;/p&gt;
+                                       &lt;/div&gt;--&gt;
+                                       
+                                    &lt;/div&gt; 
+                                    &lt;/div&gt;
+                                 &lt;/div&gt;
+                                 &lt;/div&gt;&lt;!-- &lt;/form&gt; --&gt;
+                           
+                           &lt;/div&gt;
+					   &lt;div class="modal-footer"&gt;
+                              &lt;button type="button" class="btn btn-primary pull-left saveSpouse" data-clicked="no" id="btnSaveAddress{{:index}}" data-met-idCount="{{:index}}"&gt;GUARDAR&lt;/button&gt;
+                              &lt;button id="btnAddressCancel{{:index}}" type="button" class="btn btn-primary  pull-left " data-dismiss="" data-met-idCount="{{:index}}"&gt;CANCELAR&lt;/button&gt;
+                        &lt;/div&gt;
+	</script>
+   </div>
+               <div id="otherAddressDetailsJSRenderTemplate">
+      <script data-met-template="otherAddressDetailsJSRenderTemplate" type="text/x-jsrender">
+      
+                        &lt;tr class="spouse" id="addressDiv{{:index}}"&gt;
+						 &lt;td class="report-value"&gt;&lt;label class="wordBreak" id="selectedResidentCountry{{:index}}" data-met-idCount="{{:index}}"&gt;{{:residentCountry}}&lt;/label&gt; &lt;input type="hidden" id="selectedResidentCountryVal{{:index}}" data-met-idCount="{{:index}}" value="{{:residentCountryActualVal}}" /&gt;&lt;/td&gt;
+						 &lt;td class="report-value"&gt;&lt;label class="wordBreak" id="addressLineOne{{:index}}" data-met-idCount="{{:index}}"&gt;{{:otherAddressLine1}}&lt;/label&gt;&amp;nbsp;&lt;label class="wordBreak" id="addressLineTwo{{:index}}" data-met-idCount="{{:index}}"&gt;{{:otherAddressLine2}}&lt;/label&gt;&amp;nbsp;&lt;label class="wordBreak" id="city{{:index}}" data-met-idCount="{{:index}}"&gt;{{:otherCity}}&lt;/label&gt;&amp;nbsp;&lt;label class="wordBreak" id="state{{:index}}" data-met-idCount="{{:index}}"&gt;{{:otherState}}&lt;/label&gt;&lt;/td&gt;
+						 &lt;td class="report-value"&gt;
+						 &lt;div class="no-wrap"&gt;
+						 &lt;a id="editAddressLink{{:index}}" class="dropdown-primary" data-met-idCount="{{:index}}" data-target="#AddAddressReadonly" data-toggle="modal"&gt;Editar&lt;/a&gt;&lt;span class="SeparatorColor"&gt;|&lt;/span&gt;
+						 
+							&lt;a id="deleteAddressLink{{:index}}" class="dropdown-primary deleteRow" data-met-idCount="{{:index}}" data-clicked="no" data-original-title="" title=""&gt;Borrar&lt;/a&gt;&lt;/div&gt;
+						 &lt;/td&gt;
+					  &lt;/tr&gt;
+					
+		</script>
+	 </div><!-- Client JSRender Templates End --><!-- Client  Overlays Start -->
+                  
+                  
+                  <div id="createNewClient_overlay">
+	
+	
+	<div class="modal fade" id="createNewClientOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                   <p></p><h1><span>CLIENTE</span></h1><p></p>
+                </div><!-- <div class="modal-body">
+                  	<p><span th:utext="#{${ tenantCode}+'.clientInfoSaved'}"></span></p>
+                </div> -->
+                
+                 <div class="modal-body">
+                  	<p>
+                  	
+                  	<span>El cliente ha sido salvado exitosamente </span>
+                  	</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" id="btnSearchClient" class="btn btn-primary btn-lg pull-left">Menú de Clientes</button>
+                  <button type="button" data-met-initjs="needsAnalysis" id="btnContinueToNeeds" class="btn btn-primary btn-lg pull-left">Análisis de Necesidades</button>
+				     
+ 				    
+ 				    
+	            </div>
+              </div>
+            </div>
+          </div>
+		 
+	</div>
+                  <div id="createNewClientConfirm_Overlay"><!--  <div id="createNewClientConfirmOverlay" class="pop_container popSaveSuccess" th:with="tenantCode =${session.tenantDetailTO.tenantCode}">
+         <div class="popup Width400px">
+            <div class="popHeader">
+               <p>
+                  <a href="#" class="closeBtn" data-met-hidepopup="createNewClientConfirmOverlay" id="clientConfirmCloseBtn"><span th:utext="#{${ tenantCode}+'.closeWindow'}"/></a>
+               </p>
+            </div>
+            <div class="sampleTxt">
+               <p><span th:utext="#{${ tenantCode}+'.createClientConfirm'}"></span></p>
+               
+         <article class="row">
+                    <div class="col-sm-12">
+                      <div class="btn-wrap btn-wrap-primary btn-wrap-right">
+                        <div class="form-group">
+                         <button  class="btn btn-primary btn-mobile btn-form-submit" id="btnCreateClientOK" type="button" th:utext="#{${ tenantCode}+'.createClientOK'}"></button>
+         <button  class="btn btn-secondary btn-mobile" th:utext="#{${ tenantCode}+'.createClientCancel'}" id="btnCreateClientCancel" type="button" data-met-initjs="planSelection"></button>
+            
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+            </div>
+         </div>
+         
+         </div>
+         </div>
+         </html> -->
+      
+      <div class="modal fade" id="createNewClientConfirmOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close fa fa-times" data-dismiss="modal" aria-hidden="true"></button>
+                  <h2 class="modal-title" id="myModalLabel-1"></h2>
+               </div>
+               <div class="modal-body">
+                  <p><span>¿Está seguro de crear?</span></p>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-primary btn-lg pull-left" id="btnCreateClientOK" data-met-initjs="createNewClient">Si</button>
+                  <button type="button" id="btnCreateClientCancel" class="btn btn-primary btn-lg pull-left">No</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+                  <div id="clientUpdated_CriticalOverlay"><!-- 		<div id="clientUpdatedCriticalOverlay" class="pop_container popSaveSuccess" th:with="tenantCode =${session.tenantDetailTO.tenantCode}">
+			<div class="popup Width400px">
+				<div class="popHeader">
+				<p>
+				   <a href="#" class="closeBtn" data-met-hidepopup="clientUpdatedCriticalOverlay" id="proceedForSaleOverlayCloseBtn"><span th:utext="#{${ tenantCode}+'.closeWindow'}"/></a>
+				</p>
+				</div>
+				<div class="sampleTxt">
+					<p><span th:utext="#{${ tenantCode}+'.saleOverlayMsg'}"></span></p>
+					 <p class="marginTop20px" align="center">
+						<button id="btnCriticalUpdateYes" type="button" data-met-initjs="createNewClient"  th:utext="#{${ tenantCode}+'.yes'}"></button>						
+						<button id="btnCriticalUpdateNo" type="button" data-met-hidepopup="clientUpdatedCriticalOverlay" th:utext="#{${ tenantCode}+'.no'}"></button>						
+					</p> 
+				</div>
+			</div>
+		</div>	
+    </div>
+</html> -->
+
+
+
+<div class="modal fade clientUpdatedCriticalOverlayTarrget" id="clientUpdatedCriticalOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close fa fa-times" data-dismiss="modal" aria-hidden="true"></button>
+                  <h2 class="modal-title" id="myModalLabel-1"></h2>
+                </div>
+                <div class="modal-body">
+                  	<p><span>La información critica del cliente o del familiar ha sido actualizada. Las cotizaciones pendientes se deben recalcular. ¿Desea continuar?</span></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" data-met-initjs="createNewClient" id="btnCriticalUpdateYes" class="btn btn-primary btn-lg pull-left">Si</button>
+                  <button type="button" id="btnCriticalUpdateNo" class="btn btn-primary btn-lg pull-left" data-dismiss="modal">No</button>
+                </div>
+              </div>
+            </div>
+          </div>
+	</div>
+				  <div id="needsduplicateCheckClient_overlayFragment">
+		
+	<div class="modal fade" id="duplicateCheckClientOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                   <p></p><h1><span>CLIENTE</span></h1><p></p>
+                </div>
+                <div class="modal-body">
+                  	<p><span>Client Already Exist.Do you want to continue?</span></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" id="btnDuplicateYes" class="btn btn-primary btn-lg pull-left">Si</button>
+                  <button type="button" id="btnDuplicateNo" data-met-initjs="createNewClient" class="btn btn-primary btn-lg pull-left">No</button>
+                </div>
+              </div>
+            </div>
+          </div>
+	</div>
+                  <div id="clientUpdated_RecalculateQuoteOverlay"><!-- <div id="clientUpdatedRecalculateQuoteOverlay" class="pop_container popSaveSuccess" th:with="tenantCode =${session.tenantDetailTO.tenantCode}">
+         <div class="popup Width400px">
+         	<div class="popHeader">
+         	
+         	</div>
+         	<div class="sampleTxt">
+         		<p><span th:utext="#{${ tenantCode}+'.clientSuccessfullySaved'}"></span></p>
+         		<p class="marginTop20px" align="center">
+         			<button id="btnCancelYes" type="button" th:utext="#{${ tenantCode}+'.yes'}"></button> 
+         			<button id="btnProceedToRecalQuote" type="button" data-met-initjs="quoteSelection" th:utext="#{${ tenantCode}+'.proceedToRecalQuote'}"></button>						
+         		</p>
+         	</div>
+         </div>
+         </div>	
+          </div>
+         </html> -->
+      
+      <div class="modal fade clientUpdatedRecalculateQuoteOverlayTarget" id="clientUpdatedRecalculateQuoteOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+               </div>
+               <div class="modal-body">
+                  <p><span>El cliente ha sido salvado exitosamente</span></p>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" id="btnProceedToRecalQuote" data-met-initjs="quoteSelection" class="btn btn-primary btn-lg pull-left">Recalcular cotización</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+                  <div id="clientUpdated_PaymentFrequencyOverlay"><!-- <div id="clientUpdatedPaymentFrequencyOverlay" class="pop_container popSaveSuccess" th:with="tenantCode =${session.tenantDetailTO.tenantCode}">
+         <div class="popup Width400px">
+         	<div class="popHeader">
+         	
+         	</div>
+         	<div class="sampleTxt">
+         		<p><span th:utext="#{${ tenantCode}+'.clientSavedForSelectPaymntFrequency'}"></span></p>
+         		<p class="marginTop20px" align="center"> 
+         			 <button id="btnCancelYes" type="button" th:utext="#{${ tenantCode}+'.yes'}"></button> 
+         			<button id="btnFinalizePaymentFrequency" type="button" th:utext="#{${ tenantCode}+'.finalizePaymentFrequency'}"></button>						
+         		</p>
+         	</div>
+         </div>
+         </div>	
+          </div>
+         </html> -->
+      
+      <div class="modal fade clientUpdatedPaymentFrequencyOverlayTarget" id="clientUpdatedPaymentFrequencyOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+               </div>
+               <div class="modal-body">
+                  <p><span>El cliente ha sido actualizado. Seleccione la frecuencia de pago del plan de solución</span></p>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" id="btnFinalizePaymentFrequency" class="btn btn-primary btn-lg pull-left">Frecuencia de Pago final</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+                  <div id="finalData_successOverlay"><!-- <div id="successOverlay" class="pop_container popSaveSuccess" th:with="tenantCode =${session.tenantDetailTO.tenantCode}">
+         <div class="popup">
+         <div class="popHeader">
+         </div>
+         <div class="sampleTxt">
+         <p><span th:utext="#{${ tenantCode}+'.successMsg'}"></span></p>
+         <p class="marginTop20px" align="center">
+         <button id="btnSuccessOverlayOk" type="button" th:utext="#{${ tenantCode}+'.ok'}" data-met-initjs="planSelection"  data-met-overlay="successOverlay"></button>
+         </p>
+         </div>
+         </div>
+         </div>
+         
+         
+           </div>
+         </html> -->
+      
+      <div class="modal fade" id="successOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+               </div>
+               <div class="modal-body">
+                  <p><span>Clientes reasignados con éxito</span></p>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" id="btnSuccessOverlayOk" class="btn btn-primary btn-lg pull-left" data-met-initjs="planSelection" data-met-overlay="successOverlay">De acuerdo</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+				  <div id="businessRule_overlayId">
+<div class="modal fade" id="businessRuleOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close fa fa-times" data-dismiss="modal" aria-hidden="true"></button>
+                  <h2 class="modal-title" id="myModalLabel-1"></h2>
+                </div>
+                <div class="modal-body">
+                  
+
+		<input type="hidden" id="messageId" value="" />		
+				
+	
+		
+
+		
+                </div>
+                <div class="modal-footer">
+				<button type="button" id="btnBusinessCancelYes" class="btn btn-primary btn-lg pull-left" data-dismiss="modal">De acuerdo</button>
+                  
+                  
+				  
+                </div>
+              </div>
+            </div>
+          </div>
+	</div><!-- Client  Overlays End -->
+                  
+                  <input id="StateDispNm" type="hidden" name="appDataMap['CustomerData.Party.Person.Addresses.Address:0.StateDispNm']" value="" />
+                  <input id="CityDispNm" type="hidden" name="appDataMap['CustomerData.Party.Person.Addresses.Address:0.CityDispNm']" value="" />
+                  <input id="CityUSName" type="hidden" name="appDataMap['CustomerData.Party.Person.Addresses.Address:0.CityUSName']" value="" />
+                  <input id="CityUSCd" type="hidden" name="appDataMap['CustomerData.Party.Person.Addresses.Address:0.CityUSCd']" value="" />
+                  <input id="hidAddDependentIdCount" type="hidden" name="appDataMap['CustomerData.Dependents.DependentIdCount']" value="0" />
+                  <input id="hidAddDependentCount" type="hidden" name="appDataMap['CustomerData.Dependents.DependentCount']" value="0" />
+                  <input id="hidPhoneNumberIdCount" type="hidden" name="appDataMap['CustomerData.Party.Person.Phones.PhoneNumberIdCount']" value="1" />
+                  <input id="hidPhnNumCount" type="hidden" name="appDataMap['CustomerData.Party.Person.Phones.PhoneNumberCount']" value="1" /> 
+                  <input id="hidEmailAddressCount" type="hidden" name="appDataMap['CustomerData.Party.EMailAddresses.EmailAddressCount']" value="0" />
+                  <input id="hidEmailAddressIdCount" type="hidden" name="appDataMap['CustomerData.Party.EMailAddresses.EmailAddressIdCount']" value="1" />
+                  <input id="hidAnotherAddressCount" type="hidden" name="appDataMap['CustomerData.Party.Person.Addresses.AnotherAddressCount']" value="0" />
+                  <input id="hidAnotherAddressIdCount" type="hidden" name="appDataMap['CustomerData.Party.Person.Addresses.AnotherAddressIdCount']" value="0" />
+                  <input id="hidRealAge" type="hidden" name="appDataMap['CustomerData.Party.Person.RealAge']" value="" />
+                  <input id="hidRelationship" type="hidden" name="appDataMap['CustomerData.Party.Person.Relationship']" value="1" /><!-- <input id="hidActuarialAge" type="hidden" th:field="*{appDataMap['CustomerData.Party.Person.ActuarialAge']}"/> --><!--  <input id="hidPhnNumCount" type="hidden" th:field="*{appDataMap['CustomerData.Party.Person.PhoneNumCount']}"/> -->
+                  
+                  
+                  <input id="hidCitizenShipCount" type="hidden" name="appDataMap['CustomerData.Party.Person.CitizenshipCount']" value="1" /> 
+                  <input id="hidOccupationCount" type="hidden" name="appDataMap['CustomerData.Party.Person.Occupation']" value="1" />
+                  <input id="hidCustId" type="hidden" name="metaDataMap['custId']" value="0" />
+				   <input id="hidVerId" type="hidden" name="metaDataMap['verId']" value="" />
+                  <input id="hidCustVerId" type="hidden" value="" />
+                  
+                  
+				  <input id="indexesToRemove" type="hidden" value="" name="indexesToRemove" />
+                  <input id="hidEnt" type="hidden" value="{AUTH_DECL_QT=false, UPD_ADMIN_PARMS=false, EAPP_NOTFY=true, EDT_ACTV_CUST=false, EAPP_MGMT=true, CRT_EDT_QT=true, EAPP_SRCH=true, EAPP_VIEW=true, VIEW_CUST_DETL=true, CRT_EDT_CUST=true, GNRL_RPT=true, EAPP_EMAIL=true, disabledFieldClass=, PRNT_EMAIL_QT=true, VIEW_QT=true, UNLOCK_QT=false}" />
+                  <input id="hidActiveClient" type="hidden" value="false" />
+                  <input type="hidden" id="hidFullName" name="appDataMap['CustomerData.Party.Person.FullName']" value="null null" /> 
+				  <input type="hidden" id="starFlag" name="appDataMap['CustomerData.Party.Person.PrefPartyInd']" value="" /> 
+                  <input id="hidDepDetailsFilledFlag" type="hidden" name="appDataMap['depDetailsFilledFlag']" value="true" />
+                  
+                  <input id="hidLinkIdForCust" type="hidden" value="true" />
+                  <input id="clientPageLoaded" type="hidden" name="appDataMap['CustomerData.Party.Person.PageLoaded']" value="true" /><!-- <input id="hidProceedForSale" type='hidden' th:field="*{appDataMap['hidProceedForSale']}" /> --><!--  <input id="hiddenLinkId" type="hidden" name="metaDataMap['linkId']" th:value="*{metaDataMap['linkId']}"></input> -->
+                  
+                  
+               </div>
+      </section>
+      </div>
+      </div>
+   <input id="TOKEN_CLT_TRNS" type="hidden" name="TOKEN_CLT_TRNS" value="E3B3CY4Z708J30A9" /><input type="hidden" name="metaDataMap[&quot;oldValue&quot;]" id="hidOldValues" value="{&quot;flowExecUrl&quot;:&quot;/sales/parentflow?execution=e2s2&amp;TOKEN_CLT_TRNS=E3B3CY4Z708J30A9&quot;,&quot;linkId&quot;:&quot;createcustomer&quot;,&quot;queryBuilderParam&quot;:&quot;&quot;,&quot;pageToLoad&quot;:&quot;&quot;,&quot;searchCriteriaInputs&quot;:&quot;FullName|custId|QuoteStatus|QuoteNumber|quoteStartDate|quoteExperiedDate|illustrationSearch|product|IllustrationStatus|IllustrationName|NeedStatus|FirstName|LastName|CUST_ID|AGNT_ID|AGNT_ID_FROM|TASK_STTS_NM|USR_ID|taskRef|MultipleSearchCriteria|ApplicationStatus|FirstNameField|LastNameField|DateOfBirth|DocIdNumber|AppId|ApplicationStartDate|ApplicationEndDate&quot;,&quot;hiddenQuoteParams&quot;:&quot;&quot;,&quot;nativeQueryFlag&quot;:&quot;false&quot;,&quot;nativeQuerySQLKey&quot;:&quot;&quot;,&quot;inputList&quot;:&quot;&quot;,&quot;inputListCount&quot;:&quot;&quot;,&quot;nativeQuerySQLKeyCount&quot;:&quot;&quot;,&quot;fragmentToLoad&quot;:&quot;&quot;,&quot;multipleNativeQueryFlag&quot;:&quot;false&quot;,&quot;nativeQueryMultipleSql&quot;:&quot;&quot;,&quot;mulQueryIpList&quot;:&quot;&quot;,&quot;resultSetKeysList&quot;:&quot;&quot;,&quot;queryBuilderFlagActv&quot;:&quot;true&quot;,&quot;getTypeAheadDataFlag&quot;:&quot;&quot;,&quot;criteriaSearchFlag&quot;:&quot;&quot;,&quot;criteriaSearchCountQuery&quot;:&quot;&quot;,&quot;recordType&quot;:&quot;&quot;,&quot;appendUniqueIdentifier&quot;:&quot;&quot;,&quot;perPage&quot;:&quot;&quot;,&quot;leftJoinKey&quot;:&quot;&quot;,&quot;queryBuilderParamCount&quot;:&quot;&quot;,&quot;globalSearchDefaultPage&quot;:&quot;&quot;,&quot;taskFlag&quot;:&quot;&quot;,&quot;viewAllFlag&quot;:&quot;&quot;,&quot;whereClauseTextBox&quot;:&quot;&quot;,&quot;dashBoardStatusType&quot;:&quot;&quot;,&quot;dynamicParamsForStatus&quot;:&quot;&quot;,&quot;advancedSearchFlag&quot;:&quot;&quot;,&quot;advancedSearch&quot;:&quot;&quot;,&quot;advancedSearchSQLPart1&quot;:&quot;&quot;,&quot;advancedSearchSQLPart2&quot;:&quot;&quot;,&quot;nativeQueryKeyCountForScroll&quot;:&quot;&quot;,&quot;searchFlag&quot;:&quot;&quot;,&quot;searchPageParam&quot;:&quot;&quot;,&quot;role_code&quot;:&quot;15901&quot;,&quot;polHolderType&quot;:&quot;&quot;,&quot;CustomerData.Party.Person.FirstName&quot;:&quot;Carolina&quot;,&quot;CustomerData.Party.Person.SecondName&quot;:&quot;&quot;,&quot;CustomerData.Party.Person.SecondMiddleName&quot;:&quot;&quot;,&quot;CustomerData.Party.Person.LastName&quot;:&quot;López&quot;,&quot;CustomerData.Party.Person.SecondSurname&quot;:&quot;&quot;,&quot;CustomerData.Party.Person.DateOfBirth&quot;:&quot;25/02/1981&quot;,&quot;CustomerData.Party.Person.NationalCountry&quot;:&quot;44&quot;,&quot;CustomerData.Party.Person.Age&quot;:&quot;&quot;,&quot;CustomerData.Party.Person.Gender&quot;:&quot;2&quot;,&quot;CustomerData.Party.Person.SmokingStatus&quot;:&quot;N&quot;,&quot;CustomerData.Party.Person.MaritalStatus&quot;:&quot;SOL&quot;,&quot;CustomerData.Party.Person.Occupations.Occupation0&quot;:&quot;Agente inmobiliario (Administrativo)&quot;,&quot;CustomerData.Party.Person.Occupations.OccupationCode0&quot;:&quot;&quot;,&quot;CustomerData.Party.Person.Occupations.OtherOccupation0&quot;:&quot;&quot;,&quot;CustomerData.Party.Person.needsRequired&quot;:&quot;true&quot;,&quot;CustomerData.Party.GovtIDInfo.DocIDType&quot;:&quot;C&quot;,&quot;CustomerData.Party.Person.MonthlySalary&quot;:&quot;&quot;,&quot;CustomerData.Party.EMailAddresses.EMailAddress_0.EMailAddr&quot;:&quot;&quot;,&quot;CustomerData.Party.Person.Phones.Phone_0.PhoneType&quot;:&quot;-1&quot;,&quot;CustomerData.Party.Person.Phones.Phone_0.PhoneExtNumber&quot;:&quot;&quot;,&quot;CustomerData.Party.Person.Addresses.Address_0.StateDispNm&quot;:&quot;&quot;,&quot;CustomerData.Party.Person.Addresses.Address_0.CityDispNm&quot;:&quot;&quot;,&quot;CustomerData.Party.Person.Addresses.Address_0.CityUSName&quot;:&quot;&quot;,&quot;CustomerData.Party.Person.Addresses.Address_0.CityUSCd&quot;:&quot;&quot;,&quot;CustomerData.Dependents.DependentIdCount&quot;:&quot;0&quot;,&quot;CustomerData.Dependents.DependentCount&quot;:&quot;0&quot;,&quot;CustomerData.Party.Person.Phones.PhoneNumberIdCount&quot;:&quot;1&quot;,&quot;CustomerData.Party.Person.Phones.PhoneNumberCount&quot;:&quot;1&quot;,&quot;CustomerData.Party.EMailAddresses.EmailAddressCount&quot;:&quot;0&quot;,&quot;CustomerData.Party.EMailAddresses.EmailAddressIdCount&quot;:&quot;1&quot;,&quot;CustomerData.Party.Person.Addresses.AnotherAddressCount&quot;:&quot;0&quot;,&quot;CustomerData.Party.Person.Addresses.AnotherAddressIdCount&quot;:&quot;0&quot;,&quot;CustomerData.Party.Person.RealAge&quot;:&quot;&quot;,&quot;CustomerData.Party.Person.Relationship&quot;:&quot;1&quot;,&quot;CustomerData.Party.Person.CitizenshipCount&quot;:&quot;1&quot;,&quot;CustomerData.Party.Person.Occupation&quot;:&quot;1&quot;,&quot;custId&quot;:&quot;0&quot;,&quot;verId&quot;:&quot;&quot;,&quot;indexesToRemove&quot;:&quot;&quot;,&quot;CustomerData.Party.Person.FullName&quot;:&quot;null null&quot;,&quot;CustomerData.Party.Person.PrefPartyInd&quot;:&quot;&quot;,&quot;depDetailsFilledFlag&quot;:&quot;true&quot;,&quot;CustomerData.Party.Person.PageLoaded&quot;:&quot;&quot;,&quot;TOKEN_CLT_TRNS&quot;:&quot;E3B3CY4Z708J30A9&quot;,&quot;CustomerData.Party.GovtIDInfo.DocIdNumber&quot;:&quot;&quot;,&quot;CustomerData.Party.Person.Phones.Phone_0.PhoneNumber&quot;:&quot;&quot;}" /></form>
+   </div>
+   </div>
+
+</div>
+                     </div><!--   </div> --><!-- throbber supported fields-->
+                     
+                     
+                     <div id="throbberDiv"></div>
+                      <div id="fg_backgroundpopup"></div>
+                  </div>
+               </section>
+               <div id="overlay_ImportFragment">
+        <div id="createNewClient_overlay">
+	
+	
+	<div class="modal fade" id="createNewClientOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                   <p></p><h1><span>CLIENTE</span></h1><p></p>
+                </div><!-- <div class="modal-body">
+                  	<p><span th:utext="#{${ tenantCode}+'.clientInfoSaved'}"></span></p>
+                </div> -->
+                
+                 <div class="modal-body">
+                  	<p>
+                  	<span>La información del cliente ha sido actualizada</span>
+                  	
+                  	</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" id="btnSearchClient" class="btn btn-primary btn-lg pull-left">Menú de Clientes</button>
+                  <button type="button" data-met-initjs="needsAnalysis" id="btnContinueToNeeds" class="btn btn-primary btn-lg pull-left">Análisis de Necesidades</button>
+				     
+ 				    
+ 				    
+	            </div>
+              </div>
+            </div>
+          </div>
+		 
+	</div>
+		<div id="createNewClientConfirm_Overlay"><!--  <div id="createNewClientConfirmOverlay" class="pop_container popSaveSuccess" th:with="tenantCode =${session.tenantDetailTO.tenantCode}">
+         <div class="popup Width400px">
+            <div class="popHeader">
+               <p>
+                  <a href="#" class="closeBtn" data-met-hidepopup="createNewClientConfirmOverlay" id="clientConfirmCloseBtn"><span th:utext="#{${ tenantCode}+'.closeWindow'}"/></a>
+               </p>
+            </div>
+            <div class="sampleTxt">
+               <p><span th:utext="#{${ tenantCode}+'.createClientConfirm'}"></span></p>
+               
+         <article class="row">
+                    <div class="col-sm-12">
+                      <div class="btn-wrap btn-wrap-primary btn-wrap-right">
+                        <div class="form-group">
+                         <button  class="btn btn-primary btn-mobile btn-form-submit" id="btnCreateClientOK" type="button" th:utext="#{${ tenantCode}+'.createClientOK'}"></button>
+         <button  class="btn btn-secondary btn-mobile" th:utext="#{${ tenantCode}+'.createClientCancel'}" id="btnCreateClientCancel" type="button" data-met-initjs="planSelection"></button>
+            
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+            </div>
+         </div>
+         
+         </div>
+         </div>
+         </html> -->
+      
+      <div class="modal fade" id="createNewClientConfirmOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close fa fa-times" data-dismiss="modal" aria-hidden="true"></button>
+                  <h2 class="modal-title" id="myModalLabel-1"></h2>
+               </div>
+               <div class="modal-body">
+                  <p><span>¿Está seguro de crear?</span></p>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-primary btn-lg pull-left" id="btnCreateClientOK" data-met-initjs="createNewClient">Si</button>
+                  <button type="button" id="btnCreateClientCancel" class="btn btn-primary btn-lg pull-left">No</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+		<div id="cancelOverlay_overlay"><!-- <div id="cancelOverlay" class="pop_container popSaveSuccess" th:with="tenantCode =${session.tenantDetailTO.tenantCode}">
+			<div class="popup Width400px">
+				<div class="popHeader">
+				<p>
+				   <a href="#" class="closeBtn" data-met-hidepopup="cancelOverlay" id="cancelOverlayCloseBtn"><span th:utext="#{${ tenantCode}+'.closeWindow'}"/></a>
+				</p>
+				</div>
+				<div class="sampleTxt">
+					<p><span th:utext="#{${ tenantCode}+'.cancelText'}"></span></p>
+					<p class="marginTop20px" align="center">
+						<button id="btnCancelYes" type="button" th:utext="#{${ tenantCode}+'.yes'}"></button>						
+						<button id="btnCancelNo" type="button" data-met-hidepopup="cancelOverlay" th:utext="#{${ tenantCode}+'.no'}"></button>						
+					</p>
+				</div>
+			</div>
+		</div>	
+    </div>
+</html> -->
+		
+
+<div class="modal fade" id="cancelOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close fa fa-times" data-dismiss="modal" aria-hidden="true"></button>
+                  <h2 class="modal-title" id="myModalLabel-1"></h2>
+                </div>
+                <div class="modal-body">
+                  	<p><span>La información ingresada se perdera. ¿Desea continuar?</span></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" id="btnCancelYes" class="btn btn-primary btn-lg pull-left">Si</button>
+                  <button type="button" id="btnCancelNo" class="btn btn-primary btn-lg pull-left" data-dismiss="modal">No</button>
+                </div>
+              </div>
+            </div>
+          </div>
+		  <div class="modal fade" id="cancelOverlayNeedsAnalysis" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close fa fa-times" data-dismiss="modal" aria-hidden="true"></button>
+                  <h2 class="modal-title" id="myModalLabel-1"></h2>
+                </div>
+                <div class="modal-body">
+                  	<p><span>La información ingresada se perdera. ¿Desea continuar?</span></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" id="btnNeedsCancelYes" class="btn btn-primary btn-lg pull-left">Si</button>
+                  <button type="button" id="btnCancelNo" class="btn btn-primary btn-lg pull-left" data-dismiss="modal">No</button>
+                </div>
+              </div>
+            </div>
+          </div>
+	</div>
+		<div id="profileUpdate_overlay"><!-- <div id="profileUpdateOverlay" class="pop_container popSaveSuccess" th:with="tenantCode =${session.tenantDetailTO.tenantCode}">
+         <div class="popup Width400px">
+         <div class="popHeader">
+         <p>
+                  <a href="#" class="closeBtn" id="btnUpdateProfileOverlayClose" data-met-initjs="userProfile" data-met-hidepopup="profileUpdateOverlay" data-met-overlay="profileUpdateOverlay"><span th:utext="#{${ tenantCode}+'.closeWindow'}"/></a>
+               </p>
+         </div>
+         <div class="sampleTxt">
+         <p><span th:utext="#{${ tenantCode}+'.profileUpdatedSuccess'}"></span></p>
+         <p class="marginTop20px" align="center">
+         <button id="btnUpdateProfileSuccessOverlayOk" type="button" th:utext="#{${ tenantCode}+'.ok'}" data-met-hidepopup="profileUpdateOverlay" data-met-initjs="userProfile" data-met-overlay="profileUpdateOverlay"></button>
+         </p>
+         </div>
+         </div>
+         </div>
+         
+         
+           </div>
+         </html> -->
+      
+      <div class="modal fade" id="profileUpdateOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close fa fa-times" data-dismiss="modal" aria-hidden="true" id="btnUpdateProfileOverlayClose" data-met-initjs="userProfile" data-met-hidepopup="profileUpdateOverlay" data-met-overlay="profileUpdateOverlay"></button>
+                  <h2 class="modal-title" id="myModalLabel-1"></h2>
+               </div>
+               <div class="modal-body">
+                  <p><span>Perfil salvado exitosamente</span></p>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-primary btn-lg pull-left" id="btnUpdateProfileSuccessOverlayOk" data-dismiss="modal" data-met-initjs="userProfile" data-met-overlay="profileUpdateOverlay">De acuerdo</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+		<div id="changePasswordSuccess_Overlay"><!-- <div id="changePasswordSuccessOverlay" class="pop_container popSaveSuccess" th:with="tenantCode =${session.tenantDetailTO.tenantCode}">
+         <div class="popup Width400px">
+         <div class="popHeader">
+         <p>
+                  <a href="#" class="closeBtn" id="btnChngPwdOverlayClose" data-met-initjs="userProfile" data-met-overlay="changePasswordSuccessOverlay"><span th:utext="#{${ tenantCode}+'.closeWindow'}"/></a>
+               </p>
+         </div>
+         <div class="sampleTxt">
+         <p><span th:utext="#{${ tenantCode}+'.changePasswordSuccess'}"></span></p>
+         <p class="marginTop20px" align="center">
+         <button id="btnChngPwdSuccessOverlayOk" type="button" th:utext="#{${ tenantCode}+'.ok'}" data-met-initjs="userProfile"  data-met-overlay="changePasswordSuccessOverlay"></button>
+         </p>
+         </div>
+         </div>
+         </div>
+         
+         
+           </div>
+         </html> -->
+      
+
+
+      <div class="modal fade" id="changePasswordSuccessOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close fa fa-times" data-dismiss="modal" aria-hidden="true" id="btnChngPwdOverlayClose" data-met-initjs="userProfile" data-met-overlay="changePasswordSuccessOverlay"></button>
+                  <h2 class="modal-title" id="myModalLabel-1"></h2>
+               </div>
+               <div class="modal-body">
+                  <p><span>Su contraseña se ha cambiado exitosamente</span></p>
+               </div>
+               <div class="modal-footer">
+                 <button class="btn btn-primary btn-lg pull-left" data-dismiss="modal" id="btnChngPwdSuccessOverlayOkAgent" type="button" data-met-initjs="userProfile" data-met-overlay="changePasswordSuccessOverlay">De acuerdo</button>
+             
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+		<div id="logout_overlay"><!-- <div id="logoutOverlay"  th:with="tenantCode =${session.tenantDetailTO.tenantCode}">
+			<div class="popup Width400px">
+				<div class="popHeader">
+				<p>
+				   <a href="#" class="closeBtn" id="logoutOverlayCloseBtn" ><span th:utext="#{${ tenantCode}+'.closeWindow'}"/></a>
+				</p>
+				</div>
+				<div class="sampleTxt">
+					<p><span th:utext="#{${ tenantCode}+'.logoutText'}"></span></p>
+					<p class="marginTop20px" align="center">
+						<button id="btnlogoutYes" type="button" th:utext="#{${ tenantCode}+'.yes'}"></button>						
+						<button id="btnlogoutNo" type="button" data-met-hidepopup="logoutOverlay" th:utext="#{${ tenantCode}+'.no'}"></button>						
+					</p>
+				</div>
+			</div>
+		</div>	 -->
+		
+		<div class="modal fade" id="logoutOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+		<form id="frmLogoutOverlay" data-met-logoutformtosubmit="" data-met-formmethod="POST">
+			<input type="hidden" id="hidLastVisitedPage" name="lastVisitedPage" value="" />
+			<input type="hidden" id="CN" name="CN" value="COL" />
+		</form>
+          <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close fa fa-times" data-dismiss="modal" aria-hidden="true"></button>
+                  <h2 class="modal-title" id="myModalLabel-1"></h2>
+                </div>
+                <div class="modal-body">
+                  	<p><span>¿Esta seguro que quiere salir? </span></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" id="btnlogoutYes" class="btn btn-primary btn-lg pull-left">Si</button>
+                  <button type="button" class="btn btn-primary btn-lg pull-left" data-dismiss="modal">No</button>
+                </div>
+              </div>
+            </div>
+          </div>
+	</div>
+       <div id="resetPassword_successOverlay"><!--  <div id='resetPasswordSuccessOverlay' class="pop_container forgotPassword_Popup"> -->
+     
+         <div class="modal fade" id="resetPasswordSuccessOverlay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true"> 
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h3>Cambiar Contraseña</h3>
+                 
+               </div>
+               <div class="modal-body">
+                  <form class="fl">
+                     <p><span>La contraseña ha sido cambiada exitosamente.</span>
+                        <span>Por favor ingrese de nuevo</span>
+                     </p>
+					 </form>
+               
+                    </div>
+                     <div class="clear"></div>
+                     <div class="modal-footer" align="center">
+                        <button id="btnloginAfterReset" class="btn btn-primary btn-lg pull-left" type="button">De acuerdo</button>
+                     </div>
+            </div>
+         </div>
+          </div><!--  </div> --> 
+     
+   </div>
+        <div id="sessionPopUp"><!--  <div id="fg_sessPopUp_Container" class="pop_container" th:with="tenantCode =${session.tenantDetailTO.tenantCode}">
+         <div id="fg_container_header"></div>
+         <div class="pop_box" >
+            <div class="pop_title" th:utext="#{${ tenantCode}+'.sessionTimeOutMessage'}"> </div>
+            <div class="fl pop_txt" id="sessRemainTime"> </div>
+            <div class="fr">
+      <button id="btnClose" th:utext="#{${ tenantCode}+'.close'}"></button>
+            </div>
+            <input type="hidden" id="stopTimecount" name="stopTimecount" />  
+            <input type="hidden" id="maxInactiveInterval" name="maxInactiveInterval" th:value="${session.MAXSESSINTERVAL}" />
+            <input type="hidden" id="timeBeforeSessExpire" name="timeBeforeSessExpire" th:value="${session.timeBeforeSessExpire}" />
+			<input type="hidden" id="mouseLeftFlag" name="mouseLeftFlag" th:value="1" />
+            <input type="hidden" id="isIdle" name="isIdle" />  
+         </div>
+      </div>
+      <div id="fg_backgroundpopup"></div>
+   </div>
+</html> -->
+     
+
+<div class="modal fade" id="fg_sessPopUp_Container" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1" aria-hidden="true">
+          <div class="modal-dialog" id="fg_container_header">
+              <div class="modal-content">
+                <div class="modal-header">
+                 
+                  <h2 class="modal-title" id="myModalLabel-1"></h2>
+                </div>
+                <div class="modal-body">
+				<div class="fl pop_txt" id="sessRemainTime"> </div>
+					<p><span>Esta sesión está a punto de agotar el tiempo. Guarde su trabajo para evitar la pérdida de datos.</span></p>
+                     <input type="hidden" id="stopTimecount" name="stopTimecount" />  
+            <input type="hidden" id="maxInactiveInterval" name="maxInactiveInterval" value="1800" />
+            <input type="hidden" id="timeBeforeSessExpire" name="timeBeforeSessExpire" value="5" />
+			<input type="hidden" id="mouseLeftFlag" name="mouseLeftFlag" value="1" />
+            <input type="hidden" id="isIdle" name="isIdle" />  
+                </div>
+                <div class="modal-footer">
+                  
+                  <button type="button" id="btnClose" class="btn btn-primary btn-lg pull-left" data-dismiss="modal">Cerrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+	</div> 
+   </div>
+			   <input type="hidden" id="flowStatus" value="1" /><!-- <div class="modal-backdrop fade in"></div> -->
+			   
+            
+         </body></html>
